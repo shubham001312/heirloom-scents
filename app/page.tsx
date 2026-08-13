@@ -1,69 +1,201 @@
 import Image from "next/image";
+import Link from "next/link";
+import { homeContent } from "@/content/home";
 
 export default function Home() {
+  const { hero, intro, events, archive, about, gallery, cta } = homeContent;
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main id="main-content">
+      {/* Hero */}
+      <section className="home-hero">
         <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src={hero.image}
+          alt={hero.imageAlt}
+          fill
           priority
+          sizes="100vw"
+          style={{ objectFit: "cover" }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
+        <div className="home-hero__overlay" />
+        <div className="home-hero__copy">
+          <div className="kicker">{hero.eyebrow}</div>
+          <h1 className="home-hero__title">
+            <span className="home-hero__display">{hero.titleDisplay}</span>
+            <span className="home-hero__small">{hero.titleSmall}</span>
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+          <div className="home-hero__tag">{hero.tagline}</div>
+          <div className="rule" />
+          <Link className="text-link" href={hero.ctaHref}>
+            {hero.ctaLabel} <span>→</span>
+          </Link>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <div className="home-hero__scroll" aria-hidden="true">
+          Scroll
+        </div>
+      </section>
+
+      {/* Intro + Steps */}
+      <section className="section">
+        <div className="intro">
+          <div>
+            <div className="kicker">{intro.kicker}</div>
+            <h2>
+              {intro.titleLine1}
+              <br />
+              <em>{intro.titleLine2}</em>
+            </h2>
+          </div>
+          <p>{intro.description}</p>
+        </div>
+        <div className="steps">
+          {intro.steps.map((step) => (
+            <div key={step.number} className="step">
+              <div className="step-no">{step.number}</div>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Events */}
+      <section className="section cream">
+        <div className="section-head">
+          <div className="kicker">{events.kicker}</div>
+          <h2>
+            {events.titleLine1}
+            <br />
+            {events.titleLine2}
+          </h2>
+          <div className="rule" />
+        </div>
+        <div className="events-grid">
+          {events.items.map((item) => (
+            <article key={item.name} className="event">
+              <Image
+                src={item.image}
+                alt={item.imageAlt}
+                width={600}
+                height={462}
+                style={{ width: "100%", height: "auto", objectFit: "cover" }}
+              />
+              <div className="meta">
+                <h3>{item.name}</h3>
+                <p>{item.tagline}</p>
+                <Link className="text-link" href={item.href}>
+                  Explore <span>→</span>
+                </Link>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="center" style={{ marginTop: "60px" }}>
+          <Link className="text-link" href="/experience">
+            View all events <span>→</span>
+          </Link>
+        </div>
+      </section>
+
+      {/* Scent Archive */}
+      <section className="section archive">
+        <div className="section-head">
+          <div className="kicker">{archive.kicker}</div>
+          <h2>
+            {archive.titleLine1}
+            <br />
+            {archive.titleLine2}
+          </h2>
+          <div className="rule" />
+        </div>
+        <div className="archive-grid">
+          {archive.scents.map((scent) => (
+            <article key={scent.name} className="scent">
+              <Image
+                src={scent.image}
+                alt={scent.imageAlt}
+                width={400}
+                height={280}
+                style={{ width: "100%", height: "210px", objectFit: "cover" }}
+              />
+              <h3>{scent.name}</h3>
+              <p>{scent.notes}</p>
+              <Link href="/experience">Discover →</Link>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* About (maroon strip) */}
+      <section className="wine">
+        <div className="about-intro">
+          <div className="kicker">{about.kicker}</div>
+          <h2>{about.title}</h2>
+          <div className="rule" />
+          <p className="sub">{about.description}</p>
+          <Link className="text-link" href={about.ctaHref}>
+            {about.ctaLabel} <span>→</span>
+          </Link>
+        </div>
+      </section>
+
+      {/* Gallery */}
+      <section className="section">
+        <div className="section-head">
+          <div className="kicker">{gallery.kicker}</div>
+          <h2>
+            {gallery.titleLine1}
+            <br />
+            {gallery.titleLine2}
+          </h2>
+        </div>
+        <div className="home-gallery">
+          {gallery.images.map((img) => (
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              key={img.src}
+              src={img.src}
+              alt={img.alt}
+              width={600}
+              height={400}
+              className={
+                "tall" in img && img.tall
+                  ? "tall"
+                  : "wide" in img && img.wide
+                    ? "wide"
+                    : ""
+              }
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          ))}
         </div>
-      </main>
-    </div>
+        <div className="center" style={{ marginTop: "50px" }}>
+          <Link className="text-link" href={gallery.ctaHref}>
+            {gallery.ctaLabel} <span>→</span>
+          </Link>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="cta">
+        <Image
+          src={cta.image}
+          alt={cta.imageAlt}
+          width={700}
+          height={430}
+          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+        />
+        <div className="cta-copy">
+          <div className="kicker">{cta.kicker}</div>
+          <h2>
+            {cta.titleLine1}
+            <br />
+            <em>{cta.titleLine2}</em>
+          </h2>
+          <Link className="text-link" href={cta.ctaHref}>
+            {cta.ctaLabel} <span>→</span>
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }

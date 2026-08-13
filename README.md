@@ -1,36 +1,164 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Heirloom Scents — Website POC
 
-## Getting Started
+A polished, responsive, production-minded website POC for Heirloom Scents — a luxury mobile perfume bar in the Dallas–Fort Worth area.
 
-First, run the development server:
+## Quick Start
 
 ```bash
+# 1. Clone the repository
+git clone <repository-url>
+cd heirloom-scents
+
+# 2. Install dependencies
+npm install
+
+# 3. Set up environment
+cp .env.example .env.local
+
+# 4. Run the development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command                 | Description              |
+| ----------------------- | ------------------------ |
+| `npm run dev`           | Start development server |
+| `npm run build`         | Production build         |
+| `npm start`             | Start production server  |
+| `npm run lint`          | Run ESLint               |
+| `npm run format`        | Run Prettier             |
+| `npm run typecheck`     | TypeScript type check    |
+| `npm test`              | Run unit tests (Vitest)  |
+| `npm run test:coverage` | Run tests with coverage  |
 
-## Learn More
+## Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework:** Next.js 16 (App Router)
+- **Language:** TypeScript (strict mode)
+- **Styling:** CSS + Design Tokens (CSS Custom Properties)
+- **Fonts:** Fraunces (serif) + Inter (sans-serif)
+- **Validation:** Zod (shared client/server schemas)
+- **Testing:** Vitest + React Testing Library
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+heirloom-scents/
+├── app/                    # Next.js App Router pages
+│   ├── layout.tsx          # Root layout (Header + Footer)
+│   ├── page.tsx            # Home page
+│   ├── experience/         # Experience & Events page
+│   ├── about/              # About page
+│   ├── gallery/            # Gallery page
+│   ├── inquire/            # Book / Inquire page
+│   └── api/inquiry/        # Inquiry form API endpoint
+├── components/             # Reusable components
+│   ├── layout/             # Header, Footer, MobileNav
+│   ├── forms/              # InquiryForm
+│   └── ui/                 # Button, Container, Logo, SectionHeading
+├── content/                # Typed content files
+├── lib/                    # Utilities (validation, security)
+├── styles/                 # CSS (tokens, globals, components)
+├── public/images/          # Static images and favicons
+├── tests/                  # Unit and integration tests
+└── docs/                   # Spec, ADRs, client dependencies
+```
 
-## Deploy on Vercel
+## Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Route         | Description                                |
+| ------------- | ------------------------------------------ |
+| `/`           | Home — hero, value props, event types, CTA |
+| `/experience` | Experience & Events — event type details   |
+| `/about`      | About — brand story and philosophy         |
+| `/gallery`    | Gallery — responsive image grid            |
+| `/inquire`    | Book / Inquire — contact form              |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Inquiry Form
+
+The inquiry form includes:
+
+- Client-side validation (Zod schema)
+- Server-side validation (independent of client)
+- Honeypot spam control
+- Rate limiting (configurable via environment)
+- Success and error states
+
+**Note:** The API route currently logs submissions. Configure the approved submission destination in `.env.local`.
+
+## Environment Variables
+
+See `.env.example` for all available variables.
+
+```bash
+# Required for production
+INQUIRY_DESTINATION=       # Email or webhook URL
+INQUIRY_API_KEY=           # API key for destination service
+CSRF_SECRET=               # Random string for CSRF protection
+
+# Optional (defaults shown)
+RATE_LIMIT_MAX=5           # Max submissions per IP per window
+RATE_LIMIT_WINDOW_MS=900000  # Rate limit window (15 minutes)
+NEXT_PUBLIC_SITE_URL=https://heirloomscents.com
+```
+
+## Accessibility
+
+This site is designed to meet WCAG 2.1 AA standards:
+
+- Semantic HTML with proper heading hierarchy
+- Keyboard navigation support
+- Visible focus states
+- Color contrast ≥ 4.5:1
+- Reduced motion support
+- Screen reader friendly
+
+## Security
+
+- Security headers configured (CSP, HSTS, X-Frame-Options)
+- Input validation at API boundaries
+- Rate limiting on inquiry endpoint
+- Honeypot spam control
+- No secrets in source code
+
+## Deployment
+
+### Vercel (Recommended)
+
+```bash
+# Install Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+```
+
+### Other Platforms
+
+This is a standard Next.js application. It can be deployed to any platform that supports Node.js:
+
+- Netlify
+- Railway
+- AWS Amplify
+- Docker
+
+## Client Dependencies
+
+Before production launch, the following assets are required from the client:
+
+- Logo files (SVG/PNG)
+- Brand colors and fonts
+- Photography
+- Approved copy
+- Contact details and social links
+- Inquiry form field confirmation
+- Submission destination
+
+See `docs/client-dependencies.md` for the full tracker.
+
+## License
+
+Proprietary — Heirloom Scents / Autom8x
