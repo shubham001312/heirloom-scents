@@ -4,6 +4,11 @@ import { useState } from "react";
 import { inquirySchema, type InquiryFormData } from "@/lib/validation/inquiry";
 import { inquireContent } from "@/content/inquire";
 
+// Public by design — Web3Forms requires client-side submission on the free
+// plan and explicitly states the access key is safe to ship in client code.
+// Set NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in your environment (see .env.example).
+const WEB3FORMS_ACCESS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
 type FormErrors = Partial<Record<keyof InquiryFormData, string>>;
 
 /** Get today's date in YYYY-MM-DD format (local time, not UTC) */
@@ -94,34 +99,44 @@ export function InquiryForm() {
     setStatus("submitting");
 
     try {
-      // Submit to our own API route, which re-validates server-side, applies
-      // rate limiting and spam controls, then forwards to the configured
-      // destination. The destination credentials never reach the browser.
-      const response = await fetch("/api/inquiry", {
+      if (!WEB3FORMS_ACCESS_KEY) {
+        setStatus("error");
+        setErrorMessage(
+          "Inquiry system not configured. Please email us directly at hello@heirloomscents.com."
+        );
+        return;
+      }
+
+      // Submit directly to Web3Forms from the browser. The free plan only
+      // accepts client-side calls (server-side proxying returns 403) — this
+      // is Web3Forms' intended integration and the key is public by design.
+      const payload = {
+        access_key: WEB3FORMS_ACCESS_KEY,
+        subject: `New Inquiry — ${formData.name} (${formData.eventType})`,
+        from_name: "Heirloom Scents Website",
+        botcheck: formData.website || "",
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || "",
+        eventType: formData.eventType,
+        eventDate: formData.eventDate || "",
+        guestCount: formData.guestCount || "",
+        message: formData.message,
+      };
+
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const result = (await response.json().catch(() => null)) as {
         success?: boolean;
         message?: string;
-        field?: string;
       } | null;
 
       if (response.ok && result?.success) {
         setStatus("success");
-        return;
-      }
-
-      if (response.status === 422 && result?.field) {
-        // Server rejected a specific field (client schema should normally
-        // catch these first) — surface it as a field-level error.
-        setErrors((prev) => ({
-          ...prev,
-          [result.field as keyof InquiryFormData]: result.message,
-        }));
-        setStatus("idle");
         return;
       }
 

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bodoni_Moda, Italiana, DM_Sans } from "next/font/google";
 import localFont from "next/font/local";
 import "../styles/globals.css";
@@ -58,7 +58,6 @@ export const metadata: Metadata = {
     "DFW",
   ],
   authors: [{ name: "Heirloom Scents" }],
-  themeColor: "#3a090e",
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
@@ -113,6 +112,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#3a090e",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -43,7 +43,10 @@ export const cspHeader = {
     "style-src 'self' 'unsafe-inline'",
     "font-src 'self'",
     "img-src 'self' data: https: blob:",
-    "connect-src 'self'",
+    // api.web3forms.com — the inquiry form posts directly from the browser
+    // (Web3Forms free tier requires client-side calls; the access key is
+    // public by design).
+    "connect-src 'self' https://api.web3forms.com",
     "frame-ancestors 'none'",
   ].join("; "),
 };

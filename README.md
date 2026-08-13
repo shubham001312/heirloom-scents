@@ -39,8 +39,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 - **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript (strict mode)
 - **Styling:** CSS + Design Tokens (CSS Custom Properties)
-- **Fonts:** Fraunces (serif) + Inter (sans-serif)
-- **Validation:** Zod (shared client/server schemas)
+- **Fonts:** Bodoni Moda + Italiana + DM Sans (Google), Amoresa + Mon Nicolette Grande (self-hosted brand faces)
+- **Validation:** Zod (shared client schemas)
 - **Testing:** Vitest + React Testing Library
 
 ## Project Structure
@@ -54,17 +54,20 @@ heirloom-scents/
 │   ├── about/              # About page
 │   ├── gallery/            # Gallery page
 │   ├── inquire/            # Book / Inquire page
-│   └── api/inquiry/        # Inquiry form API endpoint
+│   ├── robots.ts           # robots.txt
+│   ├── sitemap.ts          # sitemap.xml
+│   └── manifest.ts         # PWA web manifest
 ├── components/             # Reusable components
 │   ├── layout/             # Header, Footer, MobileNav
 │   ├── forms/              # InquiryForm
 │   └── ui/                 # Button, Container, Logo, SectionHeading
 ├── content/                # Typed content files
-├── lib/                    # Utilities (validation, security)
+├── fonts/                  # Self-hosted brand fonts (Amoresa, Mon Nicolette)
+├── lib/                    # Utilities (validation, security headers)
 ├── styles/                 # CSS (tokens, globals, components)
 ├── public/images/          # Static images and favicons
-├── tests/                  # Unit and integration tests
-└── docs/                   # Spec, ADRs, client dependencies
+├── tests/                  # Unit tests
+└── docs/                   # Spec, ADRs, deployment notes
 ```
 
 ## Pages
@@ -82,26 +85,24 @@ heirloom-scents/
 The inquiry form includes:
 
 - Client-side validation (Zod schema)
-- Server-side validation (independent of client)
-- Honeypot spam control
-- Rate limiting (configurable via environment)
+- Honeypot spam control (Web3Forms `botcheck`)
 - Success and error states
 
-**Note:** The API route currently logs submissions. Configure the approved submission destination in `.env.local`.
+The form submits **directly from the browser** to Web3Forms — their free plan
+only accepts client-side calls (server-side proxying returns a 403). The access
+key is public by design and is inlined into the client bundle via
+`NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY`. Web3Forms applies its own IP-based rate
+limiting and spam filtering.
 
 ## Environment Variables
 
 See `.env.example` for all available variables.
 
 ```bash
-# Required for production
-INQUIRY_DESTINATION=       # Email or webhook URL
-INQUIRY_API_KEY=           # API key for destination service
-CSRF_SECRET=               # Random string for CSRF protection
+# Required for the inquiry form (site runs without it — form shows a friendly message)
+NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=   # Web3Forms access key (public by design)
 
-# Optional (defaults shown)
-RATE_LIMIT_MAX=5           # Max submissions per IP per window
-RATE_LIMIT_WINDOW_MS=900000  # Rate limit window (15 minutes)
+# Optional (default shown)
 NEXT_PUBLIC_SITE_URL=https://heirloomscents.com
 ```
 
@@ -119,10 +120,10 @@ This site is designed to meet WCAG 2.1 AA standards:
 ## Security
 
 - Security headers configured (CSP, HSTS, X-Frame-Options)
-- Input validation at API boundaries
-- Rate limiting on inquiry endpoint
+- Zod validation on the inquiry form
 - Honeypot spam control
-- No secrets in source code
+- No secrets in source code (the Web3Forms key is public by Web3Forms design)
+- `NEXT_PUBLIC_SITE_URL` used for canonical/OG URLs
 
 ## Deployment
 

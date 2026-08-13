@@ -644,6 +644,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 430px;
+  position: relative;
+  isolation: isolate;
 }
 
 .cta img {

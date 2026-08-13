@@ -180,9 +180,9 @@ export default function Home() {
         <Image
           src={cta.image}
           alt={cta.imageAlt}
-          width={700}
-          height={430}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          fill
+          sizes="(max-width: 900px) 100vw, 50vw"
+          style={{ objectFit: "cover" }}
         />
         <div className="cta-copy">
           <div className="kicker">{cta.kicker}</div>

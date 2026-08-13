@@ -24,16 +24,38 @@ vercel --prod
 
 Set these in the deployment platform's environment settings:
 
-| Variable               | Required | Description                                                                           |
-| ---------------------- | -------- | ------------------------------------------------------------------------------------- |
-| `WEB3FORMS_ACCESS_KEY` | Yes      | Web3Forms access key (get at https://web3forms.com)                                   |
-| `INQUIRY_EMAIL`        | No       | Email address that receives inquiry notifications (default: hello@heirloomscents.com) |
-| `RATE_LIMIT_MAX`       | No       | Max submissions per IP per window (default: 5)                                        |
-| `RATE_LIMIT_WINDOW_MS` | No       | Rate limit window in ms (default: 900000 = 15 min)                                    |
-| `NEXT_PUBLIC_SITE_URL` | No       | Base URL (default: https://heirloomscents.com)                                        |
+| Variable                           | Required | Description                                         |
+| ---------------------------------- | -------- | --------------------------------------------------- |
+| `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` | No*      | Web3Forms access key (get at https://web3forms.com) |
+| `NEXT_PUBLIC_SITE_URL`             | No       | Base URL (default: https://heirloomscents.com)      |
 
-> Note: `WEB3FORMS_ACCESS_KEY` must stay **server-only**. The inquiry form must
-> submit through the `/api/inquiry` route — never expose the key to the browser.
+*Not strictly required — the site deploys and runs without it; the inquiry
+form just shows a friendly "email us directly" message until it is set.
+
+> **Free tier note:** Web3Forms' free plan only accepts **client-side**
+> submissions. The inquiry form posts directly from the browser to
+> `https://api.web3forms.com/submit`, and Web3Forms explicitly states the
+> access key is safe to ship in client code (that is why it is prefixed
+> `NEXT_PUBLIC_`). Server-side proxying returns `403` on the free plan — no
+> Vercel upgrade needed. Web3Forms applies its own per-IP rate limiting.
+
+### Setting env vars on Vercel (free Hobby plan)
+
+Environment variables are free on the Hobby plan (up to 1,000 per project):
+
+1. Open your project on vercel.com → **Settings → Environment Variables**
+2. Add each variable for the **Production** environment (and Preview if desired)
+3. Push a commit or redeploy — env var changes apply to new deployments only
+
+If Vercel shows an upgrade prompt around environment variables, it is for a
+Pro-only feature, not for setting plain values — for example:
+
+- The **"Sensitive"** flag on an env var (Pro-only) — plain values are free
+- **Custom environments** (staging) — Pro-only
+- **Custom domains** are free on Hobby, but some workflows around them are not
+
+You can safely ignore the "Try Pro free" banners; plain env vars work on the
+free plan.
 
 ### Post-Deployment Checklist
 

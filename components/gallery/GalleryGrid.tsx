@@ -14,7 +14,7 @@ interface GalleryGridProps {
 export function GalleryGrid({ items }: GalleryGridProps) {
   return (
     <div className="gallery-grid">
-      {items.map((item) => (
+      {items.map((item, index) => (
         <div key={item.id} className="gallery-item">
           <div style={{ borderRadius: "var(--radius-md)", overflow: "hidden" }}>
             <Image
@@ -22,6 +22,8 @@ export function GalleryGrid({ items }: GalleryGridProps) {
               alt={item.alt}
               width={400}
               height={300}
+              // First row is above the fold — eager keeps it out of the LCP path
+              loading={index < 4 ? "eager" : "lazy"}
               style={{ width: "100%", height: "auto", objectFit: "cover" }}
             />
           </div>
