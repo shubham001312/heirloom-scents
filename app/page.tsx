@@ -3,7 +3,7 @@ import Link from "next/link";
 import { homeContent } from "@/content/home";
 
 export default function Home() {
-  const { hero, intro, events, archive, about, gallery, cta } = homeContent;
+  const { hero, intro, events, archive, cta } = homeContent;
 
   return (
     <main id="main-content">
@@ -26,8 +26,8 @@ export default function Home() {
           </h1>
           <div className="home-hero__tag">{hero.tagline}</div>
           <div className="rule" />
-          <Link className="text-link" href={hero.ctaHref}>
-            {hero.ctaLabel} <span>→</span>
+          <Link className="btn btn-outline-light" href={hero.ctaHref}>
+            {hero.ctaLabel} <span aria-hidden="true">→</span>
           </Link>
         </div>
         <div className="home-hero__scroll" aria-hidden="true">
@@ -91,8 +91,8 @@ export default function Home() {
           ))}
         </div>
         <div className="center" style={{ marginTop: "60px" }}>
-          <Link className="text-link" href="/experience">
-            View all events <span>→</span>
+          <Link className="btn btn-outline" href="/experience">
+            View all events <span aria-hidden="true">→</span>
           </Link>
         </div>
       </section>
@@ -126,55 +126,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About (maroon strip) */}
-      <section className="wine">
-        <div className="about-intro">
-          <div className="kicker">{about.kicker}</div>
-          <h2>{about.title}</h2>
-          <div className="rule" />
-          <p className="sub">{about.description}</p>
-          <Link className="text-link" href={about.ctaHref}>
-            {about.ctaLabel} <span>→</span>
-          </Link>
-        </div>
-      </section>
-
-      {/* Gallery */}
-      <section className="section">
-        <div className="section-head">
-          <div className="kicker">{gallery.kicker}</div>
-          <h2>
-            {gallery.titleLine1}
-            <br />
-            {gallery.titleLine2}
-          </h2>
-        </div>
-        <div className="home-gallery">
-          {gallery.images.map((img) => (
-            <Image
-              key={img.src}
-              src={img.src}
-              alt={img.alt}
-              width={600}
-              height={400}
-              className={
-                "tall" in img && img.tall
-                  ? "tall"
-                  : "wide" in img && img.wide
-                    ? "wide"
-                    : ""
-              }
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-            />
-          ))}
-        </div>
-        <div className="center" style={{ marginTop: "50px" }}>
-          <Link className="text-link" href={gallery.ctaHref}>
-            {gallery.ctaLabel} <span>→</span>
-          </Link>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="cta">
         <Image
@@ -191,8 +142,8 @@ export default function Home() {
             <br />
             <em>{cta.titleLine2}</em>
           </h2>
-          <Link className="text-link" href={cta.ctaHref}>
-            {cta.ctaLabel} <span>→</span>
+          <Link className="btn btn-outline-light" href={cta.ctaHref}>
+            {cta.ctaLabel} <span aria-hidden="true">→</span>
           </Link>
         </div>
       </section>

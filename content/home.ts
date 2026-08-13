@@ -6,7 +6,7 @@ export const homeContent = {
     tagline: "Memory, bottled.",
     ctaLabel: "Discover the experience",
     ctaHref: "/experience",
-    image: "/images/hero-clean.jpg",
+    image: "/images/hero-photo.jpg",
     imageAlt: "Heirloom perfume bar experience",
   },
   intro: {
@@ -64,45 +64,20 @@ export const homeContent = {
       {
         name: "Velvet Hour",
         notes: "amber · warm · vanilla",
-        image: "/images/archive.jpg",
+        image: "/images/events.jpg",
         imageAlt: "Velvet Hour fragrance",
       },
       {
         name: "Noir Bloom",
         notes: "woody · spicy · rich",
-        image: "/images/archive.jpg",
+        image: "/images/private.jpg",
         imageAlt: "Noir Bloom fragrance",
       },
       {
         name: "Silk Veil",
         notes: "citrus · fresh · green",
-        image: "/images/archive.jpg",
+        image: "/images/cta-photo.jpg",
         imageAlt: "Silk Veil fragrance",
-      },
-    ],
-  },
-  about: {
-    kicker: "About Heirloom Scents",
-    title: "A fragrance, made personal.",
-    description:
-      "Thoughtful scent. Beautifully bottled. An experience created around your occasion.",
-    ctaLabel: "Discover our story",
-    ctaHref: "/about",
-  },
-  gallery: {
-    kicker: "A closer look",
-    titleLine1: "The art of the",
-    titleLine2: "Heirloom experience.",
-    ctaLabel: "View gallery",
-    ctaHref: "/gallery",
-    images: [
-      { src: "/images/private.jpg", alt: "Private fragrance event", tall: true },
-      { src: "/images/showers.jpg", alt: "Bridal shower fragrance setup" },
-      { src: "/images/wedding.jpg", alt: "Wedding fragrance setup" },
-      {
-        src: "/images/cta-photo.jpg",
-        alt: "Heirloom fragrance bottle and keepsake",
-        wide: true,
       },
     ],
   },

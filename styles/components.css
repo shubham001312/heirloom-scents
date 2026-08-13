@@ -17,7 +17,6 @@
 
 /* Light gold on maroon/dark contexts */
 .home-hero__copy .kicker,
-.wine .kicker,
 .cta-copy .kicker,
 .inquiry-intro .kicker {
   color: var(--color-gold);
@@ -46,7 +45,7 @@
   gap: 16px;
   align-items: center;
   margin-top: 30px;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   border-bottom: 1px solid currentColor;
@@ -122,25 +121,6 @@
 .inquiry-intro h1 em {
   font-family: var(--font-display);
   font-style: normal;
-}
-
-/* Maroon (wine) strip */
-.wine {
-  background: var(--color-maroon);
-  color: #f7efe7;
-  padding: 125px 7%;
-}
-
-.wine .kicker {
-  color: #c8a57b;
-}
-
-.wine .rule {
-  background: #c8a57b;
-}
-
-.wine .text-link {
-  color: #f7efe7;
 }
 
 /* --------------------------------------------------------------------------
@@ -468,14 +448,14 @@
 }
 
 .step h3 {
-  font-size: 14px;
+  font-size: 16px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   margin: 0 0 12px;
 }
 
 .step p {
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.7;
   color: var(--color-text-muted);
   margin: 0;
@@ -513,7 +493,7 @@
 }
 
 .event p {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--color-text-muted);
   margin: 0 0 15px;
 }
@@ -564,7 +544,7 @@
 
 .scent a {
   display: inline-block;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   border-bottom: 1px solid currentColor;
@@ -575,65 +555,6 @@
 
 .scent a:hover {
   opacity: 0.72;
-}
-
-/* --------------------------------------------------------------------------
-   Home — About intro (maroon strip)
-   -------------------------------------------------------------------------- */
-
-.about-intro {
-  max-width: 980px;
-  margin: auto;
-  text-align: center;
-}
-
-.about-intro h2 {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: clamp(50px, 5.5vw, 86px);
-  line-height: 0.94;
-  letter-spacing: -0.05em;
-  color: #f7efe7;
-}
-
-.about-intro .rule {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.about-intro p {
-  max-width: 580px;
-  margin: 28px auto 0;
-  font-size: 16px;
-  line-height: 1.8;
-  color: #d5c4b8;
-}
-
-/* --------------------------------------------------------------------------
-   Home — Gallery mosaic
-   -------------------------------------------------------------------------- */
-
-.home-gallery {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr 0.9fr;
-  gap: 14px;
-  max-width: 1250px;
-  margin: auto;
-}
-
-.home-gallery img {
-  width: 100%;
-  height: 100%;
-  min-height: 240px;
-  object-fit: cover;
-}
-
-.home-gallery .tall {
-  grid-row: span 2;
-}
-
-.home-gallery .wide {
-  grid-column: span 2;
 }
 
 /* --------------------------------------------------------------------------
@@ -973,7 +894,7 @@
 .footer__cta {
   display: inline-block;
   margin-top: 14px;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #c8bcb1;
@@ -992,7 +913,7 @@
   padding-top: 18px;
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: #8f8176;
@@ -1279,18 +1200,6 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .home-gallery {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .home-gallery .tall {
-    grid-row: span 1;
-  }
-
-  .home-gallery .wide {
-    grid-column: span 2;
-  }
-
   .inquiry-intro {
     min-height: 600px;
   }
@@ -1341,14 +1250,6 @@
 
   .scent:last-child {
     border-bottom: 0;
-  }
-
-  .home-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .home-gallery .wide {
-    grid-column: span 1;
   }
 
   .footer-grid {
