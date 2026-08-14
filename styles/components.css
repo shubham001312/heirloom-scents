@@ -315,8 +315,8 @@
   display: inline-block;
   position: relative;
   /* top clears the script H's upper swash (so the kicker stays visible);
-     bottom reserves room for the script's ink below the line box */
-  margin: clamp(48px, 6vw, 78px) 0 clamp(56px, 6vw, 88px);
+     bottom keeps the tagline close below the overlapping SCENTS */
+  margin: clamp(48px, 6vw, 78px) 0 clamp(22px, 2.5vw, 34px);
   line-height: 0.9;
 }
 
@@ -335,17 +335,17 @@
 
 .home-hero__small {
   position: absolute;
-  /* SCENTS starts at the midpoint of Heirloom (the r/l junction) and sits
-     on the same baseline — mimicking the logo lockup. It overlaps Heirloom
-     and is painted in front (z-index 2).
-     Font-size is a fixed 0.36x of Heirloom's clamp so the baseline math
-     stays exact at every viewport; top: 108.3% places SCENTS's baseline on
-     Heirloom's baseline. */
+  /* SCENTS starts at the midpoint of Heirloom (the r/l junction) and is
+     lifted up to OVERLAP Heirloom's lower-middle — the logo lockup has the
+     two words interlocking, not stacked. It is painted in front (z-index 2).
+     Font-size is a fixed 0.48x of Heirloom's clamp so the proportions stay
+     exact at every viewport; top: 53% lifts SCENTS into the script's lower
+     band so the words interlock — the same layering as the logo lockup. */
   left: 50%;
-  top: 108.3%;
+  top: 53%;
   z-index: 2;
   font-family: var(--font-monogram);
-  font-size: clamp(21.6px, 3.96vw, 47.52px);
+  font-size: clamp(28.8px, 5.28vw, 63.36px);
   line-height: 1;
   letter-spacing: 0.34em;
   font-weight: 400;
