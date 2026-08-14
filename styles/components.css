@@ -1445,37 +1445,11 @@ html.js .fade-in-up.in-view {
 
 /* Scent education text — simple, readable sans (overrides the serif italic
    flavor line so the description stays minimal and easy to read) */
-.scent .scent-education,
-.gallery-scent-meta .scent-education {
+.scent .scent-education {
   font-family: var(--font-body);
   font-style: normal;
   font-size: 15px;
   line-height: 1.7;
   color: var(--color-text-muted);
   margin: 10px 0 16px;
-}
-
-/* Scent cards inside the gallery masonry (All view) */
-.gallery-scent-meta {
-  padding: 14px 4px 20px;
-  text-align: center;
-}
-
-.gallery-scent-meta h3 {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: 21px;
-  margin: 0 0 4px;
-}
-
-.gallery-scent-meta p:not(.scent-education) {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 15px;
-  color: var(--color-text-muted);
-  margin: 0 0 10px;
-}
-
-.gallery-scent-meta .link-cta {
-  color: var(--color-maroon);
 }
