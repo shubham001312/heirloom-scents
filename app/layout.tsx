@@ -21,19 +21,21 @@ const inter = Inter({
 
 // Brand wordmark fonts (commercial — see fonts/README note in tokens.css)
 const amoresa = localFont({
-  src: "../fonts/Amoresa-Regular.ttf",
+  src: "../fonts/Amoresa-Regular.woff2",
   variable: "--font-script",
   display: "swap",
 });
 
 const monNicolette = localFont({
-  src: "../fonts/MonNicoletteGrande-Regular.ttf",
+  src: "../fonts/MonNicoletteGrande-Regular.woff2",
   variable: "--font-monogram",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://heirloomscents.com"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://heirloom-scents.vercel.app"
+  ),
   title: {
     default: "Heirloom Scents — Signature Scent Experiences",
     template: "%s | Heirloom Scents",
