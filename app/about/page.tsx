@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { aboutContent } from "@/content/about";
+import { RitualWalkthrough } from "@/components/about/RitualWalkthrough";
 
 export const metadata: Metadata = {
   title: "About",
@@ -25,7 +26,7 @@ const PHILOSOPHY_ICONS = [
 ];
 
 export default function AboutPage() {
-  const { page, story, stats, brandQuote, philosophy, inAction, cta } = aboutContent;
+  const { page, story, ritual, stats, brandQuote, philosophy, cta } = aboutContent;
 
   return (
     <main id="main-content">
@@ -101,7 +102,7 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy */}
-      <section className="section section--light fade-in-up">
+      <section className="section section--white fade-in-up">
         <Container>
           <SectionHeading title={philosophy.title} />
           <div className="philosophy-grid">
@@ -132,6 +133,22 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      {/* The ritual — interactive walkthrough */}
+      <section className="section section--light fade-in-up">
+        <Container>
+          <div className="section-head">
+            <div className="kicker">{ritual.kicker}</div>
+            <h2>
+              {ritual.titleLine1}
+              <br />
+              {ritual.titleLine2}
+            </h2>
+            <div className="rule" />
+          </div>
+          <RitualWalkthrough steps={ritual.steps} />
+        </Container>
+      </section>
+
       {/* Signature quote — engraved panel */}
       <section className="section section--stone fade-in-up">
         <Container>
@@ -147,26 +164,6 @@ export default function AboutPage() {
               {brandQuote.mark}
             </figcaption>
           </figure>
-        </Container>
-      </section>
-
-      {/* In action — gold-framed strip */}
-      <section className="section section--white fade-in-up">
-        <Container>
-          <SectionHeading eyebrow={inAction.eyebrow} title={inAction.title} />
-          <div className="about-strip">
-            {inAction.images.map((img) => (
-              <figure key={img.image} className="about-strip__item">
-                <Image
-                  src={img.image}
-                  alt={img.alt}
-                  width={600}
-                  height={400}
-                  sizes="(max-width: 768px) 90vw, 30vw"
-                />
-              </figure>
-            ))}
-          </div>
         </Container>
       </section>
 

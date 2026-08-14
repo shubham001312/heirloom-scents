@@ -1267,32 +1267,140 @@
   margin: 0;
 }
 
-/* In-action strip — gold-matted editorial crops */
-.about-strip {
+/* The ritual — interactive walkthrough (click a step, read the detail) */
+.ritual-walkthrough {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--space-12);
+  align-items: center;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-.about-strip__item {
-  margin: 0;
-  padding: 6px;
+.ritual-walkthrough__steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.ritual-step-btn {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 22px 4px;
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--color-line);
+  border-radius: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.ritual-step-btn:last-child {
+  border-bottom: 1px solid var(--color-line);
+}
+
+.ritual-step-btn__num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--color-gold);
+  min-width: 36px;
+}
+
+.ritual-step-btn__title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2vw, 26px);
+  color: var(--color-text-muted);
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+/* Editorial underline sweep — active + hovered step */
+.ritual-step-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--color-maroon);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--duration-normal) var(--ease-luxury);
+}
+
+.ritual-step-btn:hover .ritual-step-btn__title,
+.ritual-step-btn--active .ritual-step-btn__title {
+  color: var(--color-maroon);
+}
+
+.ritual-step-btn--active::after,
+.ritual-step-btn:hover::after {
+  transform: scaleX(1);
+}
+
+.ritual-step-btn:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Detail panel — paper card with a double hairline frame */
+.ritual-walkthrough__panel {
+  position: relative;
+  padding: clamp(40px, 5vw, 64px);
+  background: var(--color-paper);
   border: 1px solid var(--color-gold);
-  overflow: hidden;
+  outline: 1px solid var(--color-line);
+  outline-offset: -6px;
+  min-height: 300px;
+  animation: scent-detail-in var(--duration-normal) var(--ease-luxury) both;
 }
 
-.about-strip__item img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  transition: transform var(--duration-zoom) var(--ease-luxury);
+.ritual-walkthrough__medallion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border: 1px solid var(--color-gold);
+  transform: rotate(45deg);
+  color: var(--color-gold-deep);
+  margin-bottom: var(--space-6);
 }
 
-.about-strip__item:hover img {
-  transform: scale(1.04);
+.ritual-walkthrough__medallion svg {
+  transform: rotate(-45deg);
+}
+
+.ritual-walkthrough__num {
+  display: block;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--color-gold);
+  margin-bottom: var(--space-3);
+}
+
+.ritual-walkthrough__title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(26px, 3vw, 34px);
+  margin: 0 0 var(--space-4);
+  color: var(--color-ink);
+}
+
+.ritual-walkthrough__text {
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+  font-size: 1rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .ritual-walkthrough {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
 }
 
 @media (max-width: 900px) {
@@ -1306,11 +1414,6 @@
 
   .about-stat:nth-child(-n + 2) {
     border-bottom: 1px solid rgba(168, 135, 95, 0.45);
-  }
-
-  .about-strip {
-    grid-template-columns: 1fr;
-    max-width: 560px;
   }
 
   .philosophy-grid {
@@ -2020,7 +2123,4 @@ img.img-fade {
     box-shadow: none !important;
   }
 
-  .about-strip__item img {
-    transform: none !important;
-  }
 }

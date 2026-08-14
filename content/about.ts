@@ -48,13 +48,35 @@ export const aboutContent = {
       },
     ],
   },
-  inAction: {
-    eyebrow: "In action",
-    title: "The bar, in motion.",
-    images: [
-      { image: "/images/event_wedding.jpg", alt: "Wedding perfume bar in full swing" },
-      { image: "/images/event_showers.jpg", alt: "Bridal shower blending activity" },
-      { image: "/images/event_private.jpg", alt: "Private event scent bar setup" },
+  ritual: {
+    kicker: "The ritual",
+    titleLine1: "How the experience",
+    titleLine2: "unfolds.",
+    steps: [
+      {
+        number: "01",
+        title: "Choose your notes",
+        description:
+          "Guests browse a curated palette of premium, oil-based notes — florals, woods, citruses, and musks — guided by our fragrance hosts.",
+      },
+      {
+        number: "02",
+        title: "Create your blend",
+        description:
+          "Layered and balanced on the spot, each blend is tuned to the guest's own taste until it feels unmistakably theirs.",
+      },
+      {
+        number: "03",
+        title: "Bottle your fragrance",
+        description:
+          "The blend is bottled, sealed, and hand-finished at the bar — ready to wear or gift that same evening.",
+      },
+      {
+        number: "04",
+        title: "Take the memory home",
+        description:
+          "Every guest leaves with a labeled bottle and the memory of the moment it was made — an heirloom in the making.",
+      },
     ],
   },
   cta: {
