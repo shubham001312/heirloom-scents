@@ -63,40 +63,40 @@ export const galleryContent = {
     titleLine2: "Endless memories.",
     scents: [
       {
+        slug: "memoire",
         title: "Memoire",
         notes: "soft · floral · musky",
         image: "/images/scent-memoire.jpg",
         imageAlt: "Memoire fragrance",
         education:
-          "Soft white musk and Grasse jasmine — quiet elegance for moonlit evenings.",
-        href: "/inquire",
+          "Soft white musk and Grasse jasmine — quiet elegance for moonlit evenings. A delicate, skin-close scent that lingers gently.",
       },
       {
+        slug: "velvet-hour",
         title: "Velvet Hour",
         notes: "amber · warm · vanilla",
         image: "/images/scent-velvet.jpg",
         imageAlt: "Velvet Hour fragrance",
         education:
-          "Ethiopian amber and Madagascar vanilla — comforting warmth for golden hours.",
-        href: "/inquire",
+          "Ethiopian amber and Madagascar vanilla — comforting warmth for golden hours. A soft, enveloping blend for cool evenings.",
       },
       {
+        slug: "noir-bloom",
         title: "Noir Bloom",
         notes: "woody · spicy · rich",
         image: "/images/scent-noir.jpg",
         imageAlt: "Noir Bloom fragrance",
         education:
-          "Deep oud and spicy cardamom — rich and grounding for intimate soirées.",
-        href: "/inquire",
+          "Deep oud and spicy cardamom — rich and grounding for intimate soirées. A bold, lingering trail for after-dark events.",
       },
       {
+        slug: "silk-veil",
         title: "Silk Veil",
         notes: "citrus · fresh · green",
         image: "/images/scent-silk.jpg",
         imageAlt: "Silk Veil fragrance",
         education:
-          "Sicilian bergamot and fresh mint — the first breath of spring mornings.",
-        href: "/inquire",
+          "Sicilian bergamot and fresh mint — the first breath of spring mornings. Bright and airy, perfect for daytime celebrations.",
       },
     ],
   },

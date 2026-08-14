@@ -1,8 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { inquirySchema, type InquiryFormData } from "@/lib/validation/inquiry";
 import { inquireContent } from "@/content/inquire";
+import { galleryContent } from "@/content/gallery";
+
+// Allow scent-specific deep links, e.g. /inquire?scent=memoire
+const SCENT_BY_SLUG = Object.fromEntries(
+  galleryContent.signatures.scents.map((scent) => [scent.slug, scent.title])
+);
 
 // Public by design — Web3Forms requires client-side submission on the free
 // plan and explicitly states the access key is safe to ship in client code.
@@ -36,6 +42,20 @@ export function InquiryForm() {
     "idle"
   );
   const [errorMessage, setErrorMessage] = useState("");
+  const [scentOfInterest, setScentOfInterest] = useState<string>("");
+
+  // Read ?scent= from the URL (client-side only — avoids SSR/Suspense issues;
+  // deferred so the banner appears after first paint, never during hydration)
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get("scent");
+      if (slug && SCENT_BY_SLUG[slug]) {
+        setScentOfInterest(SCENT_BY_SLUG[slug]);
+      }
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -122,6 +142,7 @@ export function InquiryForm() {
         eventDate: formData.eventDate || "",
         guestCount: formData.guestCount || "",
         message: formData.message,
+        scent: scentOfInterest || "",
       };
 
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -162,6 +183,14 @@ export function InquiryForm() {
 
   return (
     <form className="form" onSubmit={handleSubmit} noValidate>
+      {/* Scent of interest (from a /inquire?scent= deep link) */}
+      {scentOfInterest && (
+        <div className="form__scent-banner form__field--full" role="note">
+          You&apos;re inquiring about{" "}
+          <strong>{scentOfInterest}</strong>
+        </div>
+      )}
+
       {/* Honeypot */}
       <div className="form__honeypot" aria-hidden="true">
         <label htmlFor="website">Website</label>

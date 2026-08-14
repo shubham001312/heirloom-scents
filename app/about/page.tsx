@@ -11,8 +11,21 @@ export const metadata: Metadata = {
     "Learn about Heirloom Scents — a luxury mobile perfume bar creating signature fragrance experiences in Dallas–Fort Worth.",
 };
 
+/** Minimal line icons for the three philosophy pillars (gold, stroke-based). */
+const PHILOSOPHY_ICONS = [
+  // Craftsmanship — a hand-cut crystal bottle
+  <path
+    key="craft"
+    d="M9 2h6v2h2v4a6 6 0 0 1-2 4.5V15h-1v3h-4v-3H9v-2.5A6 6 0 0 1 7 8V4h2V2zM7 5v2M17 5v2"
+  />,
+  // Connection — two overlapping circles
+  <path key="connect" d="M9 5a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm6 0a7 7 0 1 1 0 14 7 7 0 0 1 0-14z" />,
+  // Memory — an heirloom keepsake box
+  <path key="memory" d="M4 8l8-4 8 4-8 4-8-4zm0 0v8l8 4 8-4V8M12 12v8" />,
+];
+
 export default function AboutPage() {
-  const { page, story, philosophy, cta } = aboutContent;
+  const { page, story, stats, philosophy, inAction, cta } = aboutContent;
 
   return (
     <main id="main-content">
@@ -31,7 +44,7 @@ export default function AboutPage() {
       {/* Brand Story */}
       <section className="section section--white fade-in-up">
         <Container>
-          <div className="grid-2">
+          <div className="grid-2 about-story">
             <div>
               <SectionHeading title={story.title} centered={false} />
               {story.paragraphs.map((paragraph, index) => (
@@ -47,18 +60,40 @@ export default function AboutPage() {
                 </p>
               ))}
             </div>
-            <div style={{ borderRadius: "var(--radius-md)", overflow: "hidden" }}>
+            <div className="about-collage">
               <Image
                 src={story.image}
                 alt={story.imageAlt}
+                className="about-collage__main"
                 width={500}
-                height={600}
+                height={625}
                 priority
                 sizes="(max-width: 768px) 90vw, 45vw"
-                style={{ width: "100%", height: "auto", objectFit: "cover" }}
+              />
+              <Image
+                src={story.image2}
+                alt={story.image2Alt}
+                className="about-collage__accent"
+                width={400}
+                height={500}
+                sizes="(max-width: 768px) 48vw, 24vw"
               />
             </div>
           </div>
+        </Container>
+      </section>
+
+      {/* Stats band */}
+      <section className="about-stats fade-in-up">
+        <Container>
+          <dl className="about-stats__row">
+            {stats.map((stat) => (
+              <div key={stat.label} className="about-stat">
+                <dt className="about-stat__value">{stat.value}</dt>
+                <dd className="about-stat__label">{stat.label}</dd>
+              </div>
+            ))}
+          </dl>
         </Container>
       </section>
 
@@ -67,11 +102,44 @@ export default function AboutPage() {
         <Container>
           <SectionHeading title={philosophy.title} />
           <div className="grid-3">
-            {philosophy.items.map((item) => (
-              <div key={item.title} className="card">
+            {philosophy.items.map((item, index) => (
+              <div key={item.title} className="card card--icon">
+                <svg
+                  className="philosophy-icon"
+                  viewBox="0 0 24 24"
+                  width="30"
+                  height="30"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  {PHILOSOPHY_ICONS[index]}
+                </svg>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* In action — image strip */}
+      <section className="section section--white fade-in-up">
+        <Container>
+          <SectionHeading eyebrow={inAction.eyebrow} title={inAction.title} />
+          <div className="about-strip">
+            {inAction.images.map((img) => (
+              <Image
+                key={img.image}
+                src={img.image}
+                alt={img.alt}
+                width={600}
+                height={400}
+                sizes="(max-width: 768px) 90vw, 30vw"
+              />
             ))}
           </div>
         </Container>

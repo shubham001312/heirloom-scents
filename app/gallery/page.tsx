@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { LinkCta } from "@/components/ui/LinkCta";
 import { galleryContent } from "@/content/gallery";
 import { GalleryFilter } from "@/components/gallery/GalleryFilter";
+import { ScentCard } from "@/components/gallery/ScentCard";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -43,21 +42,7 @@ export default function GalleryPage() {
           </div>
           <div className="archive-grid">
             {signatures.scents.map((scent) => (
-              <article key={scent.title} className="scent">
-                <Image
-                  src={scent.image}
-                  alt={scent.imageAlt}
-                  width={400}
-                  height={280}
-                  sizes="(max-width: 768px) 90vw, 250px"
-                />
-                <h3>{scent.title}</h3>
-                <p>{scent.notes}</p>
-                <p className="scent-education">{scent.education}</p>
-                <LinkCta href={scent.href}>
-                  Discover <span aria-hidden="true">→</span>
-                </LinkCta>
-              </article>
+              <ScentCard key={scent.slug} scent={scent} />
             ))}
           </div>
         </Container>

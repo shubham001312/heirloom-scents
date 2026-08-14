@@ -115,9 +115,9 @@ export default function Home() {
                 <Image
                   src={item.image}
                   alt={item.imageAlt}
-                  className="portrait-image"
-                  width={585}
-                  height={780}
+                  className="occasion-image"
+                  width={600}
+                  height={400}
                   sizes="(max-width: 900px) 90vw, 30vw"
                 />
                 <div className="meta">

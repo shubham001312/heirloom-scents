@@ -37,7 +37,7 @@ export default function ExperiencePage() {
                 <div
                   style={{
                     direction: "ltr",
-                    borderRadius: "var(--radius-md)",
+                    borderRadius: "var(--radius-sm)",
                     overflow: "hidden",
                   }}
                 >
@@ -48,7 +48,6 @@ export default function ExperiencePage() {
                     height={400}
                     priority={index === 0}
                     sizes="(max-width: 768px) 90vw, 50vw"
-                    style={{ width: "100%", height: "auto", objectFit: "cover" }}
                   />
                 </div>
                 <div className="event-block__content" style={{ direction: "ltr" }}>

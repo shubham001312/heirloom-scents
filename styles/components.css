@@ -499,6 +499,7 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   max-width: 1280px;
   margin: auto;
+  align-items: start;
 }
 
 .scent {
@@ -526,9 +527,59 @@
   margin: 0 0 13px;
 }
 
-.scent .link-cta {
-  color: var(--color-maroon);
+/* Scent card — "Discover" toggles the full profile (education + inquiry CTA),
+   styled as an editorial underline link to match the site's link system */
+.scent__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 20px;
+  padding: 8px 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  border-radius: 0;
+  background: none;
+  font-size: 12px;
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-micro-label);
+  text-transform: uppercase;
+  color: var(--color-maroon);
+  cursor: pointer;
+  transition:
+    border-bottom-width var(--duration-fast) var(--ease-default),
+    color var(--duration-fast) var(--ease-default);
+}
+
+.scent__toggle:hover {
+  border-bottom-width: 2px;
+}
+
+.scent__toggle span {
+  display: inline-block;
+  transition: transform var(--duration-fast) var(--ease-luxury);
+}
+
+.scent__toggle:hover span {
+  transform: translateX(6px);
+}
+
+.scent__detail {
+  animation: scent-detail-in var(--duration-normal) var(--ease-luxury) both;
+}
+
+@keyframes scent-detail-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scent__cta {
+  margin: 2px 0 20px;
 }
 
 /* --------------------------------------------------------------------------
@@ -951,6 +1002,136 @@
   line-height: var(--leading-loose);
 }
 
+/* Event imagery — 3:2 landscape, unified with the home occasion cards.
+   height:auto lets aspect-ratio derive the height (next/image's width/height
+   attributes would otherwise make the height definite and ignore the ratio) */
+.event-block img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------------------------
+   About page
+   -------------------------------------------------------------------------- */
+
+.about-story {
+  align-items: center;
+}
+
+/* Two-image editorial collage — main portrait with an offset accent image
+   overlapping its lower-right corner */
+.about-collage {
+  position: relative;
+  padding-bottom: 14%;
+}
+
+.about-collage__main {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.about-collage__accent {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 52%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: 8px solid var(--color-paper);
+}
+
+/* Stats band — royal maroon strip with hairline-divided figures */
+.about-stats {
+  background: var(--color-maroon);
+  padding: 64px 7%;
+}
+
+.about-stats__row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0;
+  border-top: 1px solid rgba(246, 238, 230, 0.28);
+  border-bottom: 1px solid rgba(246, 238, 230, 0.28);
+}
+
+.about-stat {
+  text-align: center;
+  padding: 40px 24px;
+  border-right: 1px solid rgba(246, 238, 230, 0.28);
+}
+
+.about-stat:last-child {
+  border-right: 0;
+}
+
+.about-stat__value {
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 4vw, 58px);
+  line-height: 1;
+  color: var(--color-cream);
+  margin: 0 0 10px;
+}
+
+.about-stat__label {
+  font-size: 12px;
+  letter-spacing: var(--tracking-micro-label);
+  text-transform: uppercase;
+  color: rgba(246, 238, 230, 0.78);
+  margin: 0;
+}
+
+/* Philosophy cards with line icons */
+.card--icon {
+  text-align: center;
+  padding-top: var(--space-8);
+}
+
+.philosophy-icon {
+  color: var(--color-gold-deep);
+  margin-bottom: var(--space-4);
+}
+
+/* In-action image strip — three editorial crops with hairlines */
+.about-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-strip img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border: 1px solid var(--color-line);
+}
+
+@media (max-width: 900px) {
+  .about-stats__row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-stat:nth-child(2) {
+    border-right: 0;
+  }
+
+  .about-stat:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(246, 238, 230, 0.28);
+  }
+
+  .about-strip {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+  }
+}
+
 /* --------------------------------------------------------------------------
    CTA banner (experience / about pages)
    -------------------------------------------------------------------------- */
@@ -1109,32 +1290,52 @@
   margin-bottom: var(--space-4);
 }
 
+/* Editorial filter row — a hairline under the whole group; the selected
+   option gets the maroon underline (no pills / no rounded UI) */
 .gallery-filters {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space-6);
   justify-content: center;
   margin-bottom: var(--space-10);
   flex-wrap: wrap;
+  border-bottom: 1px solid var(--color-line);
 }
 
 .filter-chip {
-  padding: var(--space-2) var(--space-4);
-  font-size: 14px;
+  position: relative;
+  padding: var(--space-3) var(--space-2);
+  font-size: 13px;
   font-weight: var(--weight-semibold);
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: var(--tracking-micro-label);
   text-transform: uppercase;
-  border: 1px solid var(--color-gold);
-  border-radius: var(--radius-full);
-  color: var(--color-maroon);
-  background-color: transparent;
+  color: var(--color-text-muted);
+  background: none;
+  border: 0;
+  border-radius: 0;
   cursor: pointer;
-  transition:
-    background-color var(--duration-fast) var(--ease-default),
-    color var(--duration-fast) var(--ease-default);
+  transition: color var(--duration-fast) var(--ease-default);
+}
+
+.filter-chip::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--color-maroon);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--duration-normal) var(--ease-luxury);
 }
 
 .filter-chip:hover {
-  background-color: rgba(168, 135, 95, 0.12);
+  color: var(--color-maroon);
+}
+
+.filter-chip:hover::after,
+.filter-chip--active::after {
+  transform: scaleX(1);
 }
 
 .filter-chip:focus-visible {
@@ -1143,12 +1344,13 @@
 }
 
 .filter-chip--active {
-  color: var(--color-maroon-deep);
-  background-color: var(--color-gold);
+  color: var(--color-maroon);
 }
 
-.filter-chip--active:hover {
-  background-color: var(--color-gold);
+@media (max-width: 560px) {
+  .gallery-filters {
+    gap: var(--space-4);
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1278,19 +1480,13 @@
   color: var(--color-maroon);
 }
 
-/* Occasion cards — responsive crop: short editorial band on small screens,
-   gentler landscape on desktop (sources are 4:5 portrait, so the height
-   clamp crops them instead of stretching) */
-.portrait-image {
+/* Occasion imagery — 3:2 landscape, unified with the experience-page blocks
+   (the 4:5 portrait sources are center-cropped to the editorial ratio) */
+.occasion-image {
   width: 100%;
-  height: clamp(220px, 26vw, 360px);
+  height: auto;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
-}
-
-@media (max-width: 900px) {
-  .portrait-image {
-    height: clamp(220px, 55vw, 400px);
-  }
 }
 
 /* --------------------------------------------------------------------------
@@ -1452,7 +1648,6 @@ img.img-fade {
 
 .filter-chip {
   transition:
-    background-color var(--duration-fast) var(--ease-default),
     color var(--duration-fast) var(--ease-default),
     transform var(--duration-press) ease;
 }
@@ -1471,11 +1666,11 @@ img.img-fade {
   box-shadow: 0 24px 48px -24px rgba(58, 9, 14, 0.4);
 }
 
-.occasion-card .portrait-image {
+.occasion-card .occasion-image {
   transition: transform var(--duration-zoom) var(--ease-luxury);
 }
 
-.occasion-card:hover .portrait-image {
+.occasion-card:hover .occasion-image {
   transform: scale(1.04);
 }
 
@@ -1625,7 +1820,7 @@ img.img-fade {
   .link-cta:active,
   .occasion-card:hover,
   .scent:hover,
-  .occasion-card .portrait-image,
+  .occasion-card .occasion-image,
   .scent img,
   .event-block img,
   .gallery-item img {
