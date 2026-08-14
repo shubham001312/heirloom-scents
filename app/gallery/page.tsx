@@ -29,15 +29,8 @@ export default function GalleryPage() {
         </Container>
       </section>
 
-      {/* Gallery Grid + Filters */}
+      {/* Scent Archive — the signature blends first */}
       <section className="section section--white fade-in-up">
-        <Container>
-          <GalleryFilter categories={categories} items={items} />
-        </Container>
-      </section>
-
-      {/* Scent Archive */}
-      <section className="section section--light fade-in-up">
         <Container>
           <div className="section-head">
             <div className="kicker">{signatures.kicker}</div>
@@ -67,6 +60,13 @@ export default function GalleryPage() {
               </article>
             ))}
           </div>
+        </Container>
+      </section>
+
+      {/* Gallery Grid + Filters */}
+      <section className="section section--light fade-in-up">
+        <Container>
+          <GalleryFilter categories={categories} items={items} />
         </Container>
       </section>
     </main>
