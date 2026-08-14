@@ -1346,7 +1346,7 @@ html.js .fade-in-up.in-view {
   width: 100%;
   /* Responsive crop: shorter on small screens so the 4:5 portrait sources
      become wider, editorial crops instead of near-square blocks */
-  height: clamp(180px, 28vw, 240px);
+  height: clamp(150px, 23vw, 210px);
   object-fit: cover;
   transition: transform var(--duration-zoom) var(--ease-luxury);
 }
