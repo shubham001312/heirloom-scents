@@ -1344,7 +1344,9 @@ html.js .fade-in-up.in-view {
    -------------------------------------------------------------------------- */
 .scent img {
   width: 100%;
-  height: 240px;
+  /* Responsive crop: shorter on small screens so the 4:5 portrait sources
+     become wider, editorial crops instead of near-square blocks */
+  height: clamp(180px, 28vw, 240px);
   object-fit: cover;
   transition: transform var(--duration-zoom) var(--ease-luxury);
 }
