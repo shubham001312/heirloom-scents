@@ -1407,3 +1407,25 @@ html.js .fade-in-up.in-view {
   color: var(--color-text-muted);
   margin: 10px 0 16px;
 }
+
+/* --------------------------------------------------------------------------
+   Mobile tap targets — comfortable hit areas on touch devices
+   (scoped to ≤768px so desktop layout/spacing is untouched)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Card links ("Explore →", "Discover →") — grow from 28px to ~46px */
+  .link-cta {
+    padding-block: 12px;
+  }
+
+  /* Gallery filter chips — grow from 39px to 44px */
+  .filter-chip {
+    min-height: 44px;
+  }
+
+  /* Footer nav links + footer CTA — grow from 27px to ~43px */
+  .footer__links a,
+  .footer__cta {
+    padding-block: 8px;
+  }
+}
