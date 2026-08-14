@@ -1,8 +1,10 @@
-# Deployment Notes — Heirloom Scents POC
+# Deployment Notes — Heirloom Scents
 
-## POC Review Deployment
+## Live Deployment
 
-The POC is deployed to an Autom8x review environment for client approval.
+The site is live at **https://heirloom-scents.vercel.app** and auto-deploys
+from the `main` branch of `github.com/shubham001312/heirloom-scents` — every
+push triggers a Vercel production build.
 
 ### Deploying to Vercel (Recommended)
 
@@ -27,7 +29,7 @@ Set these in the deployment platform's environment settings:
 | Variable                           | Required | Description                                         |
 | ---------------------------------- | -------- | --------------------------------------------------- |
 | `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` | No*      | Web3Forms access key (get at https://web3forms.com) |
-| `NEXT_PUBLIC_SITE_URL`             | No       | Base URL (default: https://heirloomscents.com)      |
+| `NEXT_PUBLIC_SITE_URL`             | No       | Base URL (default: https://heirloom-scents.vercel.app) |
 
 *Not strictly required — the site deploys and runs without it; the inquiry
 form just shows a friendly "email us directly" message until it is set.
@@ -59,14 +61,14 @@ free plan.
 
 ### Post-Deployment Checklist
 
-- [ ] All pages render correctly
-- [ ] Navigation works on mobile and desktop
-- [ ] Inquiry form submits successfully
-- [ ] Success and error states display correctly
-- [ ] Security headers present (check with browser DevTools)
-- [ ] No console errors
-- [ ] Images load correctly
-- [ ] Favicon displays in browser tab
+- [x] All pages render correctly
+- [x] Navigation works on mobile and desktop
+- [x] Inquiry form submits successfully
+- [x] Success and error states display correctly
+- [x] Security headers present (check with browser DevTools)
+- [x] No console errors
+- [x] Images load correctly
+- [x] Favicon displays in browser tab (maroon H monogram)
 
 ## Production Deployment
 

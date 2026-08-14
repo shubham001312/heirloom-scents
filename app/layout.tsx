@@ -21,19 +21,21 @@ const inter = Inter({
 
 // Brand wordmark fonts (commercial — see fonts/README note in tokens.css)
 const amoresa = localFont({
-  src: "../fonts/Amoresa-Regular.ttf",
+  src: "../fonts/Amoresa-Regular.woff2",
   variable: "--font-script",
   display: "swap",
 });
 
 const monNicolette = localFont({
-  src: "../fonts/MonNicoletteGrande-Regular.ttf",
+  src: "../fonts/MonNicoletteGrande-Regular.woff2",
   variable: "--font-monogram",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://heirloomscents.com"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://heirloom-scents.vercel.app"
+  ),
   title: {
     default: "Heirloom Scents — Signature Scent Experiences",
     template: "%s | Heirloom Scents",
@@ -81,17 +83,17 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://heirloomscents.com",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://heirloom-scents.vercel.app",
     siteName: "Heirloom Scents",
     title: "Heirloom Scents — Signature Scent Experiences",
     description:
       "A guided perfume bar experience for celebrations — guests blend, bottle, and take home a fragrance made for that day only.",
     images: [
       {
-        url: "/images/logo-instagram.jpg",
-        width: 150,
-        height: 150,
-        alt: "Heirloom Scents Logo",
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Heirloom Scents — a guided perfume bar experience",
       },
     ],
   },
@@ -100,7 +102,7 @@ export const metadata: Metadata = {
     title: "Heirloom Scents — Signature Scent Experiences",
     description:
       "A guided perfume bar experience for celebrations — guests blend, bottle, and take home a fragrance made for that day only.",
-    images: ["/images/logo-instagram.jpg"],
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,

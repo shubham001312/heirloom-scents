@@ -21,45 +21,12 @@
   color: var(--color-gold);
 }
 
-.rule {
-  width: 44px;
-  height: 1px;
-  background: var(--color-gold);
-  margin: 24px 0;
-}
 
 /* Display face for feature headings (Italiana) */
 .display {
   font-family: var(--font-display);
   font-weight: 400;
   line-height: var(--leading-tight);
-}
-
-.center {
-  text-align: center;
-}
-
-.text-link {
-  display: inline-flex;
-  gap: 16px;
-  align-items: center;
-  margin-top: 30px;
-  font-size: 15px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 9px;
-  color: var(--color-ink);
-  transition: opacity var(--duration-fast) var(--ease-default);
-}
-
-.text-link:hover {
-  opacity: 0.72;
-}
-
-.text-link:focus-visible {
-  outline: 2px solid var(--color-gold);
-  outline-offset: 4px;
 }
 
 /* --------------------------------------------------------------------------
@@ -89,19 +56,7 @@
 }
 
 .section-head .kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
   margin-bottom: 18px;
-}
-
-.section-head .kicker::before,
-.section-head .kicker::after {
-  content: "";
-  width: 36px;
-  height: 1px;
-  background: var(--color-gold);
-  opacity: 0.7;
 }
 
 .section-head h2 {
@@ -115,7 +70,6 @@
 }
 
 .section-head h2 em,
-.intro h2 em,
 .inquiry-intro h1 em {
   font-family: var(--font-display);
   font-style: normal;
@@ -152,7 +106,7 @@
   text-transform: uppercase;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .header__nav {
     display: flex;
   }
@@ -195,7 +149,7 @@
   color: var(--color-cream);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .header__menu-btn {
     display: none;
   }
@@ -381,13 +335,10 @@
   color: var(--color-cream);
 }
 
-.home-hero__copy .rule {
-  background: rgba(255, 255, 255, 0.5);
+.home-hero__copy .btn {
+  margin-top: 40px;
 }
 
-.home-hero__copy .text-link {
-  color: var(--color-cream);
-}
 
 .home-hero__scroll {
   position: absolute;
@@ -447,17 +398,13 @@
   text-align: center;
 }
 
-.ritual-step .step-icon {
-  color: var(--color-gold-deep);
-  margin-bottom: 14px;
-}
-
 .ritual-step .step-no {
   font-family: var(--font-serif);
-  font-size: 15px;
-  color: var(--color-gold-deep);
-  letter-spacing: 0.18em;
-  margin-bottom: 10px;
+  font-style: italic;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--color-gold);
+  margin-bottom: 12px;
 }
 
 .ritual-step h3 {
@@ -471,43 +418,6 @@
 /* --------------------------------------------------------------------------
    Home — Events
    -------------------------------------------------------------------------- */
-
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 38px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.event img {
-  width: 100%;
-  aspect-ratio: 1.3;
-  object-fit: cover;
-  display: block;
-}
-
-.event .meta {
-  text-align: center;
-  padding: 24px 10px 0;
-}
-
-.event h3 {
-  font-family: var(--font-serif);
-  font-size: 27px;
-  font-weight: 400;
-  margin: 0 0 8px;
-}
-
-.event p {
-  font-size: 16px;
-  color: var(--color-text-muted);
-  margin: 0 0 15px;
-}
-
-.event .text-link {
-  margin-top: 8px;
-}
 
 /* --------------------------------------------------------------------------
    Home — Scent Archive
@@ -838,6 +748,15 @@
   margin-bottom: 6px;
 }
 
+/* Scent deep-link note (e.g. /inquire?scent=memoire) */
+.form__scent-banner {
+  padding: 14px 18px;
+  border: 1px solid var(--color-gold);
+  background: var(--color-ivory);
+  font-size: 15px;
+  color: var(--color-ink);
+}
+
 /* Honeypot - hidden from users, visible to bots */
 .form__honeypot {
   position: absolute;
@@ -942,47 +861,6 @@
   }
 }
 
-.grid-3 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-6);
-}
-
-@media (min-width: 768px) {
-  .grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-4);
-}
-
-@media (min-width: 1024px) {
-  .grid-4 {
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-6);
-  }
-}
-
-.card {
-  padding: var(--space-6);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-}
-
-.card h3 {
-  margin-bottom: var(--space-3);
-}
-
-.card p {
-  color: var(--color-text-muted);
-  font-size: 0.9375rem;
-  line-height: var(--leading-relaxed);
-}
-
 .text-center {
   text-align: center;
 }
@@ -1048,37 +926,9 @@
   line-height: var(--leading-relaxed);
 }
 
-/* Gold double-rule ornament under the page header: ——— ◆ ——— */
-.ornament-rule {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  padding-bottom: 64px;
-}
-
-.ornament-rule::before,
-.ornament-rule::after {
-  content: "";
-  width: 90px;
-  height: 1px;
-  background: var(--color-gold);
-  opacity: 0.85;
-}
-
-.ornament-rule span {
-  width: 9px;
-  height: 9px;
-  border: 1px solid var(--color-gold);
-  transform: rotate(45deg);
-}
-
-/* Pull quote — serif italic set between gold hairlines */
+/* Pull quote — serif italic with generous spacing (no enclosing rules) */
 .story-quote {
-  margin: var(--space-8) 0 0;
-  padding: var(--space-5) 0;
-  border-top: 1px solid var(--color-gold);
-  border-bottom: 1px solid var(--color-gold);
+  margin: var(--space-10) 0 0;
 }
 
 .story-quote p {
@@ -1118,12 +968,10 @@
   outline-offset: -6px;
 }
 
-/* Stats band — maroon strip with gold hairlines + diamond marks */
+/* Stats band — clean maroon strip */
 .about-stats {
   background: var(--color-maroon);
   padding: 72px 7%;
-  border-top: 2px solid var(--color-gold);
-  border-bottom: 2px solid var(--color-gold);
 }
 
 .about-stats__row {
@@ -1150,16 +998,6 @@
   margin: 0 0 12px;
 }
 
-.about-stat__value::after {
-  content: "";
-  display: block;
-  width: 7px;
-  height: 7px;
-  margin: 14px auto 0;
-  background: var(--color-gold);
-  transform: rotate(45deg);
-}
-
 .about-stat__label {
   font-size: 12px;
   letter-spacing: var(--tracking-micro-label);
@@ -1168,7 +1006,7 @@
   margin: 0;
 }
 
-/* Philosophy — editorial columns with gold top rules + diamond medallions */
+/* Philosophy — clean editorial columns, numerals carry the hierarchy */
 .philosophy-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1179,33 +1017,17 @@
 
 .philosophy-item {
   text-align: center;
-  padding: var(--space-8) var(--space-4) 0;
-  border-top: 1px solid var(--color-gold);
-}
-
-.philosophy-medallion {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 62px;
-  height: 62px;
-  border: 1px solid var(--color-gold);
-  transform: rotate(45deg);
-  color: var(--color-gold-deep);
-  margin-bottom: var(--space-6);
-}
-
-.philosophy-medallion svg {
-  transform: rotate(-45deg);
+  padding: 0 var(--space-4);
 }
 
 .philosophy-numeral {
   display: block;
   font-family: var(--font-serif);
-  font-size: 13px;
-  letter-spacing: 0.3em;
+  font-style: italic;
+  font-size: 20px;
+  letter-spacing: 0.2em;
   color: var(--color-gold);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 
 .philosophy-title {
@@ -1222,16 +1044,11 @@
   margin: 0;
 }
 
-/* Signature quote — engraved panel with a double gold frame */
+/* Signature quote — clean centered serif italic, no enclosing rules */
 .signature-quote {
   max-width: 760px;
   margin: 0 auto;
   text-align: center;
-  padding: clamp(48px, 6vw, 80px) clamp(24px, 6vw, 72px);
-  background: var(--color-paper);
-  border: 1px solid var(--color-gold);
-  outline: 1px solid var(--color-gold);
-  outline-offset: 8px;
 }
 
 .signature-quote__mark {
@@ -1252,19 +1069,12 @@
   margin: 0;
 }
 
-.signature-quote__rule {
-  width: 64px;
-  height: 1px;
-  background: var(--color-gold);
-  margin: 30px auto 16px;
-}
-
 .signature-quote__signature {
+  margin-top: 28px;
   font-size: 12px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--color-gold-deep);
-  margin: 0;
 }
 
 /* The ritual — interactive walkthrough (click a step, read the detail) */
@@ -1344,32 +1154,14 @@
   outline-offset: 2px;
 }
 
-/* Detail panel — paper card with a double hairline frame */
+/* Detail panel — clean paper panel with a single hairline */
 .ritual-walkthrough__panel {
   position: relative;
   padding: clamp(40px, 5vw, 64px);
   background: var(--color-paper);
-  border: 1px solid var(--color-gold);
-  outline: 1px solid var(--color-line);
-  outline-offset: -6px;
+  border: 1px solid var(--color-line);
   min-height: 300px;
   animation: scent-detail-in var(--duration-normal) var(--ease-luxury) both;
-}
-
-.ritual-walkthrough__medallion {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 58px;
-  height: 58px;
-  border: 1px solid var(--color-gold);
-  transform: rotate(45deg);
-  color: var(--color-gold-deep);
-  margin-bottom: var(--space-6);
-}
-
-.ritual-walkthrough__medallion svg {
-  transform: rotate(-45deg);
 }
 
 .ritual-walkthrough__num {
@@ -1662,10 +1454,6 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .events-grid {
-    grid-template-columns: 1fr;
-    max-width: 560px;
-  }
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;
@@ -1828,7 +1616,8 @@ html.js .fade-in-up.in-view {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .fade-in-up {
+  .fade-in-up,
+  .ritual-step {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;

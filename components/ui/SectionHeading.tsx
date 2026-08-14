@@ -23,7 +23,15 @@ export function SectionHeading({
       style={{ marginBottom: "var(--space-10)" }}
     >
       {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-      <Heading className="display" style={{ fontSize: "var(--text-3xl)", marginTop: 0 }}>
+      <Heading
+        className="display"
+        style={{
+          // Page titles (h1) lead the hierarchy — always larger than the
+          // largest section heading (clamp 46→76px) at every breakpoint.
+          fontSize: level === "h1" ? "clamp(52px, 6vw, 84px)" : "var(--text-3xl)",
+          marginTop: 0,
+        }}
+      >
         {title}
       </Heading>
       {subtitle && (

@@ -116,6 +116,10 @@ export function Logo({
     );
 
   if (variant === "image") {
+    // Monogram aspect 273:309 (portrait) — height-based sizing keeps it
+    // undistorted. To change the monogram, replace public/logo.svg.
+    const markH = lockupSizes[size].mark;
+    const markW = Math.round((markH * 273) / 309);
     return (
       <Link
         href="/"
@@ -125,16 +129,18 @@ export function Logo({
           alignItems: "center",
           gap: 14,
           textDecoration: "none",
+          color: "var(--color-cream)",
         }}
       >
-        {/* To change the monogram, replace public/logo.svg */}
         {showMark && (
           <Image
             src="/logo.svg"
-            alt=""
-            width={lockupSizes[size].mark}
-            height={lockupSizes[size].mark}
+            alt="Heirloom Scents"
+            width={markW}
+            height={markH}
+            unoptimized
             priority
+            style={{ display: "block" }}
           />
         )}
         {wordmark}

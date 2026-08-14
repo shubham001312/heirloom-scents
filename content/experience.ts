@@ -5,18 +5,18 @@ export const experienceContent = {
     eyebrow: "Experience & Events",
     title: "One scent bar, built for every event.",
     subtitle:
-      "The same guided blending experience, tailored to how each celebration actually runs.",
+      "The same guided blending experience, tailored to the rhythm of each celebration.",
   },
   events: [
     {
       slug: "weddings",
       title: "Weddings",
       description:
-        'A cocktail-hour centerpiece guests talk about long after the toast. Blend a signature scent solo, or create a shared "his & hers" pairing with your partner.',
+        'A cocktail hour centerpiece guests talk about long after the toast. Blend a signature scent solo, or create a shared "his & hers" pairing with your partner.',
       highlights: [
         "Best for: 40–250 guests",
         "Typical placement: cocktail hour or reception",
-        "Add-on: custom label with names + date",
+        "Add-on: custom label with names and date",
       ],
       image: "/images/event_wedding.jpg",
       imageAlt: "Luxury wedding perfume bar experience",

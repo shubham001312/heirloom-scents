@@ -12,29 +12,21 @@
   /* Primary Brand */
   --color-maroon: #3a090e; /* maroon / wine — primary theme color */
   --color-maroon-deep: #260509; /* deeper maroon for footer, overlays */
-  --color-burgundy: var(--color-maroon); /* legacy alias */
-  --color-burgundy-deep: var(--color-maroon-deep); /* legacy alias */
   --color-ivory: #f7f2ea; /* light page background */
   --color-paper: #fbf8f2; /* card / surface background */
   --color-cream: #f7f2ea; /* text on maroon + light sections */
   --color-stone: #efe5d8; /* secondary warm tone / section tint */
-  --color-espresso: #201815; /* near-black brown for deep sections */
   --color-ink: #171412; /* primary text */
   --color-gold: #a8875f; /* accents — borders, rules, small labels */
   /* Accessible gold for text on light backgrounds (WCAG 4.5:1 on ivory/cream/white) */
-  --color-gold-deep: #7a5c2e;
+  --color-gold-deep: #65481d; /* gold text on light bg — AA (7.5:1 on ivory) */
   --color-line: #d8cbbb; /* hairline borders */
 
   /* Semantic Colors */
   --color-bg: var(--color-paper);
-  --color-surface: var(--color-paper);
   --color-text: var(--color-ink);
-  --color-text-muted: #6c6259;
-  --color-accent: var(--color-gold);
-  --color-accent-contrast: var(--color-maroon-deep);
+  --color-text-muted: #5a5046; /* AA on ivory/paper/stone (6.3:1+) */
   --color-border: var(--color-line);
-  --color-success: #2e5a2e;
-  --color-success-bg: #eef6ee;
   --color-error: #c0392b;
   --color-error-bg: #fdeaea;
   --color-focus: var(--color-gold);
@@ -178,8 +170,6 @@
   --z-base: 0;
   --z-dropdown: 100;
   --z-sticky: 200;
-  --z-overlay: 300;
-  --z-modal: 400;
   --z-toast: 500;
 }
 

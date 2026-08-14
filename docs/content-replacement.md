@@ -1,4 +1,4 @@
-# Content Replacement Guide — Heirloom Scents POC
+# Content Replacement Guide — Heirloom Scents
 
 This guide explains how to replace placeholder content with approved client assets.
 
@@ -23,11 +23,14 @@ Content is separated from page components. Each file exports a typed object:
 // Example: content/home.ts
 export const homeContent = {
   hero: {
-    eyebrow: "Weddings · Bridal Showers · Private Events",
-    title: "A signature scent, poured for the moment.",
-    subtitle: "...",
-    ctaLabel: "Inquire About Your Event",
-    ctaHref: "/inquire",
+    eyebrow: "Bespoke perfume experiences",
+    titleDisplay: "Heirloom", // script wordmark (Amoresa)
+    titleSmall: "SCENTS", // monogram caps (Mon Nicolette Grande)
+    tagline: "Memory, bottled.",
+    ctaLabel: "Discover the experience",
+    ctaHref: "/experience",
+    image: "/images/hero-photo.jpg",
+    imageAlt: "Heirloom perfume bar experience",
   },
   // ...
 } as const;
@@ -110,15 +113,19 @@ eventTypes: [
 
 ## Placeholder Locations
 
-These locations currently use placeholders and need real content:
+All placeholder photography has been replaced with the client's real photos
+(imported from the client's Instagram archive). The images below are the
+current set — swap any of them by replacing the file in `public/images/`
+and keeping the same filename, or update the path in the content file.
 
-| Location                  | Placeholder                                     | Replace With            |
-| ------------------------- | ----------------------------------------------- | ----------------------- |
-| `app/page.tsx`            | "Client photography — perfume bar in use"       | Real event photo        |
-| `app/experience/page.tsx` | "Client photography — [event] setup"            | Real event photos       |
-| `app/about/page.tsx`      | "Client photography — brand or founder imagery" | Brand/founder photo     |
-| `app/gallery/page.tsx`    | "gallery-item" placeholders                     | Real gallery photos     |
-| Footer                    | "hello@heirloomscents.com"                      | Confirmed contact email |
+| Image file                      | Used on                                    |
+| ------------------------------- | ------------------------------------------ |
+| `public/images/hero-photo.jpg`  | Home hero (perfume bar in action)          |
+| `public/images/occ-*.jpg`       | Home occasion cards (wedding / shower / private) |
+| `public/images/scent-*.jpg`     | Gallery signature-scent cards (bottle shots) |
+| `public/images/event_*.jpg`     | Experience page event blocks               |
+| `public/images/about-*.jpg`     | About page story collage                   |
+| `public/images/gallery-*.jpg`   | Gallery grid items                         |
 
 ## Adding New Pages
 
@@ -131,5 +138,6 @@ These locations currently use placeholders and need real content:
 
 - All content is TypeScript — changes require rebuild
 - Content types are enforced — adding a field to a type requires updating all consumers
-- Placeholder images use a gold gradient to match the brand palette
-- The gallery grid uses CSS columns for masonry layout
+- The gallery grid uses CSS columns (`column-count`) for masonry layout
+- The brand wordmark fonts are self-hosted via `next/font/local` — see `app/layout.tsx`
+- To change the header/favicon monogram, replace `public/logo.svg` (or the `d` path inside it) — no code changes needed

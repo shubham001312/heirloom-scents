@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { GalleryGrid, type GalleryItem } from "./GalleryGrid";
+import { filterGalleryItems } from "@/lib/gallery/filter";
 
 interface GalleryCategory {
   slug: string;
@@ -16,10 +17,7 @@ interface GalleryFilterProps {
 export function GalleryFilter({ categories, items }: GalleryFilterProps) {
   const [activeCategory, setActiveCategory] = useState<string>("all");
 
-  const filteredItems =
-    activeCategory === "all"
-      ? items
-      : items.filter((item) => item.category === activeCategory);
+  const filteredItems = filterGalleryItems(items, activeCategory);
 
   return (
     <>

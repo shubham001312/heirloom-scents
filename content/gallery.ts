@@ -69,7 +69,7 @@ export const galleryContent = {
         image: "/images/scent-memoire.jpg",
         imageAlt: "Memoire fragrance",
         education:
-          "Soft white musk and Grasse jasmine — quiet elegance for moonlit evenings. A delicate, skin-close scent that lingers gently.",
+          "Soft white musk and Grasse jasmine — quiet elegance for moonlit evenings. A delicate scent that stays close to the skin and lingers gently.",
       },
       {
         slug: "velvet-hour",
@@ -87,7 +87,7 @@ export const galleryContent = {
         image: "/images/scent-noir.jpg",
         imageAlt: "Noir Bloom fragrance",
         education:
-          "Deep oud and spicy cardamom — rich and grounding for intimate soirées. A bold, lingering trail for after-dark events.",
+          "Deep oud and spicy cardamom — rich and grounding for intimate soirées. A bold, lingering trail that fills the room.",
       },
       {
         slug: "silk-veil",

@@ -122,7 +122,7 @@ export function InquiryForm() {
       if (!WEB3FORMS_ACCESS_KEY) {
         setStatus("error");
         setErrorMessage(
-          "Inquiry system not configured. Please email us directly at hello@heirloomscents.com."
+          "Our inquiry form is temporarily unavailable. Please email us at hello@heirloomscents.com."
         );
         return;
       }
@@ -208,7 +208,7 @@ export function InquiryForm() {
       {/* Name */}
       <div className="form__field">
         <label htmlFor="name" className="form__label">
-          Full Name *
+          Full name *
         </label>
         <input
           id="name"
@@ -276,7 +276,7 @@ export function InquiryForm() {
       {/* Event Type */}
       <div className="form__field">
         <label htmlFor="eventType" className="form__label">
-          Event Type *
+          Event type *
         </label>
         <select
           id="eventType"
@@ -327,7 +327,7 @@ export function InquiryForm() {
       {/* Guest Count */}
       <div className="form__field">
         <label htmlFor="guestCount" className="form__label">
-          Approx. guests
+          Estimated guests
         </label>
         <input
           id="guestCount"
@@ -352,7 +352,7 @@ export function InquiryForm() {
       {/* Message */}
       <div className="form__field form__field--full">
         <label htmlFor="message" className="form__label">
-          Tell us about your event *
+          About your event *
         </label>
         <textarea
           id="message"
@@ -382,7 +382,7 @@ export function InquiryForm() {
       {/* Submit */}
       <div className="form__submit-row">
         <span className="form-note">
-          We&apos;ll respond within 24 hours. No spam, ever.
+          We reply within 24 hours.
         </span>
         <button type="submit" disabled={status === "submitting"}>
           {status === "submitting" ? "Sending…" : "Send inquiry →"}

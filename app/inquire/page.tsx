@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   title: "Book / Inquire",
   description:
     "Inquire about booking Heirloom Scents for your wedding, bridal shower, or private event in the Dallas–Fort Worth area.",
+  openGraph: {
+    title: "Book / Inquire | Heirloom Scents",
+    description:
+      "Tell us about your celebration and book the Heirloom Scents perfume bar for a wedding, bridal shower, or private event.",
+  },
+  twitter: {
+    title: "Book / Inquire | Heirloom Scents",
+    description:
+      "Tell us about your celebration and book the Heirloom Scents perfume bar for a wedding, bridal shower, or private event.",
+  },
 };
 
 export default function InquirePage() {
@@ -43,7 +53,7 @@ export default function InquirePage() {
         <div className="kicker">Your inquiry</div>
         <h2>Tell us about your event.</h2>
         <p>
-          We&rsquo;ll be in touch to discuss the details, guest experience and next steps.
+          We&rsquo;ll be in touch to discuss the details, the guest experience, and next steps.
         </p>
         <InquiryForm />
       </section>
