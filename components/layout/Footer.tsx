@@ -25,7 +25,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="footer__heading">Navigate</h4>
+          <h2 className="footer__heading">Navigate</h2>
           <div className="footer__links">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href}>
@@ -36,7 +36,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="footer__heading">Connect</h4>
+          <h2 className="footer__heading">Connect</h2>
           <div className="footer__links">
             <a href="mailto:hello@heirloomscents.com">hello@heirloomscents.com</a>
             <a
@@ -51,7 +51,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="footer__heading">Inquire</h4>
+          <h2 className="footer__heading">Inquire</h2>
           <p className="footer__blurb">
             Perfume bars for weddings, showers, and private events.
           </p>
