@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function ExperiencePage() {
-  const { page, events, cta } = experienceContent;
+  const { page, events } = experienceContent;
 
   return (
     <main id="main-content">
@@ -49,18 +49,6 @@ export default function ExperiencePage() {
                     priority={index === 0}
                     style={{ width: "100%", height: "auto", objectFit: "cover" }}
                   />
-                  {/* Featured past event */}
-                  {event.pastEvent && (
-                    <div className="case-study">
-                      <Image
-                        src={event.pastEvent.image}
-                        alt={event.pastEvent.imageAlt}
-                        width={500}
-                        height={300}
-                      />
-                      <p>{event.pastEvent.result}</p>
-                    </div>
-                  )}
                 </div>
                 <div className="event-block__content" style={{ direction: "ltr" }}>
                   <h2>{event.title}</h2>
@@ -81,16 +69,6 @@ export default function ExperiencePage() {
               </div>
             </div>
           ))}
-        </Container>
-      </section>
-
-      {/* CTA Banner */}
-      <section className="cta-banner">
-        <Container>
-          <h2 className="cta-banner__title">{cta.title}</h2>
-          <Button variant="outline-light" href={cta.ctaHref}>
-            {cta.ctaLabel}
-          </Button>
         </Container>
       </section>
     </main>

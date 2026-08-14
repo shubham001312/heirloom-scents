@@ -68,7 +68,7 @@ export const galleryContent = {
         image: "/images/archive.jpg",
         imageAlt: "Memoire fragrance",
         education:
-          "Soft white musk blended with hand-picked Grasse jasmine and violet leaf. Inspired by moonlit gardens, it evokes quiet elegance and tender memories. Pairs beautifully with cashmere and pearl accents.",
+          "Soft white musk and Grasse jasmine — quiet elegance for moonlit evenings.",
         href: "/inquire",
       },
       {
@@ -77,7 +77,7 @@ export const galleryContent = {
         image: "/images/events.jpg",
         imageAlt: "Velvet Hour fragrance",
         education:
-          "Warm amber resin sourced from Ethiopian frankincense groves, smoothed with Madagascar vanilla bean and a touch of labdanum. Inspired by golden hour gatherings, it wraps you in comforting warmth. Pairs well with a single note of rose or amber candlelight.",
+          "Ethiopian amber and Madagascar vanilla — comforting warmth for golden hours.",
         href: "/inquire",
       },
       {
@@ -86,7 +86,7 @@ export const galleryContent = {
         image: "/images/private.jpg",
         imageAlt: "Noir Bloom fragrance",
         education:
-          "Deep oud wood from sustainable Assam forests meets spicy cardamom and black pepper, grounded by vetiver and patchouli. Created for intimate soirées where conversations linger. Pairs well with aged bourbon or dark chocolate.",
+          "Deep oud and spicy cardamom — rich and grounding for intimate soirées.",
         href: "/inquire",
       },
       {
@@ -95,7 +95,7 @@ export const galleryContent = {
         image: "/images/cta-photo.jpg",
         imageAlt: "Silk Veil fragrance",
         education:
-          "Sunlit Sicilian bergamot and grapefruit zest crushed with fresh-cut grass and crushed mint leaves, resting on a base of white cedar. Captures the first breath of spring mornings. Pairs excellently with linen fabrics and green tea.",
+          "Sicilian bergamot and fresh mint — the first breath of spring mornings.",
         href: "/inquire",
       },
     ],

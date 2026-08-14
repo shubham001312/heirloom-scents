@@ -132,11 +132,6 @@ export default function Home() {
             );
           })}
         </div>
-        <div className="center" style={{ marginTop: "60px" }}>
-          <Button variant="primary" href="/experience">
-            View all events <span aria-hidden="true">→</span>
-          </Button>
-        </div>
       </section>
 
       {/* CTA */}

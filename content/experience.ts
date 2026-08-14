@@ -22,13 +22,6 @@ export const experienceContent = {
       imageAlt: "Luxury wedding perfume bar experience",
       ctaLabel: "Inquire About Your Wedding",
       ctaHref: "/inquire",
-      // Featured past-event example
-      pastEvent: {
-        image: "/images/wedding.jpg",
-        imageAlt: "Sarah & Michael's Dallas Wedding - Spring 2026",
-        result:
-          "Featured notes of white tea, bergamot, and vetiver created a fresh, elegant scent that guests wore throughout the celebration.",
-      },
     },
     {
       slug: "bridal-showers",
@@ -44,13 +37,6 @@ export const experienceContent = {
       imageAlt: "Bridal shower fragrance activity with perfume bottles",
       ctaLabel: "Plan Your Shower",
       ctaHref: "/inquire",
-      // Featured past-event example
-      pastEvent: {
-        image: "/images/showers.jpg",
-        imageAlt: "Jessica's Bridal Shower - Fort Worth, Summer 2026",
-        result:
-          "Guests created personalized fragrances with notes of peony, lychee, and warm vanilla to take home as favors.",
-      },
     },
     {
       slug: "private-events",
@@ -66,18 +52,6 @@ export const experienceContent = {
       imageAlt: "Private event fragrance blending experience",
       ctaLabel: "Check Availability",
       ctaHref: "/inquire",
-      // Featured past-event example
-      pastEvent: {
-        image: "/images/private.jpg",
-        imageAlt: "Tech Company Product Launch - Dallas Arts District, Fall 2026",
-        result:
-          "Custom citrus-herb fragrance blended with notes of rosemary, grapefruit, and cedar to match brand identity.",
-      },
     },
   ] satisfies EventExperience[],
-  cta: {
-    title: "Tell us about your event.",
-    ctaLabel: "Check Availability",
-    ctaHref: "/inquire",
-  },
 } as const;

@@ -71,10 +71,4 @@ export type EventExperience = {
   imageAlt?: string;
   ctaLabel?: string;
   ctaHref?: string;
-  /** Featured past-event case study shown on the Experience page */
-  pastEvent?: {
-    image: string;
-    imageAlt: string;
-    result: string;
-  };
 };
