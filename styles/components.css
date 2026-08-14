@@ -1323,8 +1323,8 @@ html.js .fade-in-up {
   opacity: 0;
   transform: translateY(20px);
   transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+    opacity var(--duration-reveal) var(--ease-luxury),
+    transform var(--duration-reveal) var(--ease-luxury);
 }
 
 html.js .fade-in-up.in-view {
@@ -1346,7 +1346,7 @@ html.js .fade-in-up.in-view {
   width: 100%;
   height: 240px;
   object-fit: cover;
-  transition: transform 1.2s ease;
+  transition: transform var(--duration-zoom) var(--ease-luxury);
 }
 
 .scent:hover img {
@@ -1399,11 +1399,11 @@ img {
   background-image: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.35),
     transparent
   );
   background-size: 200% 100%;
-  animation: img-shimmer 1.3s ease-in-out infinite;
+  animation: img-shimmer var(--duration-shimmer) ease-in-out infinite;
 }
 
 img.img-done {
@@ -1436,15 +1436,15 @@ img.img-fade {
 .btn:active,
 .filter-chip:active,
 .link-cta:active {
-  transform: scale(0.96);
-  transition-duration: 0.12s;
+  transform: scale(0.97);
+  transition-duration: var(--duration-press);
 }
 
 .filter-chip {
   transition:
     background-color var(--duration-fast) var(--ease-default),
     color var(--duration-fast) var(--ease-default),
-    transform 0.12s ease;
+    transform var(--duration-press) ease;
 }
 
 /* --- Card hover lifts (occasion + scent archive) --- */
@@ -1452,17 +1452,17 @@ img.img-fade {
   overflow: hidden;
   border-radius: 2px;
   transition:
-    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transform var(--duration-lift) var(--ease-luxury),
+    box-shadow var(--duration-lift) var(--ease-luxury);
 }
 
 .occasion-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px -20px rgba(58, 9, 14, 0.35);
+  box-shadow: 0 24px 48px -24px rgba(58, 9, 14, 0.4);
 }
 
 .occasion-card .portrait-image {
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform var(--duration-zoom) var(--ease-luxury);
 }
 
 .occasion-card:hover .portrait-image {
@@ -1472,19 +1472,19 @@ img.img-fade {
 .scent {
   overflow: hidden;
   transition:
-    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    transform var(--duration-lift) var(--ease-luxury),
+    box-shadow var(--duration-lift) var(--ease-luxury);
 }
 
 .scent:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 40px -20px rgba(58, 9, 14, 0.35);
+  box-shadow: 0 24px 48px -24px rgba(58, 9, 14, 0.4);
 }
 
 /* Experience + gallery imagery — gentle zoom on hover (wrappers clip) */
 .event-block img,
 .gallery-item img {
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform var(--duration-zoom) var(--ease-luxury);
 }
 
 .event-block:hover img,
@@ -1494,7 +1494,7 @@ img.img-fade {
 
 /* --- Hero entrance (staggered rise-in, CSS-only, no-JS safe) --- */
 .home-hero__copy > * {
-  animation: rise-in 0.7s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  animation: rise-in var(--duration-entrance) var(--ease-luxury) backwards;
 }
 
 .home-hero__copy > *:nth-child(2) {

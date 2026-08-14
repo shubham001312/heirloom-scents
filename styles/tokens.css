@@ -155,10 +155,20 @@
   --duration-slow: 400ms;
   --duration-slower: 600ms;
 
+  /* Motion feel — the site's animation timing, tunable in one place */
+  --duration-press: 100ms; /* click / tap feedback */
+  --duration-lift: 450ms; /* card hover lift */
+  --duration-zoom: 1000ms; /* image hover zoom (slow, luxurious drift) */
+  --duration-reveal: 600ms; /* scroll fade-in-up */
+  --duration-entrance: 800ms; /* hero staggered entrance */
+  --duration-shimmer: 1600ms; /* image loading skeleton cycle */
+
   --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  /* Deliberate, weighty curve used for the site's signature motion */
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* --------------------------------------------------------------------------
      Z-Index Scale
@@ -183,5 +193,11 @@
     --duration-normal: 0ms;
     --duration-slow: 0ms;
     --duration-slower: 0ms;
+    --duration-press: 0ms;
+    --duration-lift: 0ms;
+    --duration-zoom: 0ms;
+    --duration-reveal: 0ms;
+    --duration-entrance: 0ms;
+    --duration-shimmer: 0ms;
   }
 }
