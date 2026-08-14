@@ -29,33 +29,6 @@
   line-height: var(--leading-tight);
 }
 
-.center {
-  text-align: center;
-}
-
-.text-link {
-  display: inline-flex;
-  gap: 16px;
-  align-items: center;
-  margin-top: 30px;
-  font-size: 15px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 9px;
-  color: var(--color-ink);
-  transition: opacity var(--duration-fast) var(--ease-default);
-}
-
-.text-link:hover {
-  opacity: 0.72;
-}
-
-.text-link:focus-visible {
-  outline: 2px solid var(--color-gold);
-  outline-offset: 4px;
-}
-
 /* --------------------------------------------------------------------------
    Sections
    -------------------------------------------------------------------------- */
@@ -97,7 +70,6 @@
 }
 
 .section-head h2 em,
-.intro h2 em,
 .inquiry-intro h1 em {
   font-family: var(--font-display);
   font-style: normal;
@@ -134,7 +106,7 @@
   text-transform: uppercase;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .header__nav {
     display: flex;
   }
@@ -177,7 +149,7 @@
   color: var(--color-cream);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .header__menu-btn {
     display: none;
   }
@@ -367,9 +339,6 @@
   margin-top: 40px;
 }
 
-.home-hero__copy .text-link {
-  color: var(--color-cream);
-}
 
 .home-hero__scroll {
   position: absolute;
@@ -449,43 +418,6 @@
 /* --------------------------------------------------------------------------
    Home — Events
    -------------------------------------------------------------------------- */
-
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 38px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.event img {
-  width: 100%;
-  aspect-ratio: 1.3;
-  object-fit: cover;
-  display: block;
-}
-
-.event .meta {
-  text-align: center;
-  padding: 24px 10px 0;
-}
-
-.event h3 {
-  font-family: var(--font-serif);
-  font-size: 27px;
-  font-weight: 400;
-  margin: 0 0 8px;
-}
-
-.event p {
-  font-size: 16px;
-  color: var(--color-text-muted);
-  margin: 0 0 15px;
-}
-
-.event .text-link {
-  margin-top: 8px;
-}
 
 /* --------------------------------------------------------------------------
    Home — Scent Archive
@@ -816,6 +748,15 @@
   margin-bottom: 6px;
 }
 
+/* Scent deep-link note (e.g. /inquire?scent=memoire) */
+.form__scent-banner {
+  padding: 14px 18px;
+  border: 1px solid var(--color-gold);
+  background: var(--color-ivory);
+  font-size: 15px;
+  color: var(--color-ink);
+}
+
 /* Honeypot - hidden from users, visible to bots */
 .form__honeypot {
   position: absolute;
@@ -918,47 +859,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-12);
   }
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-6);
-}
-
-@media (min-width: 768px) {
-  .grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.grid-4 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-4);
-}
-
-@media (min-width: 1024px) {
-  .grid-4 {
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--space-6);
-  }
-}
-
-.card {
-  padding: var(--space-6);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-}
-
-.card h3 {
-  margin-bottom: var(--space-3);
-}
-
-.card p {
-  color: var(--color-text-muted);
-  font-size: 0.9375rem;
-  line-height: var(--leading-relaxed);
 }
 
 .text-center {
@@ -1554,10 +1454,6 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .events-grid {
-    grid-template-columns: 1fr;
-    max-width: 560px;
-  }
 
   .footer-grid {
     grid-template-columns: 1fr 1fr;

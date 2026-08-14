@@ -88,10 +88,10 @@ export const metadata: Metadata = {
       "A guided perfume bar experience for celebrations — guests blend, bottle, and take home a fragrance made for that day only.",
     images: [
       {
-        url: "/images/logo-instagram.jpg",
-        width: 150,
-        height: 150,
-        alt: "Heirloom Scents Logo",
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Heirloom Scents — a guided perfume bar experience",
       },
     ],
   },
@@ -100,7 +100,7 @@ export const metadata: Metadata = {
     title: "Heirloom Scents — Signature Scent Experiences",
     description:
       "A guided perfume bar experience for celebrations — guests blend, bottle, and take home a fragrance made for that day only.",
-    images: ["/images/logo-instagram.jpg"],
+    images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,

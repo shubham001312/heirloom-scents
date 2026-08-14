@@ -43,7 +43,7 @@ export default function InquirePage() {
         <div className="kicker">Your inquiry</div>
         <h2>Tell us about your event.</h2>
         <p>
-          We&rsquo;ll be in touch to discuss the details, guest experience and next steps.
+          We&rsquo;ll be in touch to discuss the details, the guest experience, and next steps.
         </p>
         <InquiryForm />
       </section>

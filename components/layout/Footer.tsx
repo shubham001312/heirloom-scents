@@ -18,7 +18,7 @@ export function Footer() {
           <p className="footer__blurb">
             Heirloom Scents
             <br />
-            Luxury perfume experiences
+            Bespoke perfume experiences
             <br />
             Made to be remembered.
           </p>

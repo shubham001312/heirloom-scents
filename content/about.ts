@@ -63,7 +63,7 @@ export const aboutContent = {
         number: "02",
         title: "Create your blend",
         description:
-          "Layered and balanced on the spot, each blend is tuned to the guest's own taste until it feels unmistakably theirs.",
+          "Layered and balanced on the spot, each blend is tuned to the guest's own taste until it feels made for them.",
       },
       {
         number: "03",

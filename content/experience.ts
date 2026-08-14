@@ -5,7 +5,7 @@ export const experienceContent = {
     eyebrow: "Experience & Events",
     title: "One scent bar, built for every event.",
     subtitle:
-      "The same guided blending experience, tailored to how each celebration actually runs.",
+      "The same guided blending experience, tailored to the rhythm of each celebration.",
   },
   events: [
     {
@@ -16,7 +16,7 @@ export const experienceContent = {
       highlights: [
         "Best for: 40–250 guests",
         "Typical placement: cocktail hour or reception",
-        "Add-on: custom label with names + date",
+        "Add-on: custom label with names and date",
       ],
       image: "/images/event_wedding.jpg",
       imageAlt: "Luxury wedding perfume bar experience",

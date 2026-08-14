@@ -87,7 +87,7 @@ export const galleryContent = {
         image: "/images/scent-noir.jpg",
         imageAlt: "Noir Bloom fragrance",
         education:
-          "Deep oud and spicy cardamom — rich and grounding for intimate soirées. A bold, lingering trail made for evening events.",
+          "Deep oud and spicy cardamom — rich and grounding for intimate soirées. A bold, lingering trail that fills the room.",
       },
       {
         slug: "silk-veil",
