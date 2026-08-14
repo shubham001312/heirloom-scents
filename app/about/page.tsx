@@ -54,6 +54,7 @@ export default function AboutPage() {
                 width={500}
                 height={600}
                 priority
+                sizes="(max-width: 768px) 90vw, 45vw"
                 style={{ width: "100%", height: "auto", objectFit: "cover" }}
               />
             </div>

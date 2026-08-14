@@ -118,6 +118,7 @@ export default function Home() {
                   className="portrait-image"
                   width={585}
                   height={780}
+                  sizes="(max-width: 900px) 90vw, 30vw"
                 />
                 <div className="meta">
                   <h3>{item.name}</h3>

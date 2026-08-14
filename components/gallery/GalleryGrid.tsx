@@ -22,9 +22,11 @@ export function GalleryGrid({ items }: GalleryGridProps) {
               alt={item.alt}
               width={400}
               height={300}
-              // First rows are above the fold (3-col masonry ≈ 9 visible) —
-              // eager keeps them out of the LCP path
-              loading={index < 9 ? "eager" : "lazy"}
+              // First row only is eager — the rest load one-by-one as you
+              // scroll, each showing its shimmer skeleton (smoother on slow
+              // networks than bursting all 9 at once)
+              loading={index < 3 ? "eager" : "lazy"}
+              sizes="(max-width: 768px) 90vw, 30vw"
               style={{ width: "100%", height: "auto", objectFit: "cover" }}
             />
           </div>

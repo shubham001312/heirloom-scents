@@ -47,6 +47,7 @@ export default function ExperiencePage() {
                     width={600}
                     height={400}
                     priority={index === 0}
+                    sizes="(max-width: 768px) 90vw, 50vw"
                     style={{ width: "100%", height: "auto", objectFit: "cover" }}
                   />
                 </div>
