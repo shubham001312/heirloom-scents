@@ -502,13 +502,9 @@
    Home — Scent Archive
    -------------------------------------------------------------------------- */
 
-.archive {
-  background: var(--color-ivory);
-}
-
 .archive-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   max-width: 1280px;
   margin: auto;
 }
@@ -538,19 +534,9 @@
   margin: 0 0 13px;
 }
 
-.scent a {
-  display: inline-block;
-  font-size: 15px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 4px;
+.scent .link-cta {
+  color: var(--color-maroon);
   margin-bottom: 20px;
-  color: var(--color-ink);
-}
-
-.scent a:hover {
-  opacity: 0.72;
 }
 
 /* --------------------------------------------------------------------------
@@ -1327,9 +1313,18 @@
    -------------------------------------------------------------------------- */
 .occasion-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   align-items: start;
+}
+
+/* Occasion cards stack single-column on small screens (3-up overflows) */
+@media (max-width: 900px) {
+  .occasion-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
 }
 
 .occasion-card.wedding {
@@ -1448,11 +1443,39 @@ html.js .fade-in-up.in-view {
   transform: scale(1.03);
 }
 
-/* Scent education text */
-.scent-education {
-  font-size: 14px;
-  line-height: 1.6;
+/* Scent education text — simple, readable sans (overrides the serif italic
+   flavor line so the description stays minimal and easy to read) */
+.scent .scent-education,
+.gallery-scent-meta .scent-education {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1.7;
   color: var(--color-text-muted);
+  margin: 10px 0 16px;
+}
+
+/* Scent cards inside the gallery masonry (All view) */
+.gallery-scent-meta {
+  padding: 14px 4px 20px;
+  text-align: center;
+}
+
+.gallery-scent-meta h3 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 21px;
+  margin: 0 0 4px;
+}
+
+.gallery-scent-meta p:not(.scent-education) {
+  font-family: var(--font-serif);
   font-style: italic;
-  margin: 12px 0 20px;
+  font-size: 15px;
+  color: var(--color-text-muted);
+  margin: 0 0 10px;
+}
+
+.gallery-scent-meta .link-cta {
+  color: var(--color-maroon);
 }

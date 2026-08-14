@@ -50,45 +50,6 @@ export const homeContent = {
       },
     ],
   },
-  archive: {
-    kicker: "The scent archive",
-    titleLine1: "Four signatures.",
-    titleLine2: "Endless memories.",
-    scents: [
-      {
-        name: "Memoire",
-        notes: "soft · floral · musky",
-        image: "/images/archive.jpg",
-        imageAlt: "Memoire fragrance",
-        education:
-          "Soft white musk blended with hand-picked Grasse jasmine and violet leaf. Inspired by moonlit gardens, it evokes quiet elegance and tender memories. Pairs beautifully with cashmere and pearl accents.",
-      },
-      {
-        name: "Velvet Hour",
-        notes: "amber · warm · vanilla",
-        image: "/images/events.jpg",
-        imageAlt: "Velvet Hour fragrance",
-        education:
-          "Warm amber resin sourced from Ethiopian frankincense groves, smoothed with Madagascar vanilla bean and a touch of labdanum. Inspired by golden hour gatherings, it wraps you in comforting warmth. Pairs well with a single note of rose or amber candlelight.",
-      },
-      {
-        name: "Noir Bloom",
-        notes: "woody · spicy · rich",
-        image: "/images/private.jpg",
-        imageAlt: "Noir Bloom fragrance",
-        education:
-          "Deep oud wood from sustainable Assam forests meets spicy cardamom and black pepper, grounded by vetiver and patchouli. Created for intimate soirées where conversations linger. Pairs well with aged bourbon or dark chocolate.",
-      },
-      {
-        name: "Silk Veil",
-        notes: "citrus · fresh · green",
-        image: "/images/cta-photo.jpg",
-        imageAlt: "Silk Veil fragrance",
-        education:
-          "Sunlit Sicilian bergamot and grapefruit zest crushed with fresh-cut grass and crushed mint leaves, resting on a base of white cedar. Captures the first breath of spring mornings. Pairs excellently with linen fabrics and green tea.",
-      },
-    ],
-  },
   cta: {
     kicker: "Ready when you are",
     titleLine1: "Let’s create a scent",

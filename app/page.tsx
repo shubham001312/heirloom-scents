@@ -23,7 +23,7 @@ const STEP_ICONS = [
 ];
 
 export default function Home() {
-  const { hero, intro, events, archive, cta } = homeContent;
+  const { hero, intro, events, cta } = homeContent;
 
   return (
     <main id="main-content">
@@ -136,38 +136,6 @@ export default function Home() {
           <Button variant="primary" href="/experience">
             View all events <span aria-hidden="true">→</span>
           </Button>
-        </div>
-      </section>
-
-      {/* Scent Archive */}
-      <section className="section archive fade-in-up">
-        <div className="section-head">
-          <div className="kicker">{archive.kicker}</div>
-          <h2>
-            {archive.titleLine1}
-            <br />
-            {archive.titleLine2}
-          </h2>
-          <div className="rule" />
-        </div>
-        <div className="archive-grid">
-          {archive.scents.map((scent) => (
-            <article key={scent.name} className="scent">
-              <Image
-                src={scent.image}
-                alt={scent.imageAlt}
-                width={400}
-                height={280}
-                style={{ width: "100%", height: "210px", objectFit: "cover" }}
-              />
-              <h3>{scent.name}</h3>
-              <p>{scent.notes}</p>
-              <p className="scent-education">{scent.education}</p>
-              <LinkCta href="/experience">
-                Discover <span aria-hidden="true">→</span>
-              </LinkCta>
-            </article>
-          ))}
         </div>
       </section>
 

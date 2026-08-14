@@ -7,6 +7,7 @@ export const galleryContent = {
   },
   categories: [
     { slug: "all", label: "All" },
+    { slug: "signatures", label: "Signatures" },
     { slug: "weddings", label: "Weddings" },
     { slug: "showers", label: "Showers" },
     { slug: "events", label: "Events" },
@@ -54,6 +55,51 @@ export const galleryContent = {
       category: "events",
       alt: "Luxury event fragrance experience",
       image: "/images/cta-photo.jpg",
+    },
+    // The four signature scents (moved from the home archive section)
+    {
+      id: 9,
+      category: "signatures",
+      alt: "Memoire fragrance",
+      image: "/images/archive.jpg",
+      title: "Memoire",
+      notes: "soft · floral · musky",
+      education:
+        "Soft white musk blended with hand-picked Grasse jasmine and violet leaf. Inspired by moonlit gardens, it evokes quiet elegance and tender memories. Pairs beautifully with cashmere and pearl accents.",
+      href: "/inquire",
+    },
+    {
+      id: 10,
+      category: "signatures",
+      alt: "Velvet Hour fragrance",
+      image: "/images/events.jpg",
+      title: "Velvet Hour",
+      notes: "amber · warm · vanilla",
+      education:
+        "Warm amber resin sourced from Ethiopian frankincense groves, smoothed with Madagascar vanilla bean and a touch of labdanum. Inspired by golden hour gatherings, it wraps you in comforting warmth. Pairs well with a single note of rose or amber candlelight.",
+      href: "/inquire",
+    },
+    {
+      id: 11,
+      category: "signatures",
+      alt: "Noir Bloom fragrance",
+      image: "/images/private.jpg",
+      title: "Noir Bloom",
+      notes: "woody · spicy · rich",
+      education:
+        "Deep oud wood from sustainable Assam forests meets spicy cardamom and black pepper, grounded by vetiver and patchouli. Created for intimate soirées where conversations linger. Pairs well with aged bourbon or dark chocolate.",
+      href: "/inquire",
+    },
+    {
+      id: 12,
+      category: "signatures",
+      alt: "Silk Veil fragrance",
+      image: "/images/cta-photo.jpg",
+      title: "Silk Veil",
+      notes: "citrus · fresh · green",
+      education:
+        "Sunlit Sicilian bergamot and grapefruit zest crushed with fresh-cut grass and crushed mint leaves, resting on a base of white cedar. Captures the first breath of spring mornings. Pairs excellently with linen fabrics and green tea.",
+      href: "/inquire",
     },
   ],
 } as const;

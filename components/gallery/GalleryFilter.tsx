@@ -1,18 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { GalleryGrid } from "./GalleryGrid";
+import { GalleryGrid, type GalleryItem } from "./GalleryGrid";
 
 interface GalleryCategory {
   slug: string;
   label: string;
-}
-
-interface GalleryItem {
-  id: number;
-  category: string;
-  alt: string;
-  image: string;
 }
 
 interface GalleryFilterProps {
