@@ -1,4 +1,4 @@
-# Client Dependencies — Heirloom Scents POC
+# Client Dependencies — Heirloom Scents
 
 Track all assets and approvals required from the client before development can proceed on specific features.
 
@@ -15,27 +15,27 @@ Track all assets and approvals required from the client before development can p
 
 | Asset                | Status      | Needed By               | Notes                                        |
 | -------------------- | ----------- | ----------------------- | -------------------------------------------- |
-| Logo files (SVG/PNG) | 🔴 Required | Phase 3 (Design System) | High-res, transparent background             |
-| Brand colors         | 🟡 Pending  | Phase 3 (Design System) | Mockups show burgundy/cream/gold — confirm   |
-| Brand fonts          | 🟡 Pending  | Phase 3 (Design System) | Mockups use Fraunces + Inter — confirm       |
-| Photography          | 🔴 Required | Phase 5 (Pages)         | Event setups, perfume bar, products          |
-| Usage rights         | 🔴 Required | Phase 5 (Pages)         | Confirmation that we can use provided photos |
+| Logo files (SVG/PNG) | 🟢 Received | Phase 3 (Design System) | Traced to real vector — `public/logo.svg`    |
+| Brand colors         | 🟢 Received | Phase 3 (Design System) | Maroon `#3a090e` / cream / gold — confirmed  |
+| Brand fonts          | 🟢 Received | Phase 3 (Design System) | Amoresa + Mon Nicolette Grande (licensed, self-hosted); Instrument Serif + Inter for UI |
+| Photography          | 🟢 Received | Phase 5 (Pages)         | Imported from client's Instagram archive    |
+| Usage rights         | 🟢 Received | Phase 5 (Pages)         | Client-provided photos with license         |
 
 ## Content
 
 | Asset                      | Status     | Needed By             | Notes                                           |
 | -------------------------- | ---------- | --------------------- | ----------------------------------------------- |
-| Approved copy — Home       | 🟡 Pending | Phase 5a (Home)       | Hero headline, value props, CTAs                |
-| Approved copy — Experience | 🟡 Pending | Phase 5b (Experience) | Event type descriptions                         |
-| Approved copy — About      | 🟡 Pending | Phase 5c (About)      | Brand story, philosophy, team                   |
-| Event details              | 🟡 Pending | Phase 5b (Experience) | Wedding, bridal shower, private event specifics |
+| Approved copy — Home       | 🟢 Received | Phase 5a (Home)       | Live on site                                    |
+| Approved copy — Experience | 🟢 Received | Phase 5b (Experience) | Live on site                                    |
+| Approved copy — About      | 🟢 Received | Phase 5c (About)      | Live on site                                    |
+| Event details              | 🟢 Received | Phase 5b (Experience) | Weddings, bridal showers, private events        |
 
 ## Contact & Social
 
 | Asset              | Status          | Needed By              | Notes                                     |
 | ------------------ | --------------- | ---------------------- | ----------------------------------------- |
-| Contact email      | 🟡 Pending      | Phase 4 (Shell/Footer) | For footer display                        |
-| Contact phone      | 🟡 Pending      | Phase 4 (Shell/Footer) | For footer display                        |
+| Contact email      | 🟢 Received     | Phase 4 (Shell/Footer) | hello@heirloomscents.com                  |
+| Contact phone      | 🟡 Pending      | Phase 4 (Shell/Footer) | Not yet provided                          |
 | Instagram link     | 🟢 Received     | Phase 4 (Shell/Footer) | https://www.instagram.com/heirloomscents/ |
 | Facebook link      | ⚪ Not Required | —                      | Not confirmed                             |
 | Other social links | 🟡 Pending      | Phase 4 (Shell/Footer) | TikTok, Pinterest, etc.                   |
@@ -44,9 +44,9 @@ Track all assets and approvals required from the client before development can p
 
 | Asset                  | Status     | Needed By          | Notes                                                                   |
 | ---------------------- | ---------- | ------------------ | ----------------------------------------------------------------------- |
-| Required form fields   | 🟡 Pending | Phase 5e (Inquire) | Proposed: name, email, phone, eventType, eventDate, guestCount, message |
-| Submission destination | 🟡 Pending | Phase 6 (Backend)  | Email (SendGrid/Resend) or webhook (Zapier)?                            |
-| Submission recipient   | 🟡 Pending | Phase 6 (Backend)  | Email address or webhook URL                                            |
+| Required form fields   | 🟢 Received | Phase 5e (Inquire) | name, email, event type, event date, guests, message                     |
+| Submission destination | 🟢 Received | Phase 6 (Backend)  | Web3Forms (free plan, client-side submit)                               |
+| Submission recipient   | 🟢 Received | Phase 6 (Backend)  | hello@heirloomscents.com (via Web3Forms key)                            |
 
 ## Legal
 
@@ -58,11 +58,11 @@ Track all assets and approvals required from the client before development can p
 
 ## Deployment
 
-| Asset                     | Status     | Needed By          | Notes                             |
-| ------------------------- | ---------- | ------------------ | --------------------------------- |
-| Hosting provider          | 🟡 Pending | Phase 10 (Handoff) | Autom8x review deployment for POC |
-| Domain access             | 🟡 Pending | Phase 10 (Handoff) | Required for production           |
-| Hosting account ownership | 🟡 Pending | Phase 10 (Handoff) | Client must own the account       |
+| Asset                     | Status     | Needed By          | Notes                                   |
+| ------------------------- | ---------- | ------------------ | --------------------------------------- |
+| Hosting provider          | 🟢 Live     | Phase 10 (Handoff) | Vercel (auto-deploys from GitHub)       |
+| Domain access             | 🟡 Pending | Phase 10 (Handoff) | Currently on heirloom-scents.vercel.app |
+| Hosting account ownership | 🟢 Live     | Phase 10 (Handoff) | Client's GitHub + Vercel accounts       |
 
 ---
 
@@ -75,5 +75,5 @@ Track all assets and approvals required from the client before development can p
 
 ---
 
-**Last Updated:** 2026-08-13
-**Source:** Autom8x Heirloom Scents POC SOW (August 2026)
+**Last Updated:** 2026-08-15
+**Source:** Autom8x Heirloom Scents SOW (August 2026)

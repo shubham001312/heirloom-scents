@@ -1616,7 +1616,8 @@ html.js .fade-in-up.in-view {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .fade-in-up {
+  .fade-in-up,
+  .ritual-step {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
