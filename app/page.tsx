@@ -117,8 +117,8 @@ export default function Home() {
                   src={item.image}
                   alt={item.imageAlt}
                   className="portrait-image"
-                  width={1024}
-                  height={243}
+                  width={585}
+                  height={780}
                   style={{ width: "100%", height: "auto", objectFit: "cover" }}
                 />
                 <div className="meta">

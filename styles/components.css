@@ -207,61 +207,55 @@
    Mobile Navigation
    -------------------------------------------------------------------------- */
 
+/* Android-style dropdown — slides down from under the header bar */
 .mobile-nav {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 100%;
   left: 0;
   right: 0;
-  bottom: 0;
-  z-index: var(--z-modal);
+  z-index: var(--z-dropdown);
   background-color: var(--color-maroon);
   color: var(--color-cream);
-  display: flex;
-  flex-direction: column;
-  padding: var(--space-6);
-  transform: translateX(100%);
+  box-shadow: 0 24px 40px -12px rgb(0 0 0 / 0.45);
+  transform: translateY(-110%);
   visibility: hidden;
+  opacity: 0;
   transition:
     transform var(--duration-normal) var(--ease-out),
+    opacity var(--duration-normal) var(--ease-out),
     visibility 0s linear var(--duration-normal);
 }
 
 .mobile-nav[data-open="true"] {
-  transform: translateX(0);
+  transform: translateY(0);
   visibility: visible;
+  opacity: 1;
   transition:
     transform var(--duration-normal) var(--ease-out),
+    opacity var(--duration-normal) var(--ease-out),
     visibility 0s;
-}
-
-.mobile-nav__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: var(--space-12);
-}
-
-.mobile-nav__close {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  color: var(--color-cream);
 }
 
 .mobile-nav__links {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  padding: var(--space-2) var(--space-6) var(--space-4);
 }
 
 .mobile-nav__link {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
   font-family: var(--font-serif);
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   color: var(--color-cream);
   text-decoration: none;
+  border-bottom: 1px solid rgb(247 242 234 / 0.14);
   transition: color var(--duration-fast) var(--ease-default);
+}
+
+.mobile-nav__link:last-child {
+  border-bottom: 0;
 }
 
 .mobile-nav__link:hover {
@@ -270,7 +264,7 @@
 
 .mobile-nav__link:focus-visible {
   outline: 2px solid var(--color-gold);
-  outline-offset: 4px;
+  outline-offset: -2px;
 }
 
 /* --------------------------------------------------------------------------
@@ -1304,18 +1298,7 @@
   }
 }
 
-.occasion-card.wedding {
-  transform: translateY(-30px);
-}
-
-.occasion-card.showers {
-  transform: translateY(0);
-}
-
-.occasion-card.private {
-  transform: translateY(20px);
-}
-
+/* Cards sit on one aligned row — no staggered offsets */
 .occasion-card .meta {
   text-align: center;
   padding: 26px 10px 0;
@@ -1339,19 +1322,9 @@
   color: var(--color-maroon);
 }
 
-/* Disable on mobile — asymmetry only reads well at desktop width */
-@media (max-width: 768px) {
-  .occasion-card.wedding,
-  .occasion-card.showers,
-  .occasion-card.private {
-    transform: none;
-  }
-}
-
-/* Occasion cards — wide editorial crop that matches the source banners
-   (1024x243) so images stay crisp instead of upscaling a portrait slice */
+/* Occasion cards — portrait crop matching the real 4:5 source photos */
 .portrait-image {
-  aspect-ratio: 2 / 1;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   width: 100%;
 }

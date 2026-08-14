@@ -65,7 +65,7 @@ export const galleryContent = {
       {
         title: "Memoire",
         notes: "soft · floral · musky",
-        image: "/images/archive.jpg",
+        image: "/images/scent-memoire.jpg",
         imageAlt: "Memoire fragrance",
         education:
           "Soft white musk and Grasse jasmine — quiet elegance for moonlit evenings.",
@@ -74,7 +74,7 @@ export const galleryContent = {
       {
         title: "Velvet Hour",
         notes: "amber · warm · vanilla",
-        image: "/images/events.jpg",
+        image: "/images/scent-velvet.jpg",
         imageAlt: "Velvet Hour fragrance",
         education:
           "Ethiopian amber and Madagascar vanilla — comforting warmth for golden hours.",
@@ -83,7 +83,7 @@ export const galleryContent = {
       {
         title: "Noir Bloom",
         notes: "woody · spicy · rich",
-        image: "/images/private.jpg",
+        image: "/images/scent-noir.jpg",
         imageAlt: "Noir Bloom fragrance",
         education:
           "Deep oud and spicy cardamom — rich and grounding for intimate soirées.",
@@ -92,7 +92,7 @@ export const galleryContent = {
       {
         title: "Silk Veil",
         notes: "citrus · fresh · green",
-        image: "/images/cta-photo.jpg",
+        image: "/images/scent-silk.jpg",
         imageAlt: "Silk Veil fragrance",
         education:
           "Sicilian bergamot and fresh mint — the first breath of spring mornings.",

@@ -34,7 +34,7 @@ export function Header() {
           <button
             id={MENU_BUTTON_ID}
             className="header__menu-btn"
-            onClick={() => setMobileNavOpen(true)}
+            onClick={() => setMobileNavOpen((open) => !open)}
             aria-label="Open navigation menu"
             aria-expanded={mobileNavOpen}
             aria-controls="mobile-nav"
@@ -55,13 +55,14 @@ export function Header() {
             </svg>
           </button>
         </div>
-      </header>
 
-      <MobileNav
-        isOpen={mobileNavOpen}
-        onClose={() => setMobileNavOpen(false)}
-        links={navLinks}
-      />
+        {/* Android-style dropdown — drops down from under the header bar */}
+        <MobileNav
+          isOpen={mobileNavOpen}
+          onClose={() => setMobileNavOpen(false)}
+          links={navLinks}
+        />
+      </header>
     </>
   );
 }
