@@ -1278,11 +1278,19 @@
   color: var(--color-maroon);
 }
 
-/* Occasion cards — portrait crop matching the real 4:5 source photos */
+/* Occasion cards — responsive crop: short editorial band on small screens,
+   gentler landscape on desktop (sources are 4:5 portrait, so the height
+   clamp crops them instead of stretching) */
 .portrait-image {
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
   width: 100%;
+  height: clamp(220px, 26vw, 360px);
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .portrait-image {
+    height: clamp(220px, 55vw, 400px);
+  }
 }
 
 /* --------------------------------------------------------------------------

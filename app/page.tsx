@@ -118,7 +118,6 @@ export default function Home() {
                   className="portrait-image"
                   width={585}
                   height={780}
-                  style={{ width: "100%", height: "auto", objectFit: "cover" }}
                 />
                 <div className="meta">
                   <h3>{item.name}</h3>
