@@ -32,21 +32,21 @@ export const homeContent = {
         tagline: "A scent to remember.",
         image: "/images/event_wedding.jpg",
         imageAlt: "Wedding fragrance experience",
-        href: "/experience",
+        href: "/experience#weddings",
       },
       {
         name: "Bridal Showers",
         tagline: "A signature blend for the celebration.",
         image: "/images/event_showers.jpg",
         imageAlt: "Bridal shower fragrance experience",
-        href: "/experience",
+        href: "/experience#bridal-showers",
       },
       {
         name: "Private Events",
         tagline: "From intimate to unforgettable.",
         image: "/images/event_private.jpg",
         imageAlt: "Private event fragrance experience",
-        href: "/experience",
+        href: "/experience#private-events",
       },
     ],
   },
@@ -60,24 +60,32 @@ export const homeContent = {
         notes: "soft · floral · musky",
         image: "/images/archive.jpg",
         imageAlt: "Memoire fragrance",
+        education:
+          "Soft white musk blended with hand-picked Grasse jasmine and violet leaf. Inspired by moonlit gardens, it evokes quiet elegance and tender memories. Pairs beautifully with cashmere and pearl accents.",
       },
       {
         name: "Velvet Hour",
         notes: "amber · warm · vanilla",
         image: "/images/events.jpg",
         imageAlt: "Velvet Hour fragrance",
+        education:
+          "Warm amber resin sourced from Ethiopian frankincense groves, smoothed with Madagascar vanilla bean and a touch of labdanum. Inspired by golden hour gatherings, it wraps you in comforting warmth. Pairs well with a single note of rose or amber candlelight.",
       },
       {
         name: "Noir Bloom",
         notes: "woody · spicy · rich",
         image: "/images/private.jpg",
         imageAlt: "Noir Bloom fragrance",
+        education:
+          "Deep oud wood from sustainable Assam forests meets spicy cardamom and black pepper, grounded by vetiver and patchouli. Created for intimate soirées where conversations linger. Pairs well with aged bourbon or dark chocolate.",
       },
       {
         name: "Silk Veil",
         notes: "citrus · fresh · green",
         image: "/images/cta-photo.jpg",
         imageAlt: "Silk Veil fragrance",
+        education:
+          "Sunlit Sicilian bergamot and grapefruit zest crushed with fresh-cut grass and crushed mint leaves, resting on a base of white cedar. Captures the first breath of spring mornings. Pairs excellently with linen fabrics and green tea.",
       },
     ],
   },
@@ -102,4 +110,10 @@ export type EventExperience = {
   imageAlt?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  /** Featured past-event case study shown on the Experience page */
+  pastEvent?: {
+    image: string;
+    imageAlt: string;
+    result: string;
+  };
 };

@@ -22,8 +22,9 @@ export function GalleryGrid({ items }: GalleryGridProps) {
               alt={item.alt}
               width={400}
               height={300}
-              // First row is above the fold — eager keeps it out of the LCP path
-              loading={index < 4 ? "eager" : "lazy"}
+              // First rows are above the fold (3-col masonry ≈ 9 visible) —
+              // eager keeps them out of the LCP path
+              loading={index < 9 ? "eager" : "lazy"}
               style={{ width: "100%", height: "auto", objectFit: "cover" }}
             />
           </div>

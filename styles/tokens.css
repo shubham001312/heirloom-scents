@@ -43,19 +43,21 @@
      Typography
      -------------------------------------------------------------------------- */
 
-  /* Font Families — Bodoni Moda (serif), Italiana (display), DM Sans (sans) */
-  --font-display: "Italiana", "Times New Roman", serif;
-  --font-serif: "Bodoni Moda", Georgia, "Times New Roman", serif;
-  --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* Font Families — Instrument Serif (headings), Inter (body/UI/buttons) */
+  /* --font-serif is defined by next/font on <html> (do NOT redeclare it here
+     or the loaded family gets overridden); --font-display aliases it so
+     display-face usages resolve to the loaded font, not a fallback. */
+  --font-display: var(--font-serif, "Instrument Serif", "Times New Roman", serif);
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   /* Brand wordmark faces — Amoresa (script) + Mon Nicolette Grande (decorative
      caps). Self-hosted via next/font/local in app/layout.tsx, which defines
      --font-script and --font-monogram on <html> (do NOT redeclare these here
      or the generated family names get overridden). Both fonts are commercial —
      replace fonts/*.ttf or license them for commercial use. */
 
-  /* Font Sizes — Modular Scale */
+  /* Font Sizes — Modified for readability */
   --text-xs: 0.75rem; /* 12px */
-  --text-sm: 0.875rem; /* 14px */
+  --text-sm: 0.875rem; /* 14px - minimum body size */
   --text-base: 1rem; /* 16px */
   --text-lg: 1.125rem; /* 18px */
   --text-xl: 1.25rem; /* 20px */
@@ -72,15 +74,15 @@
   --weight-semibold: 600;
   --weight-bold: 700;
 
-  /* Line Heights */
+  /* Line Heights - Updated for readability (1.6-1.8 for paragraph text) */
   --leading-none: 1;
   --leading-tight: 1.25;
-  --leading-snug: 1.375;
+  --leading-snug: 1.35;
   --leading-normal: 1.5;
-  --leading-relaxed: 1.625;
+  --leading-relaxed: 1.7; /* Within 1.6-1.8 range for better readability */
   --leading-loose: 2;
 
-  /* Letter Spacing */
+  /* Letter Spacing - Updated per plan */
   --tracking-tighter: -0.05em;
   --tracking-tight: -0.025em;
   --tracking-normal: 0em;
@@ -89,6 +91,10 @@
   --tracking-widest: 0.1em;
   --tracking-ultra: 0.2em;
   --tracking-ultra-2: 0.3em;
+  /* Headline tightening: -0.01em */
+  --tracking-headline-tight: -0.01em;
+  /* Micro-label opening: +0.15-0.18em */
+  --tracking-micro-label: 0.165em;
 
   /* --------------------------------------------------------------------------
      Spacing — 4px base unit

@@ -53,6 +53,7 @@ export default function AboutPage() {
                 alt={story.imageAlt}
                 width={500}
                 height={600}
+                priority
                 style={{ width: "100%", height: "auto", objectFit: "cover" }}
               />
             </div>
@@ -79,7 +80,9 @@ export default function AboutPage() {
       <section className="cta-banner">
         <Container>
           <h2 className="cta-banner__title">{cta.title}</h2>
-          <Button href={cta.ctaHref}>{cta.ctaLabel}</Button>
+          <Button variant="outline-light" href={cta.ctaHref}>
+            {cta.ctaLabel}
+          </Button>
         </Container>
       </section>
     </main>

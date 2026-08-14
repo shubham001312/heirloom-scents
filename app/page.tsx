@@ -1,6 +1,8 @@
 import Image from "next/image";
-import Link from "next/link";
 import { homeContent } from "@/content/home";
+import { Button } from "@/components/ui/Button";
+import { LinkCta } from "@/components/ui/LinkCta";
+import { ScrollEffects } from "@/components/home/ScrollEffects";
 
 export default function Home() {
   const { hero, intro, events, archive, cta } = homeContent;
@@ -26,9 +28,9 @@ export default function Home() {
           </h1>
           <div className="home-hero__tag">{hero.tagline}</div>
           <div className="rule" />
-          <Link className="btn btn-outline-light" href={hero.ctaHref}>
+          <Button variant="outline-light" href={hero.ctaHref}>
             {hero.ctaLabel} <span aria-hidden="true">→</span>
-          </Link>
+          </Button>
         </div>
         <div className="home-hero__scroll" aria-hidden="true">
           Scroll
@@ -36,8 +38,8 @@ export default function Home() {
       </section>
 
       {/* Intro + Steps */}
-      <section className="section">
-        <div className="intro">
+      <section className="section ritual-section">
+        <div className="ritual-sticky">
           <div>
             <div className="kicker">{intro.kicker}</div>
             <h2>
@@ -48,9 +50,9 @@ export default function Home() {
           </div>
           <p>{intro.description}</p>
         </div>
-        <div className="steps">
-          {intro.steps.map((step) => (
-            <div key={step.number} className="step">
+        <div className="ritual-steps">
+          {intro.steps.map((step, index) => (
+            <div key={step.number} className={`ritual-step step-${index + 1}`}>
               <div className="step-no">{step.number}</div>
               <h3>{step.title}</h3>
               <p>{step.text}</p>
@@ -60,7 +62,7 @@ export default function Home() {
       </section>
 
       {/* Events */}
-      <section className="section cream">
+      <section className="section cream fade-in-up">
         <div className="section-head">
           <div className="kicker">{events.kicker}</div>
           <h2>
@@ -70,35 +72,41 @@ export default function Home() {
           </h2>
           <div className="rule" />
         </div>
-        <div className="events-grid">
-          {events.items.map((item) => (
-            <article key={item.name} className="event">
-              <Image
-                src={item.image}
-                alt={item.imageAlt}
-                width={600}
-                height={462}
-                style={{ width: "100%", height: "auto", objectFit: "cover" }}
-              />
-              <div className="meta">
-                <h3>{item.name}</h3>
-                <p>{item.tagline}</p>
-                <Link className="text-link" href={item.href}>
-                  Explore <span>→</span>
-                </Link>
-              </div>
-            </article>
-          ))}
+        <div className="occasion-grid">
+          {events.items.map((item, index) => {
+            // Map each event to its corresponding occasion card class
+            const occasionClass =
+              index === 0 ? "wedding" : index === 1 ? "showers" : "private";
+            return (
+              <article key={item.name} className={`occasion-card ${occasionClass}`}>
+                <Image
+                  src={item.image}
+                  alt={item.imageAlt}
+                  className="portrait-image"
+                  width={600}
+                  height={462}
+                  style={{ width: "100%", height: "auto", objectFit: "cover" }}
+                />
+                <div className="meta">
+                  <h3>{item.name}</h3>
+                  <p>{item.tagline}</p>
+                  <LinkCta href={item.href}>
+                    Explore <span aria-hidden="true">→</span>
+                  </LinkCta>
+                </div>
+              </article>
+            );
+          })}
         </div>
         <div className="center" style={{ marginTop: "60px" }}>
-          <Link className="btn btn-outline" href="/experience">
+          <Button variant="primary" href="/experience">
             View all events <span aria-hidden="true">→</span>
-          </Link>
+          </Button>
         </div>
       </section>
 
       {/* Scent Archive */}
-      <section className="section archive">
+      <section className="section archive fade-in-up">
         <div className="section-head">
           <div className="kicker">{archive.kicker}</div>
           <h2>
@@ -120,14 +128,17 @@ export default function Home() {
               />
               <h3>{scent.name}</h3>
               <p>{scent.notes}</p>
-              <Link href="/experience">Discover →</Link>
+              <p className="scent-education">{scent.education}</p>
+              <LinkCta href="/experience">
+                Discover <span aria-hidden="true">→</span>
+              </LinkCta>
             </article>
           ))}
         </div>
       </section>
 
       {/* CTA */}
-      <section className="cta">
+      <section className="cta fade-in-up">
         <Image
           src={cta.image}
           alt={cta.imageAlt}
@@ -142,11 +153,12 @@ export default function Home() {
             <br />
             <em>{cta.titleLine2}</em>
           </h2>
-          <Link className="btn btn-outline-light" href={cta.ctaHref}>
+          <Button variant="outline-light" href={cta.ctaHref}>
             {cta.ctaLabel} <span aria-hidden="true">→</span>
-          </Link>
+          </Button>
         </div>
       </section>
+      <ScrollEffects />
     </main>
   );
 }

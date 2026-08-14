@@ -32,7 +32,7 @@ export default function ExperiencePage() {
       <section className="section section--white">
         <Container>
           {events.map((event, index) => (
-            <div key={event.slug} className="event-block">
+            <div key={event.slug} id={event.slug} className="event-block">
               <div className="grid-2" style={index % 2 === 1 ? { direction: "rtl" } : {}}>
                 <div
                   style={{
@@ -49,6 +49,39 @@ export default function ExperiencePage() {
                     priority={index === 0}
                     style={{ width: "100%", height: "auto", objectFit: "cover" }}
                   />
+                  {/* Featured past event */}
+                  {event.pastEvent && (
+                    <div
+                      style={{
+                        marginTop: "var(--space-4)",
+                        padding: "var(--space-3)",
+                        background: "var(--color-stone)",
+                        borderRadius: "var(--radius-md)",
+                      }}
+                    >
+                      <Image
+                        src={event.pastEvent.image}
+                        alt={event.pastEvent.imageAlt}
+                        width={500}
+                        height={300}
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                          objectFit: "cover",
+                          marginBottom: "var(--space-2)",
+                        }}
+                      />
+                      <p
+                        style={{
+                          fontSize: "var(--text-sm)",
+                          fontStyle: "italic",
+                          color: "var(--color-text-muted)",
+                        }}
+                      >
+                        {event.pastEvent.result}
+                      </p>
+                    </div>
+                  )}
                 </div>
                 <div className="event-block__content" style={{ direction: "ltr" }}>
                   <h2>{event.title}</h2>
@@ -76,7 +109,9 @@ export default function ExperiencePage() {
       <section className="cta-banner">
         <Container>
           <h2 className="cta-banner__title">{cta.title}</h2>
-          <Button href={cta.ctaHref}>{cta.ctaLabel}</Button>
+          <Button variant="outline-light" href={cta.ctaHref}>
+            {cta.ctaLabel}
+          </Button>
         </Container>
       </section>
     </main>

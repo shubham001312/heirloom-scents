@@ -1,25 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Bodoni_Moda, Italiana, DM_Sans } from "next/font/google";
+import { Instrument_Serif, Inter } from "next/font/google";
 import localFont from "next/font/local";
 import "../styles/globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
-const bodoni = Bodoni_Moda({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  style: ["normal", "italic"],
+  weight: "400",
   variable: "--font-serif",
   display: "swap",
 });
 
-const italiana = Italiana({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-display",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
@@ -122,7 +115,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${bodoni.variable} ${italiana.variable} ${dmSans.variable} ${amoresa.variable} ${monNicolette.variable}`}
+      className={`${instrumentSerif.variable} ${inter.variable} ${amoresa.variable} ${monNicolette.variable}`}
     >
       <body>
         <a href="#main-content" className="skip-link">
@@ -131,6 +124,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         {children}
         <Footer />
+        <div className="grain-overlay" aria-hidden="true"></div>
       </body>
     </html>
   );
