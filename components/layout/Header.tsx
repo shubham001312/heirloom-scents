@@ -19,9 +19,9 @@ export function Header() {
     <>
       <header className="header">
         <div className="header__inner">
-          {/* Wordmark only, side by side in golden ratio — the HS monogram
-              lives in the browser tab icon */}
-          <Logo variant="image" size="md" showMark={false} layout="horizontal" />
+          {/* HS monogram + wordmark, side by side in golden ratio. The mark
+              is a real vector (public/logo.svg) traced from the brand H */}
+          <Logo variant="image" size="md" showMark layout="horizontal" />
 
           <nav className="header__nav" aria-label="Main navigation">
             {navLinks.map((link) => (
