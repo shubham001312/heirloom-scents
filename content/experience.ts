@@ -12,7 +12,7 @@ export const experienceContent = {
       slug: "weddings",
       title: "Weddings",
       description:
-        'A cocktail-hour centerpiece guests talk about long after the toast. Blend a signature scent solo, or create a shared "his & hers" pairing with your partner.',
+        'A cocktail hour centerpiece guests talk about long after the toast. Blend a signature scent solo, or create a shared "his & hers" pairing with your partner.',
       highlights: [
         "Best for: 40–250 guests",
         "Typical placement: cocktail hour or reception",

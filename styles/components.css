@@ -21,12 +21,6 @@
   color: var(--color-gold);
 }
 
-.rule {
-  width: 44px;
-  height: 1px;
-  background: var(--color-gold);
-  margin: 24px 0;
-}
 
 /* Display face for feature headings (Italiana) */
 .display {
@@ -89,19 +83,7 @@
 }
 
 .section-head .kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
   margin-bottom: 18px;
-}
-
-.section-head .kicker::before,
-.section-head .kicker::after {
-  content: "";
-  width: 36px;
-  height: 1px;
-  background: var(--color-gold);
-  opacity: 0.7;
 }
 
 .section-head h2 {
@@ -381,8 +363,8 @@
   color: var(--color-cream);
 }
 
-.home-hero__copy .rule {
-  background: rgba(255, 255, 255, 0.5);
+.home-hero__copy .btn {
+  margin-top: 40px;
 }
 
 .home-hero__copy .text-link {
@@ -447,17 +429,13 @@
   text-align: center;
 }
 
-.ritual-step .step-icon {
-  color: var(--color-gold-deep);
-  margin-bottom: 14px;
-}
-
 .ritual-step .step-no {
   font-family: var(--font-serif);
-  font-size: 15px;
-  color: var(--color-gold-deep);
-  letter-spacing: 0.18em;
-  margin-bottom: 10px;
+  font-style: italic;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--color-gold);
+  margin-bottom: 12px;
 }
 
 .ritual-step h3 {
@@ -1048,37 +1026,9 @@
   line-height: var(--leading-relaxed);
 }
 
-/* Gold double-rule ornament under the page header: ——— ◆ ——— */
-.ornament-rule {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  padding-bottom: 64px;
-}
-
-.ornament-rule::before,
-.ornament-rule::after {
-  content: "";
-  width: 90px;
-  height: 1px;
-  background: var(--color-gold);
-  opacity: 0.85;
-}
-
-.ornament-rule span {
-  width: 9px;
-  height: 9px;
-  border: 1px solid var(--color-gold);
-  transform: rotate(45deg);
-}
-
-/* Pull quote — serif italic set between gold hairlines */
+/* Pull quote — serif italic with generous spacing (no enclosing rules) */
 .story-quote {
-  margin: var(--space-8) 0 0;
-  padding: var(--space-5) 0;
-  border-top: 1px solid var(--color-gold);
-  border-bottom: 1px solid var(--color-gold);
+  margin: var(--space-10) 0 0;
 }
 
 .story-quote p {
@@ -1118,12 +1068,10 @@
   outline-offset: -6px;
 }
 
-/* Stats band — maroon strip with gold hairlines + diamond marks */
+/* Stats band — clean maroon strip */
 .about-stats {
   background: var(--color-maroon);
   padding: 72px 7%;
-  border-top: 2px solid var(--color-gold);
-  border-bottom: 2px solid var(--color-gold);
 }
 
 .about-stats__row {
@@ -1150,16 +1098,6 @@
   margin: 0 0 12px;
 }
 
-.about-stat__value::after {
-  content: "";
-  display: block;
-  width: 7px;
-  height: 7px;
-  margin: 14px auto 0;
-  background: var(--color-gold);
-  transform: rotate(45deg);
-}
-
 .about-stat__label {
   font-size: 12px;
   letter-spacing: var(--tracking-micro-label);
@@ -1168,7 +1106,7 @@
   margin: 0;
 }
 
-/* Philosophy — editorial columns with gold top rules + diamond medallions */
+/* Philosophy — clean editorial columns, numerals carry the hierarchy */
 .philosophy-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1179,33 +1117,17 @@
 
 .philosophy-item {
   text-align: center;
-  padding: var(--space-8) var(--space-4) 0;
-  border-top: 1px solid var(--color-gold);
-}
-
-.philosophy-medallion {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 62px;
-  height: 62px;
-  border: 1px solid var(--color-gold);
-  transform: rotate(45deg);
-  color: var(--color-gold-deep);
-  margin-bottom: var(--space-6);
-}
-
-.philosophy-medallion svg {
-  transform: rotate(-45deg);
+  padding: 0 var(--space-4);
 }
 
 .philosophy-numeral {
   display: block;
   font-family: var(--font-serif);
-  font-size: 13px;
-  letter-spacing: 0.3em;
+  font-style: italic;
+  font-size: 20px;
+  letter-spacing: 0.2em;
   color: var(--color-gold);
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 
 .philosophy-title {
@@ -1222,16 +1144,11 @@
   margin: 0;
 }
 
-/* Signature quote — engraved panel with a double gold frame */
+/* Signature quote — clean centered serif italic, no enclosing rules */
 .signature-quote {
   max-width: 760px;
   margin: 0 auto;
   text-align: center;
-  padding: clamp(48px, 6vw, 80px) clamp(24px, 6vw, 72px);
-  background: var(--color-paper);
-  border: 1px solid var(--color-gold);
-  outline: 1px solid var(--color-gold);
-  outline-offset: 8px;
 }
 
 .signature-quote__mark {
@@ -1252,19 +1169,12 @@
   margin: 0;
 }
 
-.signature-quote__rule {
-  width: 64px;
-  height: 1px;
-  background: var(--color-gold);
-  margin: 30px auto 16px;
-}
-
 .signature-quote__signature {
+  margin-top: 28px;
   font-size: 12px;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--color-gold-deep);
-  margin: 0;
 }
 
 /* The ritual — interactive walkthrough (click a step, read the detail) */
@@ -1344,32 +1254,14 @@
   outline-offset: 2px;
 }
 
-/* Detail panel — paper card with a double hairline frame */
+/* Detail panel — clean paper panel with a single hairline */
 .ritual-walkthrough__panel {
   position: relative;
   padding: clamp(40px, 5vw, 64px);
   background: var(--color-paper);
-  border: 1px solid var(--color-gold);
-  outline: 1px solid var(--color-line);
-  outline-offset: -6px;
+  border: 1px solid var(--color-line);
   min-height: 300px;
   animation: scent-detail-in var(--duration-normal) var(--ease-luxury) both;
-}
-
-.ritual-walkthrough__medallion {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 58px;
-  height: 58px;
-  border: 1px solid var(--color-gold);
-  transform: rotate(45deg);
-  color: var(--color-gold-deep);
-  margin-bottom: var(--space-6);
-}
-
-.ritual-walkthrough__medallion svg {
-  transform: rotate(-45deg);
 }
 
 .ritual-walkthrough__num {

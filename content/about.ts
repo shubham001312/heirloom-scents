@@ -23,7 +23,7 @@ export const aboutContent = {
     mark: "The Heirloom ritual",
   },
   stats: [
-    { value: "100%", label: "oil-based fragrances" },
+    { value: "100%", label: "premium fragrance oils" },
     { value: "40–300+", label: "guests per event" },
     { value: "4", label: "signature blends" },
     { value: "DFW", label: "serving Dallas–Fort Worth" },
@@ -34,7 +34,7 @@ export const aboutContent = {
       {
         title: "Craftsmanship",
         description:
-          "Every blend is made with premium, oil-based fragrances — not synthetic shortcuts.",
+          "Every blend is made with premium fragrance oils, never synthetic shortcuts.",
       },
       {
         title: "Connection",
@@ -57,7 +57,7 @@ export const aboutContent = {
         number: "01",
         title: "Choose your notes",
         description:
-          "Guests browse a curated palette of premium, oil-based notes — florals, woods, citruses, and musks — guided by our fragrance hosts.",
+          "Guests browse a curated palette of premium fragrance notes — florals, woods, citruses, and musks — guided by our fragrance hosts.",
       },
       {
         number: "02",
@@ -69,7 +69,7 @@ export const aboutContent = {
         number: "03",
         title: "Bottle your fragrance",
         description:
-          "The blend is bottled, sealed, and hand-finished at the bar — ready to wear or gift that same evening.",
+          "The blend is bottled, sealed, and finished by hand at the bar — ready to wear or gift that same evening.",
       },
       {
         number: "04",

@@ -18,7 +18,7 @@ export const homeContent = {
     steps: [
       { number: "01", title: "Choose your notes", text: "Explore the scent palette." },
       { number: "02", title: "Create your blend", text: "Make it unmistakably yours." },
-      { number: "03", title: "Bottle your fragrance", text: "Hand-finished with care." },
+      { number: "03", title: "Bottle your fragrance", text: "Finished by hand, with care." },
       { number: "04", title: "Take the memory home", text: "A keepsake from the day." },
     ],
   },

@@ -38,7 +38,6 @@ export default function GalleryPage() {
               <br />
               {signatures.titleLine2}
             </h2>
-            <div className="rule" />
           </div>
           <div className="archive-grid">
             {signatures.scents.map((scent) => (
