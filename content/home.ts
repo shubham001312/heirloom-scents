@@ -16,10 +16,10 @@ export const homeContent = {
     description:
       "A private fragrance ritual for the moments you want to keep.",
     steps: [
-      { number: "01", title: "Choose your notes", text: "Explore the scent palette." },
-      { number: "02", title: "Create your blend", text: "Balanced to your taste, note by note." },
-      { number: "03", title: "Bottle your fragrance", text: "Finished by hand, with care." },
-      { number: "04", title: "Take the memory home", text: "A keepsake from the day." },
+      { number: "01", title: "Choose your notes" },
+      { number: "02", title: "Create your blend" },
+      { number: "03", title: "Bottle your fragrance" },
+      { number: "04", title: "Take the memory home" },
     ],
   },
   events: {
