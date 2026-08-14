@@ -51,13 +51,7 @@ export default function GalleryPage() {
           <div className="archive-grid">
             {signatures.scents.map((scent) => (
               <article key={scent.title} className="scent">
-                <Image
-                  src={scent.image}
-                  alt={scent.imageAlt}
-                  width={400}
-                  height={280}
-                  style={{ width: "100%", height: "auto", objectFit: "cover" }}
-                />
+                <Image src={scent.image} alt={scent.imageAlt} width={400} height={280} />
                 <h3>{scent.title}</h3>
                 <p>{scent.notes}</p>
                 <p className="scent-education">{scent.education}</p>

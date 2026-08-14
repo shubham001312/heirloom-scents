@@ -1348,9 +1348,10 @@
   }
 }
 
-/* Portrait crops for all product/event imagery */
+/* Occasion cards — wide editorial crop that matches the source banners
+   (1024x243) so images stay crisp instead of upscaling a portrait slice */
 .portrait-image {
-  aspect-ratio: 4 / 5; /* or 3 / 4 */
+  aspect-ratio: 2 / 1;
   object-fit: cover;
   width: 100%;
 }
@@ -1413,6 +1414,9 @@ html.js .fade-in-up.in-view {
    Product Image Hover Lift (Scent Archive)
    -------------------------------------------------------------------------- */
 .scent img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
   transition: transform 1.2s ease;
 }
 
