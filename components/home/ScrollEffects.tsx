@@ -3,9 +3,7 @@
 import { useEffect } from "react";
 
 /**
- * Runs the scroll-reveal observers for the home page:
- * - `.fade-in-up` sections fade in as they enter the viewport
- * - `.ritual-step` rows dim-to-full as they enter (desktop ritual scroll)
+ * Runs the fade-in-up scroll reveal for home page sections.
  *
  * Renders nothing; effects only. The `js` class is added here — after
  * hydration — so content is never hidden for no-JS visitors and React never
@@ -19,14 +17,14 @@ export function ScrollEffects() {
 
     const observers: IntersectionObserver[] = [];
 
-    const reveal = (el: Element, threshold: number) => {
+    const reveal = (el: Element) => {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) =>
             entry.target.classList.toggle("in-view", entry.isIntersecting)
           );
         },
-        { threshold }
+        { threshold: 0.2 }
       );
       observer.observe(el);
       observers.push(observer);
@@ -39,12 +37,7 @@ export function ScrollEffects() {
 
     document.querySelectorAll(".fade-in-up").forEach((el) => {
       if (inViewport(el)) el.classList.add("in-view");
-      else reveal(el, 0.2);
-    });
-
-    document.querySelectorAll(".ritual-step").forEach((el) => {
-      if (inViewport(el)) el.classList.add("in-view");
-      else reveal(el, 0.6);
+      else reveal(el);
     });
 
     return () => observers.forEach((observer) => observer.disconnect());

@@ -4,6 +4,24 @@ import { Button } from "@/components/ui/Button";
 import { LinkCta } from "@/components/ui/LinkCta";
 import { ScrollEffects } from "@/components/home/ScrollEffects";
 
+/** Minimalist line icons for the four ritual steps (gold, stroke-based). */
+const STEP_ICONS = [
+  // 01 Choose your notes — a single leaf
+  <path
+    key="notes"
+    d="M12 3c4.5 0 7.5 3 7.5 7.5S16.5 18 12 18 4.5 15 4.5 10.5 7.5 3 12 3zM12 18v3"
+  />,
+  // 02 Create your blend — a mixing flask
+  <path key="blend" d="M9 3h6M10 3v3h4V3M7.5 6h9M9 6l-2 6a5 5 0 0 0 10 0l-2-6" />,
+  // 03 Bottle your fragrance — a perfume bottle
+  <path key="bottle" d="M10 2h4v2h2v5a6 6 0 0 1-8 0V4h2V2zM10 9h4" />,
+  // 04 Take the memory home — a keepsake heart
+  <path
+    key="keepsake"
+    d="M12 20S5 15.5 5 11a3.5 3.5 0 0 1 7-1 3.5 3.5 0 0 1 7 1c0 4.5-7 9-7 9z"
+  />,
+];
+
 export default function Home() {
   const { hero, intro, events, archive, cta } = homeContent;
 
@@ -49,13 +67,29 @@ export default function Home() {
             </h2>
           </div>
           <p>{intro.description}</p>
+          <Button variant="outline" href="/inquire">
+            Book your experience <span aria-hidden="true">→</span>
+          </Button>
         </div>
         <div className="ritual-steps">
           {intro.steps.map((step, index) => (
             <div key={step.number} className={`ritual-step step-${index + 1}`}>
+              <svg
+                className="step-icon"
+                viewBox="0 0 24 24"
+                width="26"
+                height="26"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                {STEP_ICONS[index]}
+              </svg>
               <div className="step-no">{step.number}</div>
               <h3>{step.title}</h3>
-              <p>{step.text}</p>
             </div>
           ))}
         </div>

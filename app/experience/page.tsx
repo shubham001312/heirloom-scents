@@ -51,35 +51,14 @@ export default function ExperiencePage() {
                   />
                   {/* Featured past event */}
                   {event.pastEvent && (
-                    <div
-                      style={{
-                        marginTop: "var(--space-4)",
-                        padding: "var(--space-3)",
-                        background: "var(--color-stone)",
-                        borderRadius: "var(--radius-md)",
-                      }}
-                    >
+                    <div className="case-study">
                       <Image
                         src={event.pastEvent.image}
                         alt={event.pastEvent.imageAlt}
                         width={500}
                         height={300}
-                        style={{
-                          width: "100%",
-                          height: "auto",
-                          objectFit: "cover",
-                          marginBottom: "var(--space-2)",
-                        }}
                       />
-                      <p
-                        style={{
-                          fontSize: "var(--text-sm)",
-                          fontStyle: "italic",
-                          color: "var(--color-text-muted)",
-                        }}
-                      >
-                        {event.pastEvent.result}
-                      </p>
+                      <p>{event.pastEvent.result}</p>
                     </div>
                   )}
                 </div>

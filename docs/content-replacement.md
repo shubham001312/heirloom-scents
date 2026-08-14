@@ -62,7 +62,7 @@ Edit the relevant content file. All text is in one place — no need to search t
 
 Replace placeholder photography with approved photos:
 
-1. Add approved photos to `public/images/` (note: `fragrance-blending.jpg` is currently a placeholder copy of `archive.jpg`)
+1. Add approved photos to `public/images/`
 2. Update the image paths in the content files (`content/home.ts`, `content/experience.ts`, `content/about.ts`, `content/gallery.ts`)
 
 ```typescript
