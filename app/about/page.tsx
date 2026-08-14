@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Learn about Heirloom Scents — a luxury mobile perfume bar creating signature fragrance experiences in Dallas–Fort Worth.",
 };
 
-/** Minimal line icons for the three philosophy pillars (gold, stroke-based). */
+/** Minimal gold line icons for the three philosophy pillars. */
 const PHILOSOPHY_ICONS = [
   // Craftsmanship — a hand-cut crystal bottle
   <path
@@ -25,7 +25,7 @@ const PHILOSOPHY_ICONS = [
 ];
 
 export default function AboutPage() {
-  const { page, story, stats, philosophy, inAction, cta } = aboutContent;
+  const { page, story, stats, brandQuote, philosophy, inAction, cta } = aboutContent;
 
   return (
     <main id="main-content">
@@ -38,6 +38,9 @@ export default function AboutPage() {
             title={page.title}
             subtitle={page.subtitle}
           />
+          <div className="ornament-rule" aria-hidden="true">
+            <span />
+          </div>
         </Container>
       </section>
 
@@ -50,15 +53,15 @@ export default function AboutPage() {
               {story.paragraphs.map((paragraph, index) => (
                 <p
                   key={index}
-                  style={{
-                    color: "var(--color-text-muted)",
-                    lineHeight: "var(--leading-relaxed)",
-                    marginBottom: "var(--space-4)",
-                  }}
+                  className="about-paragraph"
+                  style={{ marginBottom: "var(--space-5)" }}
                 >
                   {paragraph}
                 </p>
               ))}
+              <blockquote className="story-quote">
+                <p>{story.quote}</p>
+              </blockquote>
             </div>
             <div className="about-collage">
               <Image
@@ -83,7 +86,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Stats band */}
+      {/* Stats band — royal maroon strip */}
       <section className="about-stats fade-in-up">
         <Container>
           <dl className="about-stats__row">
@@ -101,45 +104,67 @@ export default function AboutPage() {
       <section className="section section--light fade-in-up">
         <Container>
           <SectionHeading title={philosophy.title} />
-          <div className="grid-3">
+          <div className="philosophy-grid">
             {philosophy.items.map((item, index) => (
-              <div key={item.title} className="card card--icon">
-                <svg
-                  className="philosophy-icon"
-                  viewBox="0 0 24 24"
-                  width="30"
-                  height="30"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  {PHILOSOPHY_ICONS[index]}
-                </svg>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
+              <div key={item.title} className="philosophy-item">
+                <span className="philosophy-medallion" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 24 24"
+                    width="26"
+                    height="26"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    {PHILOSOPHY_ICONS[index]}
+                  </svg>
+                </span>
+                <span className="philosophy-numeral" aria-hidden="true">
+                  {["I", "II", "III"][index]}
+                </span>
+                <h3 className="philosophy-title">{item.title}</h3>
+                <p className="philosophy-text">{item.description}</p>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      {/* In action — image strip */}
+      {/* Signature quote — engraved panel */}
+      <section className="section section--stone fade-in-up">
+        <Container>
+          <figure className="signature-quote">
+            <span className="signature-quote__mark" aria-hidden="true">
+              &ldquo;
+            </span>
+            <blockquote>
+              <p>{brandQuote.text}</p>
+            </blockquote>
+            <div className="signature-quote__rule" aria-hidden="true" />
+            <figcaption className="signature-quote__signature">
+              {brandQuote.mark}
+            </figcaption>
+          </figure>
+        </Container>
+      </section>
+
+      {/* In action — gold-framed strip */}
       <section className="section section--white fade-in-up">
         <Container>
           <SectionHeading eyebrow={inAction.eyebrow} title={inAction.title} />
           <div className="about-strip">
             {inAction.images.map((img) => (
-              <Image
-                key={img.image}
-                src={img.image}
-                alt={img.alt}
-                width={600}
-                height={400}
-                sizes="(max-width: 768px) 90vw, 30vw"
-              />
+              <figure key={img.image} className="about-strip__item">
+                <Image
+                  src={img.image}
+                  alt={img.alt}
+                  width={600}
+                  height={400}
+                  sizes="(max-width: 768px) 90vw, 30vw"
+                />
+              </figure>
             ))}
           </div>
         </Container>

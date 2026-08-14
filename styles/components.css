@@ -1013,15 +1013,66 @@
 }
 
 /* --------------------------------------------------------------------------
-   About page
+   About page — royal & luxurious
    -------------------------------------------------------------------------- */
+
+.section--stone {
+  background: var(--color-stone);
+}
 
 .about-story {
   align-items: center;
 }
 
-/* Two-image editorial collage — main portrait with an offset accent image
-   overlapping its lower-right corner */
+.about-paragraph {
+  color: var(--color-text-muted);
+  line-height: var(--leading-relaxed);
+}
+
+/* Gold double-rule ornament under the page header: ——— ◆ ——— */
+.ornament-rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding-bottom: 64px;
+}
+
+.ornament-rule::before,
+.ornament-rule::after {
+  content: "";
+  width: 90px;
+  height: 1px;
+  background: var(--color-gold);
+  opacity: 0.85;
+}
+
+.ornament-rule span {
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--color-gold);
+  transform: rotate(45deg);
+}
+
+/* Pull quote — serif italic set between gold hairlines */
+.story-quote {
+  margin: var(--space-8) 0 0;
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--color-gold);
+  border-bottom: 1px solid var(--color-gold);
+}
+
+.story-quote p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.5;
+  color: var(--color-maroon);
+  margin: 0;
+}
+
+/* Two-image collage — gold-framed main portrait with a matted accent
+   image overlapping its lower-right corner */
 .about-collage {
   position: relative;
   padding-bottom: 14%;
@@ -1032,6 +1083,7 @@
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  border: 1px solid var(--color-gold);
 }
 
 .about-collage__accent {
@@ -1042,27 +1094,29 @@
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  border: 8px solid var(--color-paper);
+  border: 6px solid var(--color-paper);
+  outline: 1px solid var(--color-gold);
+  outline-offset: -6px;
 }
 
-/* Stats band — royal maroon strip with hairline-divided figures */
+/* Stats band — maroon strip with gold hairlines + diamond marks */
 .about-stats {
   background: var(--color-maroon);
-  padding: 64px 7%;
+  padding: 72px 7%;
+  border-top: 2px solid var(--color-gold);
+  border-bottom: 2px solid var(--color-gold);
 }
 
 .about-stats__row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   margin: 0;
-  border-top: 1px solid rgba(246, 238, 230, 0.28);
-  border-bottom: 1px solid rgba(246, 238, 230, 0.28);
 }
 
 .about-stat {
   text-align: center;
-  padding: 40px 24px;
-  border-right: 1px solid rgba(246, 238, 230, 0.28);
+  padding: 44px 24px;
+  border-right: 1px solid rgba(168, 135, 95, 0.45);
 }
 
 .about-stat:last-child {
@@ -1071,46 +1125,155 @@
 
 .about-stat__value {
   font-family: var(--font-serif);
-  font-size: clamp(40px, 4vw, 58px);
+  font-size: clamp(42px, 4.2vw, 60px);
   line-height: 1;
   color: var(--color-cream);
-  margin: 0 0 10px;
+  margin: 0 0 12px;
+}
+
+.about-stat__value::after {
+  content: "";
+  display: block;
+  width: 7px;
+  height: 7px;
+  margin: 14px auto 0;
+  background: var(--color-gold);
+  transform: rotate(45deg);
 }
 
 .about-stat__label {
   font-size: 12px;
   letter-spacing: var(--tracking-micro-label);
   text-transform: uppercase;
-  color: rgba(246, 238, 230, 0.78);
+  color: rgba(246, 238, 230, 0.8);
   margin: 0;
 }
 
-/* Philosophy cards with line icons */
-.card--icon {
-  text-align: center;
-  padding-top: var(--space-8);
-}
-
-.philosophy-icon {
-  color: var(--color-gold-deep);
-  margin-bottom: var(--space-4);
-}
-
-/* In-action image strip — three editorial crops with hairlines */
-.about-strip {
+/* Philosophy — editorial columns with gold top rules + diamond medallions */
+.philosophy-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-5);
+  gap: var(--space-12);
   max-width: 1100px;
   margin: 0 auto;
 }
 
-.about-strip img {
+.philosophy-item {
+  text-align: center;
+  padding: var(--space-8) var(--space-4) 0;
+  border-top: 1px solid var(--color-gold);
+}
+
+.philosophy-medallion {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  border: 1px solid var(--color-gold);
+  transform: rotate(45deg);
+  color: var(--color-gold-deep);
+  margin-bottom: var(--space-6);
+}
+
+.philosophy-medallion svg {
+  transform: rotate(-45deg);
+}
+
+.philosophy-numeral {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  color: var(--color-gold);
+  margin-bottom: var(--space-3);
+}
+
+.philosophy-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 26px;
+  margin: 0 0 var(--space-3);
+}
+
+.philosophy-text {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+  line-height: var(--leading-relaxed);
+  margin: 0;
+}
+
+/* Signature quote — engraved panel with a double gold frame */
+.signature-quote {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  padding: clamp(48px, 6vw, 80px) clamp(24px, 6vw, 72px);
+  background: var(--color-paper);
+  border: 1px solid var(--color-gold);
+  outline: 1px solid var(--color-gold);
+  outline-offset: 8px;
+}
+
+.signature-quote__mark {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 72px;
+  line-height: 0.5;
+  color: var(--color-gold);
+  margin-bottom: 22px;
+}
+
+.signature-quote blockquote p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(26px, 3.2vw, 40px);
+  line-height: 1.35;
+  color: var(--color-maroon);
+  margin: 0;
+}
+
+.signature-quote__rule {
+  width: 64px;
+  height: 1px;
+  background: var(--color-gold);
+  margin: 30px auto 16px;
+}
+
+.signature-quote__signature {
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-gold-deep);
+  margin: 0;
+}
+
+/* In-action strip — gold-matted editorial crops */
+.about-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-strip__item {
+  margin: 0;
+  padding: 6px;
+  border: 1px solid var(--color-gold);
+  overflow: hidden;
+}
+
+.about-strip__item img {
   width: 100%;
   height: auto;
   aspect-ratio: 3 / 2;
   object-fit: cover;
-  border: 1px solid var(--color-line);
+  transition: transform var(--duration-zoom) var(--ease-luxury);
+}
+
+.about-strip__item:hover img {
+  transform: scale(1.04);
 }
 
 @media (max-width: 900px) {
@@ -1123,12 +1286,18 @@
   }
 
   .about-stat:nth-child(-n + 2) {
-    border-bottom: 1px solid rgba(246, 238, 230, 0.28);
+    border-bottom: 1px solid rgba(168, 135, 95, 0.45);
   }
 
   .about-strip {
     grid-template-columns: 1fr;
     max-width: 560px;
+  }
+
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    max-width: 480px;
   }
 }
 
@@ -1830,5 +1999,9 @@ img.img-fade {
   .occasion-card,
   .scent {
     box-shadow: none !important;
+  }
+
+  .about-strip__item img {
+    transform: none !important;
   }
 }

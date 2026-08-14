@@ -11,10 +11,16 @@ export const aboutContent = {
     imageAlt: "Heirloom Scents luxury event setup",
     image2: "/images/occ-wedding.jpg",
     image2Alt: "Guests blending custom fragrances at a wedding",
+    quote:
+      "Every guest becomes the perfumer — guided, never rushed, to a scent that is unmistakably theirs.",
     paragraphs: [
       "Heirloom Scents is a luxury mobile perfume bar based in the Dallas–Fort Worth area. We bring an interactive, guided fragrance experience directly to your event — weddings, bridal showers, corporate gatherings, and private celebrations.",
       "What makes us different isn't just the perfume. It's the experience. Every guest becomes the perfumer, guided by our fragrance hosts through a curated selection of notes to create something entirely their own.",
     ],
+  },
+  brandQuote: {
+    text: "A fragrance made by your own hand becomes an heirloom.",
+    mark: "The Heirloom ritual",
   },
   stats: [
     { value: "100%", label: "oil-based fragrances" },
