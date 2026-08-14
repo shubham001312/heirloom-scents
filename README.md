@@ -103,7 +103,7 @@ See `.env.example` for all available variables.
 NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY=   # Web3Forms access key (public by design)
 
 # Optional (default shown)
-NEXT_PUBLIC_SITE_URL=https://heirloomscents.com
+NEXT_PUBLIC_SITE_URL=https://heirloom-scents.vercel.app
 ```
 
 ## Accessibility

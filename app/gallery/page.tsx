@@ -9,6 +9,16 @@ export const metadata: Metadata = {
   title: "Gallery",
   description:
     "See the Heirloom Scents perfume bar experience in action — weddings, bridal showers, and private events in Dallas–Fort Worth.",
+  openGraph: {
+    title: "Gallery | Heirloom Scents",
+    description:
+      "Browse the Heirloom Scents gallery — weddings, bridal showers, private events, and the four signature blends in Dallas–Fort Worth.",
+  },
+  twitter: {
+    title: "Gallery | Heirloom Scents",
+    description:
+      "Browse the Heirloom Scents gallery — weddings, bridal showers, private events, and the four signature blends in Dallas–Fort Worth.",
+  },
 };
 
 export default function GalleryPage() {

@@ -10,6 +10,16 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Learn about Heirloom Scents — a luxury mobile perfume bar creating signature fragrance experiences in Dallas–Fort Worth.",
+  openGraph: {
+    title: "About | Heirloom Scents",
+    description:
+      "The story behind Heirloom Scents — a luxury mobile perfume bar creating signature fragrance experiences in Dallas–Fort Worth.",
+  },
+  twitter: {
+    title: "About | Heirloom Scents",
+    description:
+      "The story behind Heirloom Scents — a luxury mobile perfume bar creating signature fragrance experiences in Dallas–Fort Worth.",
+  },
 };
 
 export default function AboutPage() {

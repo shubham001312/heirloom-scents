@@ -9,6 +9,16 @@ export const metadata: Metadata = {
   title: "Experience & Events",
   description:
     "Discover the Heirloom Scents perfume bar experience — weddings, bridal showers, private events in Dallas–Fort Worth.",
+  openGraph: {
+    title: "Experience & Events | Heirloom Scents",
+    description:
+      "The Heirloom Scents perfume bar experience — weddings, bridal showers, and private events in Dallas–Fort Worth.",
+  },
+  twitter: {
+    title: "Experience & Events | Heirloom Scents",
+    description:
+      "The Heirloom Scents perfume bar experience — weddings, bridal showers, and private events in Dallas–Fort Worth.",
+  },
 };
 
 export default function ExperiencePage() {

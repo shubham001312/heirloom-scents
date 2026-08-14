@@ -5,6 +5,16 @@ export const metadata: Metadata = {
   title: "Book / Inquire",
   description:
     "Inquire about booking Heirloom Scents for your wedding, bridal shower, or private event in the Dallas–Fort Worth area.",
+  openGraph: {
+    title: "Book / Inquire | Heirloom Scents",
+    description:
+      "Tell us about your celebration and book the Heirloom Scents perfume bar for a wedding, bridal shower, or private event.",
+  },
+  twitter: {
+    title: "Book / Inquire | Heirloom Scents",
+    description:
+      "Tell us about your celebration and book the Heirloom Scents perfume bar for a wedding, bridal shower, or private event.",
+  },
 };
 
 export default function InquirePage() {

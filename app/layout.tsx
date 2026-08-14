@@ -83,7 +83,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://heirloomscents.com",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://heirloom-scents.vercel.app",
     siteName: "Heirloom Scents",
     title: "Heirloom Scents — Signature Scent Experiences",
     description:
