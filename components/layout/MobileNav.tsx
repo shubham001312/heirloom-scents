@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -14,6 +15,7 @@ const MENU_BUTTON_ID = "nav-menu-button";
 export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
   const previouslyFocused = useRef<Element | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!isOpen) return;
@@ -52,17 +54,21 @@ export function MobileNav({ isOpen, onClose, links }: MobileNavProps) {
       aria-label="Navigation menu"
     >
       <nav className="mobile-nav__links" aria-label="Mobile navigation">
-        {links.map((link, index) => (
-          <Link
-            key={link.href}
-            ref={index === 0 ? firstLinkRef : undefined}
-            href={link.href}
-            className="mobile-nav__link"
-            onClick={onClose}
-          >
-            {link.label}
-          </Link>
-        ))}
+        {links.map((link, index) => {
+          const isActive = pathname === link.href;
+          return (
+            <Link
+              key={link.href}
+              ref={index === 0 ? firstLinkRef : undefined}
+              href={link.href}
+              className={`mobile-nav__link${isActive ? " mobile-nav__link--active" : ""}`}
+              aria-current={isActive ? "page" : undefined}
+              onClick={onClose}
+            >
+              {link.label}
+            </Link>
+          );
+        })}
       </nav>
     </div>
   );

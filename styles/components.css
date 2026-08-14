@@ -240,7 +240,11 @@
   padding: var(--space-2) var(--space-6) var(--space-4);
 }
 
+/* Editorial underline — matches the desktop nav + gallery filters: a gold
+   hairline that sweeps in from the left on hover/focus, and stays drawn on
+   the current page (the "selected" state) */
 .mobile-nav__link {
+  position: relative;
   display: flex;
   align-items: center;
   min-height: 52px;
@@ -248,15 +252,30 @@
   font-size: var(--text-xl);
   color: var(--color-cream);
   text-decoration: none;
-  border-bottom: 1px solid rgb(247 242 234 / 0.14);
   transition: color var(--duration-fast) var(--ease-default);
 }
 
-.mobile-nav__link:last-child {
-  border-bottom: 0;
+.mobile-nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  height: 1px;
+  background: var(--color-gold);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform var(--duration-normal) var(--ease-luxury);
 }
 
-.mobile-nav__link:hover {
+.mobile-nav__link:hover::after,
+.mobile-nav__link:focus-visible::after,
+.mobile-nav__link--active::after {
+  transform: scaleX(1);
+}
+
+.mobile-nav__link:hover,
+.mobile-nav__link--active {
   color: var(--color-gold);
 }
 
