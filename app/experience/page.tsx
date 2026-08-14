@@ -17,7 +17,7 @@ export default function ExperiencePage() {
   return (
     <main id="main-content">
       {/* Page Header */}
-      <section className="section section--light" style={{ paddingBottom: 0 }}>
+      <section className="section section--light fade-in-up" style={{ paddingBottom: 0 }}>
         <Container>
           <SectionHeading
             level="h1"
@@ -29,7 +29,7 @@ export default function ExperiencePage() {
       </section>
 
       {/* Event Blocks */}
-      <section className="section section--white">
+      <section className="section section--white fade-in-up">
         <Container>
           {events.map((event, index) => (
             <div key={event.slug} id={event.slug} className="event-block">

@@ -50,15 +50,6 @@ export const homeContent = {
       },
     ],
   },
-  cta: {
-    kicker: "Ready when you are",
-    titleLine1: "Let’s create a scent",
-    titleLine2: "they’ll never forget.",
-    ctaLabel: "Start your inquiry",
-    ctaHref: "/inquire",
-    image: "/images/cta.jpg",
-    imageAlt: "Heirloom scent keepsake",
-  },
 } as const;
 
 export type EventExperience = {

@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "../styles/globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SiteEffects } from "@/components/ui/SiteEffects";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -124,6 +125,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         {children}
         <Footer />
+        <SiteEffects />
         <div className="grain-overlay" aria-hidden="true"></div>
       </body>
     </html>

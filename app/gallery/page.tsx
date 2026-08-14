@@ -18,7 +18,7 @@ export default function GalleryPage() {
   return (
     <main id="main-content">
       {/* Page Header */}
-      <section className="section section--light" style={{ paddingBottom: 0 }}>
+      <section className="section section--light fade-in-up" style={{ paddingBottom: 0 }}>
         <Container>
           <SectionHeading
             level="h1"
@@ -30,14 +30,14 @@ export default function GalleryPage() {
       </section>
 
       {/* Gallery Grid + Filters */}
-      <section className="section section--white">
+      <section className="section section--white fade-in-up">
         <Container>
           <GalleryFilter categories={categories} items={items} />
         </Container>
       </section>
 
       {/* Scent Archive */}
-      <section className="section section--light">
+      <section className="section section--light fade-in-up">
         <Container>
           <div className="section-head">
             <div className="kicker">{signatures.kicker}</div>

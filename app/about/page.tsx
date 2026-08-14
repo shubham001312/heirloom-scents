@@ -17,7 +17,7 @@ export default function AboutPage() {
   return (
     <main id="main-content">
       {/* Page Header */}
-      <section className="section section--light" style={{ paddingBottom: 0 }}>
+      <section className="section section--light fade-in-up" style={{ paddingBottom: 0 }}>
         <Container>
           <SectionHeading
             level="h1"
@@ -29,7 +29,7 @@ export default function AboutPage() {
       </section>
 
       {/* Brand Story */}
-      <section className="section section--white">
+      <section className="section section--white fade-in-up">
         <Container>
           <div className="grid-2">
             <div>
@@ -62,7 +62,7 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy */}
-      <section className="section section--light">
+      <section className="section section--light fade-in-up">
         <Container>
           <SectionHeading title={philosophy.title} />
           <div className="grid-3">
@@ -77,7 +77,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Banner */}
-      <section className="cta-banner">
+      <section className="cta-banner fade-in-up">
         <Container>
           <h2 className="cta-banner__title">{cta.title}</h2>
           <Button variant="outline-light" href={cta.ctaHref}>

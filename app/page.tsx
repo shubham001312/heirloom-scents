@@ -2,7 +2,6 @@ import Image from "next/image";
 import { homeContent } from "@/content/home";
 import { Button } from "@/components/ui/Button";
 import { LinkCta } from "@/components/ui/LinkCta";
-import { ScrollEffects } from "@/components/home/ScrollEffects";
 
 /** Minimalist line icons for the four ritual steps (gold, stroke-based). */
 const STEP_ICONS = [
@@ -23,7 +22,7 @@ const STEP_ICONS = [
 ];
 
 export default function Home() {
-  const { hero, intro, events, cta } = homeContent;
+  const { hero, intro, events } = homeContent;
 
   return (
     <main id="main-content">
@@ -133,29 +132,6 @@ export default function Home() {
           })}
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="cta fade-in-up">
-        <Image
-          src={cta.image}
-          alt={cta.imageAlt}
-          fill
-          sizes="(max-width: 900px) 100vw, 50vw"
-          style={{ objectFit: "cover" }}
-        />
-        <div className="cta-copy">
-          <div className="kicker">{cta.kicker}</div>
-          <h2>
-            {cta.titleLine1}
-            <br />
-            <em>{cta.titleLine2}</em>
-          </h2>
-          <Button variant="outline-light" href={cta.ctaHref}>
-            {cta.ctaLabel} <span aria-hidden="true">→</span>
-          </Button>
-        </div>
-      </section>
-      <ScrollEffects />
     </main>
   );
 }

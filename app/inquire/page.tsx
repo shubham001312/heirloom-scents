@@ -11,7 +11,7 @@ export default function InquirePage() {
   return (
     <main id="main-content" className="inquiry-wrap">
       {/* Maroon intro panel */}
-      <section className="inquiry-intro">
+      <section className="inquiry-intro fade-in-up">
         <div className="kicker">Begin the conversation</div>
         <h1>
           Let&rsquo;s create a scent
@@ -39,7 +39,7 @@ export default function InquirePage() {
       </section>
 
       {/* Form panel */}
-      <section className="form-panel">
+      <section className="form-panel fade-in-up">
         <div className="kicker">Your inquiry</div>
         <h2>Tell us about your event.</h2>
         <p>
