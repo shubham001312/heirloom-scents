@@ -14,7 +14,8 @@ export function Footer() {
     <footer className="footer">
       <div className="footer-grid">
         <div>
-          <Logo variant="image" size="sm" className="footer__brand" />
+          {/* Same lockup as the header: Heirloom + SCENTS side by side in golden ratio */}
+          <Logo variant="image" size="md" layout="horizontal" className="footer__brand" />
           <p className="footer__blurb">
             Heirloom Scents
             <br />
