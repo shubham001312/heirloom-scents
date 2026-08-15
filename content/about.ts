@@ -24,7 +24,7 @@ export const aboutContent = {
   },
   stats: [
     { value: "100%", label: "oil-based fragrances" },
-    { value: "40–300+", label: "guests per event" },
+    { value: "300+", label: "guests per event" },
     { value: "4", label: "signature blends" },
     { value: "DFW", label: "serving Dallas–Fort Worth" },
   ],
