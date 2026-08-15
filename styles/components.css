@@ -1050,22 +1050,25 @@
    image overlapping its lower-right corner */
 .about-collage {
   position: relative;
-  padding-bottom: 14%;
+  /* Square composite: the main fills a 1:1 box and the accent overlaps its
+     bottom-right corner, so the two images together read as one square. */
+  width: min(100%, 460px);
+  aspect-ratio: 1 / 1;
 }
 
 .about-collage__main {
   width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 5;
+  height: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border: 1px solid var(--color-gold);
 }
 
 .about-collage__accent {
   position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 52%;
+  right: 5%;
+  bottom: 6%;
+  width: 46%;
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;

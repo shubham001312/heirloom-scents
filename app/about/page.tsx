@@ -53,18 +53,18 @@ export default function AboutPage() {
                 src={story.image}
                 alt={story.imageAlt}
                 className="about-collage__main"
-                width={500}
-                height={625}
+                width={460}
+                height={460}
                 priority
-                sizes="(max-width: 768px) 90vw, 45vw"
+                sizes="(max-width: 768px) 90vw, 460px"
               />
               <Image
                 src={story.image2}
                 alt={story.image2Alt}
                 className="about-collage__accent"
-                width={400}
-                height={500}
-                sizes="(max-width: 768px) 48vw, 24vw"
+                width={220}
+                height={275}
+                sizes="(max-width: 768px) 46vw, 212px"
               />
             </div>
           </div>
