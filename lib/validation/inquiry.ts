@@ -42,7 +42,11 @@ export const inquirySchema = z.object({
     .or(z.literal(""))
     .refine((val) => {
       if (!val || val === "") return true;
-      const selected = new Date(val);
+      // Parse YYYY-MM-DD as a LOCAL date so "today" isn't rejected by the
+      // UTC/local midnight mismatch (new Date("2026-08-16") is UTC midnight,
+      // which reads as *yesterday* for timezones west of UTC).
+      const [year, month, day] = val.split("-").map(Number);
+      const selected = new Date(year, month - 1, day);
       const today = new Date();
       today.setHours(0, 0, 0, 0);
       return selected >= today;
@@ -53,8 +57,10 @@ export const inquirySchema = z.object({
     .or(z.literal(""))
     .refine((val) => {
       if (!val || val === "") return true;
-      const num = parseInt(val, 10);
-      return !isNaN(num) && num > 0 && num <= 10000;
+      // Whole digits only — parseInt would accept partial garbage like "12abc"
+      if (!/^\d{1,5}$/.test(val)) return false;
+      const num = Number(val);
+      return num > 0 && num <= 10000;
     }, "Guest count must be between 1 and 10,000"),
   message: z
     .string()

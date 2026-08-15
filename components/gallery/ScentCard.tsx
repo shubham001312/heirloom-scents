@@ -31,7 +31,7 @@ export function ScentCard({ scent }: { scent: Scent }) {
       <p>{scent.notes}</p>
 
       {expanded && (
-        <div className="scent__detail">
+        <div className="scent__detail" id={`${scent.slug}-detail`}>
           <p className="scent-education">{scent.education}</p>
           <a className="btn btn-outline scent__cta" href={`/inquire?scent=${scent.slug}`}>
             Inquire about {scent.title}

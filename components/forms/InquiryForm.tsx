@@ -67,11 +67,12 @@ export function InquiryForm() {
     }
   };
 
-  const validateForm = (): boolean => {
+  /** Parse once: returns the per-field error map (null when valid) and updates state. */
+  const validateForm = (): FormErrors | null => {
     const result = inquirySchema.safeParse(formData);
     if (result.success) {
       setErrors({});
-      return true;
+      return null;
     }
     const fieldErrors: FormErrors = {};
     result.error.issues.forEach((issue) => {
@@ -81,7 +82,7 @@ export function InquiryForm() {
       }
     });
     setErrors(fieldErrors);
-    return false;
+    return fieldErrors;
   };
 
   /** Move keyboard focus to the first field with an error */
@@ -102,17 +103,9 @@ export function InquiryForm() {
       return;
     }
 
-    if (!validateForm()) {
-      // Validate again to get the field map for focus management
-      const result = inquirySchema.safeParse(formData);
-      if (!result.success) {
-        const fieldErrors: FormErrors = {};
-        result.error.issues.forEach((issue) => {
-          const field = issue.path[0] as keyof InquiryFormData;
-          if (!fieldErrors[field]) fieldErrors[field] = issue.message;
-        });
-        focusFirstError(fieldErrors);
-      }
+    const fieldErrors = validateForm();
+    if (fieldErrors) {
+      focusFirstError(fieldErrors);
       return;
     }
 

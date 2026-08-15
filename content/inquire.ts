@@ -1,10 +1,4 @@
 export const inquireContent = {
-  page: {
-    eyebrow: "Book / Inquire",
-    title: "Tell us about your event.",
-    subtitle:
-      "Fill out the form below and we'll get back to you within 24 hours to discuss your event.",
-  },
   eventTypes: [
     { value: "", label: "Select an event type" },
     { value: "wedding", label: "Wedding" },

@@ -19,15 +19,16 @@ const inter = Inter({
   display: "swap",
 });
 
-// Brand wordmark fonts (commercial — see fonts/README note in tokens.css)
+// Brand wordmark fonts (commercial — see fonts/README note in tokens.css).
+// WOFF2 versions are ~3x smaller than the source TTFs and render identically.
 const amoresa = localFont({
-  src: "../fonts/Amoresa-Regular.ttf",
+  src: "../fonts/Amoresa-Regular.woff2",
   variable: "--font-script",
   display: "swap",
 });
 
 const monNicolette = localFont({
-  src: "../fonts/MonNicoletteGrande-Regular.ttf",
+  src: "../fonts/MonNicoletteGrande-Regular.woff2",
   variable: "--font-monogram",
   display: "swap",
 });
