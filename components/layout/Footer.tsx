@@ -14,11 +14,15 @@ export function Footer() {
     <footer className="footer">
       <div className="footer-grid">
         <div>
-          {/* Same lockup as the header: Heirloom + SCENTS side by side in golden ratio */}
-          <Logo variant="image" size="md" layout="horizontal" className="footer__brand" />
+          {/* Written brand name only (no monogram mark) — the wordmark IS the brand */}
+          <Logo
+            variant="image"
+            size="lg"
+            showMark={false}
+            layout="horizontal"
+            className="footer__brand"
+          />
           <p className="footer__blurb">
-            Heirloom Scents
-            <br />
             Luxury perfume experiences
             <br />
             Made to be remembered.
