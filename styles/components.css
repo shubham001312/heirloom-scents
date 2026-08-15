@@ -1820,6 +1820,10 @@ img {
 
 img.img-done {
   animation: none;
+  /* The stone box is the loading placeholder — once the pixels are in it
+     must go, or transparent images (like the SVG logo) keep a cream box
+     painted behind them. Opaque photos are unaffected. */
+  background: none;
 }
 
 img.img-fade {
