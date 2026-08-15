@@ -3,6 +3,7 @@ import { homeContent } from "@/content/home";
 import { Button } from "@/components/ui/Button";
 import { LinkCta } from "@/components/ui/LinkCta";
 import { Icon, RITUAL_STEP_ICONS } from "@/components/ui/Icon";
+import { HeroImage } from "@/components/home/HeroImage";
 
 export default function Home() {
   const { hero, intro, events } = homeContent;
@@ -11,13 +12,11 @@ export default function Home() {
     <main id="main-content">
       {/* Hero */}
       <section className="home-hero">
-        <Image
-          src={hero.image}
-          alt={hero.imageAlt}
-          fill
-          priority
-          sizes="100vw"
-          style={{ objectFit: "cover" }}
+        <HeroImage
+          slides={[
+            { src: hero.image, alt: hero.imageAlt },
+            { src: hero.image2, alt: hero.image2Alt },
+          ]}
         />
         <div className="home-hero__overlay" />
         <div className="home-hero__copy">

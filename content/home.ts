@@ -8,6 +8,8 @@ export const homeContent = {
     ctaHref: "/experience",
     image: "/images/hero-photo.jpg",
     imageAlt: "Heirloom perfume bar experience",
+    image2: "/images/hero-clean.jpg",
+    image2Alt: "Heirloom perfume bar setup",
   },
   intro: {
     kicker: "The Heirloom Scent Experience",

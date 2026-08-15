@@ -284,6 +284,23 @@
   }
 }
 
+/* Hero crossfade — stacked slides fade into each other on a loop */
+.hero-image-stack {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease-luxury);
+}
+
+.hero-image--active {
+  opacity: 1;
+}
+
 .home-hero__overlay {
   position: absolute;
   inset: 0;
