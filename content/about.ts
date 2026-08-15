@@ -7,10 +7,10 @@ export const aboutContent = {
   },
   story: {
     title: "Our Story",
-    image: "/images/hero.jpg",
-    imageAlt: "Heirloom Scents luxury event setup",
-    image2: "/images/occ-wedding.jpg",
-    image2Alt: "Guests blending custom fragrances at a wedding",
+    image: "/images/about-main.jpg",
+    imageAlt: "Luxury perfume bottle still life in white and gold",
+    image2: "/images/about-accent.jpg",
+    image2Alt: "Hands labeling a custom amber fragrance bottle",
     quote:
       "Every guest becomes the perfumer, guided yet never rushed, to a scent that is unmistakably theirs.",
     paragraphs: [
