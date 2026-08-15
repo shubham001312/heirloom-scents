@@ -3,7 +3,7 @@ export const galleryContent = {
     eyebrow: "Gallery",
     title: "Moments worth remembering.",
     subtitle:
-      "A glimpse into the Heirloom Scents experience — from setup to the final blend.",
+      "A glimpse into the Heirloom Scents experience, from setup to the final blend.",
   },
   categories: [
     { slug: "all", label: "All" },
@@ -69,7 +69,7 @@ export const galleryContent = {
         image: "/images/scent-memoire.jpg",
         imageAlt: "Memoire fragrance",
         education:
-          "Soft white musk and Grasse jasmine — quiet elegance for moonlit evenings. A delicate, skin-close scent that lingers gently.",
+          "Soft white musk and Grasse jasmine evoke quiet elegance for moonlit evenings. A delicate, skin-close scent that lingers gently.",
       },
       {
         slug: "velvet-hour",
@@ -78,7 +78,7 @@ export const galleryContent = {
         image: "/images/scent-velvet.jpg",
         imageAlt: "Velvet Hour fragrance",
         education:
-          "Ethiopian amber and Madagascar vanilla — comforting warmth for golden hours. A soft, enveloping blend for cool evenings.",
+          "Ethiopian amber and Madagascar vanilla bring comforting warmth for golden hours. A soft, enveloping blend for cool evenings.",
       },
       {
         slug: "noir-bloom",
@@ -87,7 +87,7 @@ export const galleryContent = {
         image: "/images/scent-noir.jpg",
         imageAlt: "Noir Bloom fragrance",
         education:
-          "Deep oud and spicy cardamom — rich and grounding for intimate soirées. A bold, lingering trail for after-dark events.",
+          "Deep oud and spicy cardamom feel rich and grounding for intimate soirées. A bold, lingering trail for after-dark events.",
       },
       {
         slug: "silk-veil",
@@ -96,7 +96,7 @@ export const galleryContent = {
         image: "/images/scent-silk.jpg",
         imageAlt: "Silk Veil fragrance",
         education:
-          "Sicilian bergamot and fresh mint — the first breath of spring mornings. Bright and airy, perfect for daytime celebrations.",
+          "Sicilian bergamot and fresh mint capture the first breath of spring mornings. Bright and airy, perfect for daytime celebrations.",
       },
     ],
   },

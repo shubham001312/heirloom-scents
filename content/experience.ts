@@ -27,7 +27,7 @@ export const experienceContent = {
       slug: "bridal-showers",
       title: "Bridal Showers",
       description:
-        "An interactive activity that doubles as the party favor — every guest leaves with their own bottle instead of a generic gift bag.",
+        "An interactive activity that doubles as the party favor. Every guest leaves with their own bottle instead of a generic gift bag.",
       highlights: [
         "Best for: 10–60 guests",
         "Typical placement: main activity, seated or standing",
@@ -42,7 +42,7 @@ export const experienceContent = {
       slug: "private-events",
       title: "Private & Brand Events",
       description:
-        "Milestone birthdays, corporate gifting, and brand activations — the format flexes to the room, from an intimate table setup to a full lounge installation.",
+        "Milestone birthdays, corporate gifting, and brand activations. The format flexes to the room, from an intimate table setup to a full lounge installation.",
       highlights: [
         "Best for: 10–300+ guests",
         "Typical placement: flexible, scoped per event",

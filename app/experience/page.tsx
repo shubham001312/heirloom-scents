@@ -8,7 +8,7 @@ import { experienceContent } from "@/content/experience";
 export const metadata: Metadata = {
   title: "Experience & Events",
   description:
-    "Discover the Heirloom Scents perfume bar experience — weddings, bridal showers, private events in Dallas–Fort Worth.",
+    "Discover the Heirloom Scents perfume bar experience for weddings, bridal showers, and private events in Dallas–Fort Worth.",
 };
 
 export default function ExperiencePage() {

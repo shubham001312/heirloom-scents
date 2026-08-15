@@ -9,7 +9,7 @@ import { RitualWalkthrough } from "@/components/about/RitualWalkthrough";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Heirloom Scents — a luxury mobile perfume bar creating signature fragrance experiences in Dallas–Fort Worth.",
+    "Learn about Heirloom Scents, a luxury mobile perfume bar creating signature fragrance experiences in Dallas–Fort Worth.",
 };
 
 export default function AboutPage() {

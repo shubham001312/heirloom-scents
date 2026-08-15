@@ -3,7 +3,7 @@ export const aboutContent = {
     eyebrow: "About",
     title: "The story behind the scent.",
     subtitle:
-      "Heirloom Scents was born from the idea that a fragrance can hold a memory — and a memory can last forever.",
+      "Heirloom Scents was born from the idea that a fragrance can hold a memory, and a memory can last forever.",
   },
   story: {
     title: "Our Story",
@@ -12,9 +12,9 @@ export const aboutContent = {
     image2: "/images/occ-wedding.jpg",
     image2Alt: "Guests blending custom fragrances at a wedding",
     quote:
-      "Every guest becomes the perfumer — guided, never rushed, to a scent that is unmistakably theirs.",
+      "Every guest becomes the perfumer, guided yet never rushed, to a scent that is unmistakably theirs.",
     paragraphs: [
-      "Heirloom Scents is a luxury mobile perfume bar based in the Dallas–Fort Worth area. We bring an interactive, guided fragrance experience directly to your event — weddings, bridal showers, corporate gatherings, and private celebrations.",
+      "Heirloom Scents is a luxury mobile perfume bar based in the Dallas–Fort Worth area. We bring an interactive, guided fragrance experience to weddings, bridal showers, corporate gatherings, and private celebrations.",
       "What makes us different isn't just the perfume. It's the experience. Every guest becomes the perfumer, guided by our fragrance hosts through a curated selection of notes to create something entirely their own.",
     ],
   },
@@ -37,7 +37,7 @@ export const aboutContent = {
         number: "01",
         title: "Choose your notes",
         description:
-          "Guests browse a curated palette of premium, oil-based notes — florals, woods, citruses, and musks — guided by our fragrance hosts.",
+          "Guests browse a curated palette of premium, oil-based notes, from florals and woods to citruses and musks, with our fragrance hosts guiding the way.",
       },
       {
         number: "02",
@@ -49,13 +49,13 @@ export const aboutContent = {
         number: "03",
         title: "Bottle your fragrance",
         description:
-          "The blend is bottled, sealed, and hand-finished at the bar — ready to wear or gift that same evening.",
+          "The blend is bottled, sealed, and hand-finished at the bar, ready to wear or gift that same evening.",
       },
       {
         number: "04",
         title: "Take the memory home",
         description:
-          "Every guest leaves with a labeled bottle and the memory of the moment it was made — an heirloom in the making.",
+          "Every guest leaves with a labeled bottle and the memory of the moment it was made, an heirloom in the making.",
       },
     ],
   },

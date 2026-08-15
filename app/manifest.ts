@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Heirloom Scents",
     short_name: "Heirloom",
     description:
-      "A guided perfume bar experience for celebrations — guests blend, bottle, and take home a fragrance made for that day only.",
+      "A guided perfume bar experience for celebrations where guests blend, bottle, and take home a fragrance made for that day only.",
     start_url: "/",
     display: "standalone",
     background_color: "#fbf8f2",

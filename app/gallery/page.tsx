@@ -8,7 +8,7 @@ import { ScentCard } from "@/components/gallery/ScentCard";
 export const metadata: Metadata = {
   title: "Gallery",
   description:
-    "See the Heirloom Scents perfume bar experience in action — weddings, bridal showers, and private events in Dallas–Fort Worth.",
+    "See the Heirloom Scents perfume bar experience in action at weddings, bridal showers, and private events in Dallas–Fort Worth.",
 };
 
 export default function GalleryPage() {
