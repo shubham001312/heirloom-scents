@@ -133,7 +133,8 @@ export function Logo({
             src="/logo.svg"
             alt=""
             width={lockupSizes[size].mark}
-            height={lockupSizes[size].mark}
+            /* logo.svg is 273×309 — keep its native ratio instead of a square crop */
+            height={Math.round((lockupSizes[size].mark * 309) / 273)}
             priority
           />
         )}
