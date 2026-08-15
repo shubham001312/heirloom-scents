@@ -28,26 +28,6 @@ export const aboutContent = {
     { value: "4", label: "signature blends" },
     { value: "DFW", label: "serving Dallas–Fort Worth" },
   ],
-  philosophy: {
-    title: "Our Philosophy",
-    items: [
-      {
-        title: "Craftsmanship",
-        description:
-          "Every blend is made with premium, oil-based fragrances — not synthetic shortcuts.",
-      },
-      {
-        title: "Connection",
-        description:
-          "The scent bar is an icebreaker, a conversation starter, a shared moment.",
-      },
-      {
-        title: "Memory",
-        description:
-          "A fragrance tied to a specific day becomes an heirloom — something you carry with you.",
-      },
-    ],
-  },
   ritual: {
     kicker: "The ritual",
     titleLine1: "How the experience",

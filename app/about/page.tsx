@@ -12,21 +12,8 @@ export const metadata: Metadata = {
     "Learn about Heirloom Scents — a luxury mobile perfume bar creating signature fragrance experiences in Dallas–Fort Worth.",
 };
 
-/** Minimal gold line icons for the three philosophy pillars. */
-const PHILOSOPHY_ICONS = [
-  // Craftsmanship — a hand-cut crystal bottle
-  <path
-    key="craft"
-    d="M9 2h6v2h2v4a6 6 0 0 1-2 4.5V15h-1v3h-4v-3H9v-2.5A6 6 0 0 1 7 8V4h2V2zM7 5v2M17 5v2"
-  />,
-  // Connection — two overlapping circles
-  <path key="connect" d="M9 5a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm6 0a7 7 0 1 1 0 14 7 7 0 0 1 0-14z" />,
-  // Memory — an heirloom keepsake box
-  <path key="memory" d="M4 8l8-4 8 4-8 4-8-4zm0 0v8l8 4 8-4V8M12 12v8" />,
-];
-
 export default function AboutPage() {
-  const { page, story, ritual, stats, brandQuote, philosophy, cta } = aboutContent;
+  const { page, story, ritual, stats, brandQuote, cta } = aboutContent;
 
   return (
     <main id="main-content">
@@ -39,9 +26,6 @@ export default function AboutPage() {
             title={page.title}
             subtitle={page.subtitle}
           />
-          <div className="ornament-rule" aria-hidden="true">
-            <span />
-          </div>
         </Container>
       </section>
 
@@ -101,38 +85,6 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Philosophy */}
-      <section className="section section--white fade-in-up">
-        <Container>
-          <SectionHeading title={philosophy.title} />
-          <div className="philosophy-grid">
-            {philosophy.items.map((item, index) => (
-              <div key={item.title} className="philosophy-item">
-                <span className="philosophy-medallion" aria-hidden="true">
-                  <svg
-                    viewBox="0 0 24 24"
-                    width="26"
-                    height="26"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    {PHILOSOPHY_ICONS[index]}
-                  </svg>
-                </span>
-                <span className="philosophy-numeral" aria-hidden="true">
-                  {["I", "II", "III"][index]}
-                </span>
-                <h3 className="philosophy-title">{item.title}</h3>
-                <p className="philosophy-text">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       {/* The ritual — interactive walkthrough */}
       <section className="section section--light fade-in-up">
         <Container>
@@ -143,7 +95,6 @@ export default function AboutPage() {
               <br />
               {ritual.titleLine2}
             </h2>
-            <div className="rule" />
           </div>
           <RitualWalkthrough steps={ritual.steps} />
         </Container>

@@ -21,13 +21,6 @@
   color: var(--color-gold);
 }
 
-.rule {
-  width: 44px;
-  height: 1px;
-  background: var(--color-gold);
-  margin: 24px 0;
-}
-
 /* Display face for feature headings (Italiana) */
 .display {
   font-family: var(--font-display);
@@ -89,19 +82,7 @@
 }
 
 .section-head .kicker {
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
   margin-bottom: 18px;
-}
-
-.section-head .kicker::before,
-.section-head .kicker::after {
-  content: "";
-  width: 36px;
-  height: 1px;
-  background: var(--color-gold);
-  opacity: 0.7;
 }
 
 .section-head h2 {
@@ -381,33 +362,8 @@
   color: var(--color-cream);
 }
 
-.home-hero__copy .rule {
-  background: rgba(255, 255, 255, 0.5);
-}
-
 .home-hero__copy .text-link {
   color: var(--color-cream);
-}
-
-.home-hero__scroll {
-  position: absolute;
-  z-index: 4;
-  right: 4%;
-  bottom: 32px;
-  font-size: 13px;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  writing-mode: vertical-rl;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.home-hero__scroll::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.4);
-  margin-top: 13px;
 }
 
 /* --------------------------------------------------------------------------
@@ -1048,31 +1004,6 @@
   line-height: var(--leading-relaxed);
 }
 
-/* Gold double-rule ornament under the page header: ——— ◆ ——— */
-.ornament-rule {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  padding-bottom: 64px;
-}
-
-.ornament-rule::before,
-.ornament-rule::after {
-  content: "";
-  width: 90px;
-  height: 1px;
-  background: var(--color-gold);
-  opacity: 0.85;
-}
-
-.ornament-rule span {
-  width: 9px;
-  height: 9px;
-  border: 1px solid var(--color-gold);
-  transform: rotate(45deg);
-}
-
 /* Pull quote — serif italic set between gold hairlines */
 .story-quote {
   margin: var(--space-8) 0 0;
@@ -1165,60 +1096,6 @@
   letter-spacing: var(--tracking-micro-label);
   text-transform: uppercase;
   color: rgba(246, 238, 230, 0.8);
-  margin: 0;
-}
-
-/* Philosophy — editorial columns with gold top rules + diamond medallions */
-.philosophy-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-12);
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.philosophy-item {
-  text-align: center;
-  padding: var(--space-8) var(--space-4) 0;
-  border-top: 1px solid var(--color-gold);
-}
-
-.philosophy-medallion {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 62px;
-  height: 62px;
-  border: 1px solid var(--color-gold);
-  transform: rotate(45deg);
-  color: var(--color-gold-deep);
-  margin-bottom: var(--space-6);
-}
-
-.philosophy-medallion svg {
-  transform: rotate(-45deg);
-}
-
-.philosophy-numeral {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 13px;
-  letter-spacing: 0.3em;
-  color: var(--color-gold);
-  margin-bottom: var(--space-3);
-}
-
-.philosophy-title {
-  font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: 26px;
-  margin: 0 0 var(--space-3);
-}
-
-.philosophy-text {
-  color: var(--color-text-muted);
-  font-size: 0.9375rem;
-  line-height: var(--leading-relaxed);
   margin: 0;
 }
 
@@ -1414,12 +1291,6 @@
 
   .about-stat:nth-child(-n + 2) {
     border-bottom: 1px solid rgba(168, 135, 95, 0.45);
-  }
-
-  .philosophy-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-    max-width: 480px;
   }
 }
 
