@@ -290,7 +290,9 @@
   }
 }
 
-/* Hero crossfade — stacked slides fade into each other on a loop */
+/* Hero slides — stacked, crossfading with a slow "catch-up" slide: the
+   incoming photo starts slightly right-of-frame and glides into place while
+   fading, so the change reads as one frame catching the next. */
 .hero-image-stack {
   position: absolute;
   inset: 0;
@@ -300,11 +302,17 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 1.2s var(--ease-luxury);
+  /* Resting offset — the incoming slide starts here and slides into place */
+  transform: translateX(2.5%);
+  will-change: opacity, transform;
+  transition:
+    opacity 1.3s var(--ease-luxury),
+    transform 1.6s var(--ease-luxury);
 }
 
 .hero-image--active {
   opacity: 1;
+  transform: translateX(0);
 }
 
 .home-hero__overlay {
