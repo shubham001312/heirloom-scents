@@ -63,6 +63,12 @@
   padding: 125px 7%;
 }
 
+/* First content section after a page header — the header already carries
+   the transition, so a full 125px top pad would leave a void above it */
+.section--first {
+  padding-top: var(--space-16);
+}
+
 .section--light {
   background: var(--color-ivory);
 }
@@ -1013,7 +1019,9 @@
 }
 
 .about-story {
-  align-items: center;
+  /* Top-align the text with the collage instead of floating it into the
+     middle of the tall image column */
+  align-items: start;
 }
 
 .about-paragraph {
@@ -1541,6 +1549,10 @@
     padding: 95px 6%;
   }
 
+  .section--first {
+    padding-top: var(--space-16);
+  }
+
   .intro,
   .inquiry-wrap {
     grid-template-columns: 1fr;
@@ -1580,6 +1592,10 @@
 
   .section {
     padding: 80px 6%;
+  }
+
+  .section--first {
+    padding-top: var(--space-12);
   }
 
   .section-head {

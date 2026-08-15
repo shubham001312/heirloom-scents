@@ -29,7 +29,7 @@ export default function ExperiencePage() {
       </section>
 
       {/* Event Blocks */}
-      <section className="section section--white fade-in-up">
+      <section className="section section--white section--first fade-in-up">
         <Container>
           {events.map((event, index) => (
             <div key={event.slug} id={event.slug} className="event-block">

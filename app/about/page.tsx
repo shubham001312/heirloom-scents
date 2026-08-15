@@ -30,7 +30,7 @@ export default function AboutPage() {
       </section>
 
       {/* Brand Story */}
-      <section className="section section--white fade-in-up">
+      <section className="section section--white section--first fade-in-up">
         <Container>
           <div className="grid-2 about-story">
             <div>

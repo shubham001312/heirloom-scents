@@ -29,7 +29,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Scent Archive — the signature blends first */}
-      <section className="section section--white fade-in-up">
+      <section className="section section--white section--first fade-in-up">
         <Container>
           <div className="section-head">
             <div className="kicker">{signatures.kicker}</div>
