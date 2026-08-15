@@ -1490,6 +1490,46 @@
   margin-bottom: var(--space-4);
 }
 
+/* Uniform editorial crop — every tile is 3:4 regardless of the source
+   aspect (the set mixes wide banners with portraits), so the masonry grid
+   reads tidy and organized */
+.gallery-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+/* "View all" — hairline underline like the link CTAs (no pill UI) */
+.gallery-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 2px;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  font-size: 14px;
+  letter-spacing: var(--tracking-micro-label);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.4s var(--ease-luxury);
+}
+
+.gallery-more:hover {
+  border-bottom-width: 2px;
+}
+
+.gallery-more span {
+  display: inline-block;
+  transition: transform 0.4s var(--ease-luxury);
+}
+
+.gallery-more:hover span {
+  transform: translateX(6px);
+}
+
 /* Editorial filter row — a hairline under the whole group; the selected
    option gets the maroon underline (no pills / no rounded UI) */
 .gallery-filters {

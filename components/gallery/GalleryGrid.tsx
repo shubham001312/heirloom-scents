@@ -21,13 +21,13 @@ export function GalleryGrid({ items }: GalleryGridProps) {
               src={item.image}
               alt={item.alt}
               width={400}
-              height={300}
+              height={533}
               // First row only is eager — the rest load one-by-one as you
               // scroll, each showing its shimmer skeleton (smoother on slow
               // networks than bursting all 9 at once)
               loading={index < 3 ? "eager" : "lazy"}
               sizes="(max-width: 768px) 90vw, 30vw"
-              style={{ width: "100%", height: "auto", objectFit: "cover" }}
+              className="gallery-image"
             />
           </div>
         </div>

@@ -28,8 +28,15 @@ export default function GalleryPage() {
         </Container>
       </section>
 
-      {/* Scent Archive — the signature blends first */}
+      {/* Gallery Grid + Filters — the event photos, first */}
       <section className="section section--white section--first fade-in-up">
+        <Container>
+          <GalleryFilter categories={categories} items={items} />
+        </Container>
+      </section>
+
+      {/* Scent Archive — the signature blends, at the bottom */}
+      <section className="section section--light fade-in-up">
         <Container>
           <div className="section-head">
             <div className="kicker">{signatures.kicker}</div>
@@ -44,13 +51,6 @@ export default function GalleryPage() {
               <ScentCard key={scent.slug} scent={scent} />
             ))}
           </div>
-        </Container>
-      </section>
-
-      {/* Gallery Grid + Filters */}
-      <section className="section section--light fade-in-up">
-        <Container>
-          <GalleryFilter categories={categories} items={items} />
         </Container>
       </section>
     </main>
