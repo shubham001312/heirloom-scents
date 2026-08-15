@@ -66,6 +66,8 @@
   --text-4xl: 2.25rem; /* 36px */
   --text-5xl: 3rem; /* 48px */
   --text-6xl: 3.75rem; /* 60px */
+  /* Fluid page-title scale — one shared ratio for every page header */
+  --text-page-title: clamp(46px, 6vw, 78px);
 
   /* Font Weights */
   --weight-light: 300;

@@ -23,7 +23,13 @@ export function SectionHeading({
       style={{ marginBottom: "var(--space-10)" }}
     >
       {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-      <Heading className="display" style={{ fontSize: "var(--text-3xl)", marginTop: 0 }}>
+      <Heading
+        className="display"
+        style={{
+          fontSize: level === "h1" ? "var(--text-page-title)" : "var(--text-3xl)",
+          marginTop: 0,
+        }}
+      >
         {title}
       </Heading>
       {subtitle && (

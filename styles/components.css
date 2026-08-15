@@ -579,7 +579,7 @@
 .inquiry-intro h1 {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(50px, 5.5vw, 84px);
+  font-size: var(--text-page-title);
   line-height: 0.93;
   margin: 18px 0 28px;
   letter-spacing: var(--tracking-headline-tight);
