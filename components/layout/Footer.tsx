@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
+import { Button } from "@/components/ui/Button";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -60,9 +61,12 @@ export function Footer() {
           <p className="footer__blurb">
             Perfume bars for weddings, showers, and private events.
           </p>
-          <Link href="/inquire" className="footer__cta">
-            Start your inquiry →
-          </Link>
+          <div className="footer__cta">
+            {/* Same button as the hero — outline that fills cream on hover */}
+            <Button variant="outline-light" href="/inquire">
+              Start your inquiry <span aria-hidden="true">→</span>
+            </Button>
+          </div>
         </div>
       </div>
 

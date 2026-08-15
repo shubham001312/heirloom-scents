@@ -884,18 +884,14 @@
 }
 
 .footer__cta {
-  display: inline-block;
-  margin-top: 14px;
-  font-size: 15px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #c8bcb1;
-  border-bottom: 1px solid rgba(200, 188, 177, 0.5);
-  padding-bottom: 4px;
+  /* Spacing wrapper — the button itself matches the hero's outline style */
+  margin-top: var(--space-5);
 }
 
-.footer__cta:hover {
-  color: #eee5db;
+.footer__cta .btn {
+  /* Keep the label on one line — the footer column is just narrow enough to
+     wrap it into two, which would make it taller than the hero button */
+  white-space: nowrap;
 }
 
 .footer__bottom {
@@ -1833,9 +1829,8 @@ html.js .fade-in-up.in-view {
     min-height: 44px;
   }
 
-  /* Footer nav links + footer CTA — grow from 27px to ~43px */
-  .footer__links a,
-  .footer__cta {
+  /* Footer nav links — grow from 27px to ~43px touch targets */
+  .footer__links a {
     padding-block: 8px;
   }
 }
